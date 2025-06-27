@@ -1,0 +1,185 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Du_An_Ban_Hang\\Do_an_P10\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|d:\\du_an_ban_hang\\do_an_p10\\do_an_p10\\dangky.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\dangky.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|d:\\du_an_ban_hang\\do_an_p10\\do_an_p10\\dangky.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\dangky.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|d:\\du_an_ban_hang\\do_an_p10\\do_an_p10\\dangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\dangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|d:\\du_an_ban_hang\\do_an_p10\\do_an_p10\\dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|d:\\du_an_ban_hang\\do_an_p10\\do_an_p10\\dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|d:\\du_an_ban_hang\\do_an_p10\\do_an_p10\\ecostraws.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\ecostraws.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|d:\\du_an_ban_hang\\do_an_p10\\do_an_p10\\dangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\dangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|d:\\du_an_ban_hang\\do_an_p10\\do_an_p10\\quenmatkhau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\quenmatkhau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|d:\\du_an_ban_hang\\do_an_p10\\do_an_p10\\quenmatkhau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\quenmatkhau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|d:\\du_an_ban_hang\\do_an_p10\\do_an_p10\\dangnhap.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\dangnhap.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dangky.cs [Design]",
+              "DocumentMoniker": "D:\\Du_An_Ban_Hang\\Do_an_P10\\Do_an_P10\\Dangky.cs",
+              "RelativeDocumentMoniker": "Do_an_P10\\Dangky.cs",
+              "ToolTip": "D:\\Du_An_Ban_Hang\\Do_an_P10\\Do_an_P10\\Dangky.cs [Design]",
+              "RelativeToolTip": "Do_an_P10\\Dangky.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T03:58:29.257Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dangky.resx",
+              "DocumentMoniker": "D:\\Du_An_Ban_Hang\\Do_an_P10\\Do_an_P10\\Dangky.resx",
+              "RelativeDocumentMoniker": "Do_an_P10\\Dangky.resx",
+              "ToolTip": "D:\\Du_An_Ban_Hang\\Do_an_P10\\Do_an_P10\\Dangky.resx",
+              "RelativeToolTip": "Do_an_P10\\Dangky.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-06-27T03:57:31.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Dangky.Designer.cs",
+              "DocumentMoniker": "D:\\Du_An_Ban_Hang\\Do_an_P10\\Do_an_P10\\Dangky.Designer.cs",
+              "RelativeDocumentMoniker": "Do_an_P10\\Dangky.Designer.cs",
+              "ToolTip": "D:\\Du_An_Ban_Hang\\Do_an_P10\\Do_an_P10\\Dangky.Designer.cs",
+              "RelativeToolTip": "Do_an_P10\\Dangky.Designer.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAArwEoAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T03:57:24.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EcoStraws.cs [Design]",
+              "DocumentMoniker": "D:\\Du_An_Ban_Hang\\Do_an_P10\\Do_an_P10\\EcoStraws.cs",
+              "RelativeDocumentMoniker": "Do_an_P10\\EcoStraws.cs",
+              "ToolTip": "D:\\Du_An_Ban_Hang\\Do_an_P10\\Do_an_P10\\EcoStraws.cs [Design]",
+              "RelativeToolTip": "Do_an_P10\\EcoStraws.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T03:35:51.113Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Dangky.cs",
+              "DocumentMoniker": "D:\\Du_An_Ban_Hang\\Do_an_P10\\Do_an_P10\\Dangky.cs",
+              "RelativeDocumentMoniker": "Do_an_P10\\Dangky.cs",
+              "ToolTip": "D:\\Du_An_Ban_Hang\\Do_an_P10\\Do_an_P10\\Dangky.cs",
+              "RelativeToolTip": "Do_an_P10\\Dangky.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAArwBwAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T03:34:25.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Dangnhap.cs [Design]",
+              "DocumentMoniker": "D:\\Du_An_Ban_Hang\\Do_an_P10\\Do_an_P10\\Dangnhap.cs",
+              "RelativeDocumentMoniker": "Do_an_P10\\Dangnhap.cs",
+              "ToolTip": "D:\\Du_An_Ban_Hang\\Do_an_P10\\Do_an_P10\\Dangnhap.cs [Design]",
+              "RelativeToolTip": "Do_an_P10\\Dangnhap.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T02:41:30.706Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Dangnhap.cs",
+              "DocumentMoniker": "D:\\Du_An_Ban_Hang\\Do_an_P10\\Do_an_P10\\Dangnhap.cs",
+              "RelativeDocumentMoniker": "Do_an_P10\\Dangnhap.cs",
+              "ToolTip": "D:\\Du_An_Ban_Hang\\Do_an_P10\\Do_an_P10\\Dangnhap.cs",
+              "RelativeToolTip": "Do_an_P10\\Dangnhap.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAewBkAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T02:54:35.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "quenmatkhau.cs [Design]",
+              "DocumentMoniker": "D:\\Du_An_Ban_Hang\\Do_an_P10\\Do_an_P10\\quenmatkhau.cs",
+              "RelativeDocumentMoniker": "Do_an_P10\\quenmatkhau.cs",
+              "ToolTip": "D:\\Du_An_Ban_Hang\\Do_an_P10\\Do_an_P10\\quenmatkhau.cs [Design]",
+              "RelativeToolTip": "Do_an_P10\\quenmatkhau.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T03:20:27.16Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "quenmatkhau.cs",
+              "DocumentMoniker": "D:\\Du_An_Ban_Hang\\Do_an_P10\\Do_an_P10\\quenmatkhau.cs",
+              "RelativeDocumentMoniker": "Do_an_P10\\quenmatkhau.cs",
+              "ToolTip": "D:\\Du_An_Ban_Hang\\Do_an_P10\\Do_an_P10\\quenmatkhau.cs",
+              "RelativeToolTip": "Do_an_P10\\quenmatkhau.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAApwBsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T03:25:45.089Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Dangnhap.Designer.cs",
+              "DocumentMoniker": "D:\\Du_An_Ban_Hang\\Do_an_P10\\Do_an_P10\\Dangnhap.Designer.cs",
+              "RelativeDocumentMoniker": "Do_an_P10\\Dangnhap.Designer.cs",
+              "ToolTip": "D:\\Du_An_Ban_Hang\\Do_an_P10\\Do_an_P10\\Dangnhap.Designer.cs",
+              "RelativeToolTip": "Do_an_P10\\Dangnhap.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-27T02:48:24.319Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
