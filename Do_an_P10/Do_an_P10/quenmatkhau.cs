@@ -21,12 +21,24 @@ namespace Do_an_P10
         {
 
         }
-
+        Modify modify = new Modify();
         private void xacnhan_Click(object sender, EventArgs e)
         {
-            Dangnhap d = new Dangnhap();
-            d.Show();
-            this.Hide();
+            String Email = email.Text;
+            if (Email.Trim() == "") { MessageBox.Show("Vui lòng nhập email!"); return; }
+            else
+            {
+                String query = "Select * from taikhoan where email = '" + Email + "'";
+                if (modify.tk(query).Count != 0)
+                {
+                    MessageBox.Show("mật khẩu của bạn: " + modify.tk(query)[0].Matkhau, "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Dangnhap dn = new Dangnhap();
+                    dn.Show();
+                    this.Hide();
+                }
+                else MessageBox.Show("Email không tồn tại!");
+
+            }
 
         }
     }

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             label2 = new Label();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            tk = new TextBox();
+            mk = new TextBox();
             label3 = new Label();
-            textBox4 = new TextBox();
+            nlmk = new TextBox();
             label4 = new Label();
             label5 = new Label();
-            textBox5 = new TextBox();
+            email = new TextBox();
             dk = new Button();
             SuspendLayout();
             // 
@@ -48,21 +48,20 @@
             label2.Size = new Size(81, 19);
             label2.TabIndex = 0;
             label2.Text = "Tài khoản";
-            label2.Click += label2_Click;
             // 
-            // textBox2
+            // tk
             // 
-            textBox2.Location = new Point(268, 125);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(335, 27);
-            textBox2.TabIndex = 1;
+            tk.Location = new Point(268, 125);
+            tk.Name = "tk";
+            tk.Size = new Size(335, 27);
+            tk.TabIndex = 1;
             // 
-            // textBox3
+            // mk
             // 
-            textBox3.Location = new Point(268, 166);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(335, 27);
-            textBox3.TabIndex = 3;
+            mk.Location = new Point(268, 166);
+            mk.Name = "mk";
+            mk.Size = new Size(335, 27);
+            mk.TabIndex = 3;
             // 
             // label3
             // 
@@ -74,12 +73,12 @@
             label3.TabIndex = 2;
             label3.Text = "Mật khẩu";
             // 
-            // textBox4
+            // nlmk
             // 
-            textBox4.Location = new Point(268, 255);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(335, 27);
-            textBox4.TabIndex = 5;
+            nlmk.Location = new Point(268, 255);
+            nlmk.Name = "nlmk";
+            nlmk.Size = new Size(335, 27);
+            nlmk.TabIndex = 5;
             // 
             // label4
             // 
@@ -101,12 +100,12 @@
             label5.TabIndex = 4;
             label5.Text = "Email";
             // 
-            // textBox5
+            // email
             // 
-            textBox5.Location = new Point(268, 212);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(335, 27);
-            textBox5.TabIndex = 5;
+            email.Location = new Point(268, 212);
+            email.Name = "email";
+            email.Size = new Size(335, 27);
+            email.TabIndex = 5;
             // 
             // dk
             // 
@@ -125,16 +124,17 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(738, 450);
             Controls.Add(dk);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
+            Controls.Add(email);
+            Controls.Add(nlmk);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(textBox3);
+            Controls.Add(mk);
             Controls.Add(label3);
-            Controls.Add(textBox2);
+            Controls.Add(tk);
             Controls.Add(label2);
             Name = "Dangky";
             Text = "Dangky";
+            Load += Dangky_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -150,5 +150,9 @@
         private Label label5;
         private TextBox textBox5;
         private Button dk;
+        private TextBox tk;
+        private TextBox mk;
+        private TextBox email;
+        private TextBox nlmk;
     }
 }

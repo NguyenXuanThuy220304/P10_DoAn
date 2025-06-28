@@ -30,8 +30,6 @@
         {
             label1 = new Label();
             email = new TextBox();
-            mkm = new TextBox();
-            label2 = new Label();
             xacnhan = new Button();
             SuspendLayout();
             // 
@@ -52,27 +50,10 @@
             email.Size = new Size(328, 27);
             email.TabIndex = 1;
             // 
-            // mkm
-            // 
-            mkm.Location = new Point(231, 97);
-            mkm.Name = "mkm";
-            mkm.Size = new Size(328, 27);
-            mkm.TabIndex = 3;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Times New Roman", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(114, 101);
-            label2.Name = "label2";
-            label2.Size = new Size(111, 19);
-            label2.TabIndex = 2;
-            label2.Text = "Mật khẩu mới";
-            // 
             // xacnhan
             // 
             xacnhan.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            xacnhan.Location = new Point(296, 153);
+            xacnhan.Location = new Point(297, 139);
             xacnhan.Name = "xacnhan";
             xacnhan.Size = new Size(94, 29);
             xacnhan.TabIndex = 4;
@@ -86,8 +67,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(702, 194);
             Controls.Add(xacnhan);
-            Controls.Add(mkm);
-            Controls.Add(label2);
             Controls.Add(email);
             Controls.Add(label1);
             Name = "quenmatkhau";
@@ -100,8 +79,6 @@
 
         private Label label1;
         private TextBox email;
-        private TextBox mkm;
-        private Label label2;
         private Button xacnhan;
     }
 }
