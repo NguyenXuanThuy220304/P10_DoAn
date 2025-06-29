@@ -92,11 +92,11 @@
             // pictureBox1
             // 
             pictureBox1.ErrorImage = null;
-            pictureBox1.Image = Properties.Resources.eco;
+            pictureBox1.Image = Properties.Resources.logo1;
             pictureBox1.InitialImage = null;
-            pictureBox1.Location = new Point(89, 12);
+            pictureBox1.Location = new Point(187, 39);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(437, 248);
+            pictureBox1.Size = new Size(235, 204);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
@@ -104,7 +104,7 @@
             // dn
             // 
             dn.Font = new Font("Times New Roman", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dn.Location = new Point(248, 413);
+            dn.Location = new Point(243, 413);
             dn.Name = "dn";
             dn.Size = new Size(111, 38);
             dn.TabIndex = 5;
@@ -116,7 +116,7 @@
             // 
             qmk.AutoSize = true;
             qmk.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            qmk.Location = new Point(145, 381);
+            qmk.Location = new Point(130, 381);
             qmk.Name = "qmk";
             qmk.Size = new Size(98, 17);
             qmk.TabIndex = 6;
@@ -128,7 +128,7 @@
             // 
             dk.AutoSize = true;
             dk.Font = new Font("Times New Roman", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dk.Location = new Point(396, 381);
+            dk.Location = new Point(387, 381);
             dk.Name = "dk";
             dk.Size = new Size(58, 17);
             dk.TabIndex = 7;
@@ -140,6 +140,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(604, 463);
             Controls.Add(dk);
             Controls.Add(qmk);
@@ -150,6 +151,7 @@
             Controls.Add(mk);
             Controls.Add(tk);
             Name = "Dangnhap";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Đăng nhập";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

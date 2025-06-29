@@ -154,7 +154,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(991, 278);
+            ClientSize = new Size(991, 266);
             Controls.Add(groupBox1);
             Name = "tt_muahang";
             Text = "tt_muahang";

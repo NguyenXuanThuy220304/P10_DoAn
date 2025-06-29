@@ -37,6 +37,10 @@
             label5 = new Label();
             email = new TextBox();
             dk = new Button();
+            label1 = new Label();
+            textBox1 = new TextBox();
+            button1 = new Button();
+            label6 = new Label();
             SuspendLayout();
             // 
             // label2
@@ -75,7 +79,7 @@
             // 
             // nlmk
             // 
-            nlmk.Location = new Point(268, 255);
+            nlmk.Location = new Point(268, 212);
             nlmk.Name = "nlmk";
             nlmk.Size = new Size(335, 27);
             nlmk.TabIndex = 5;
@@ -84,7 +88,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Times New Roman", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(124, 263);
+            label4.Location = new Point(124, 220);
             label4.Name = "label4";
             label4.Size = new Size(147, 19);
             label4.TabIndex = 4;
@@ -94,7 +98,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Times New Roman", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(124, 220);
+            label5.Location = new Point(124, 267);
             label5.Name = "label5";
             label5.Size = new Size(54, 19);
             label5.TabIndex = 4;
@@ -102,7 +106,7 @@
             // 
             // email
             // 
-            email.Location = new Point(268, 212);
+            email.Location = new Point(268, 259);
             email.Name = "email";
             email.Size = new Size(335, 27);
             email.TabIndex = 5;
@@ -110,7 +114,7 @@
             // dk
             // 
             dk.Font = new Font("Times New Roman", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dk.Location = new Point(330, 351);
+            dk.Location = new Point(457, 343);
             dk.Name = "dk";
             dk.Size = new Size(94, 29);
             dk.TabIndex = 6;
@@ -118,13 +122,55 @@
             dk.UseVisualStyleBackColor = true;
             dk.Click += dk_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Times New Roman", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(124, 267);
+            label1.Name = "label1";
+            label1.Size = new Size(54, 19);
+            label1.TabIndex = 4;
+            label1.Text = "Email";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(268, 259);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(335, 27);
+            textBox1.TabIndex = 5;
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Times New Roman", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(205, 343);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 7;
+            button1.Text = "Quay lại";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Times New Roman", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(231, 42);
+            label6.Name = "label6";
+            label6.Size = new Size(286, 38);
+            label6.TabIndex = 8;
+            label6.Text = "Đăng ký tài khoản";
+            // 
             // Dangky
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(738, 450);
+            Controls.Add(label6);
+            Controls.Add(button1);
             Controls.Add(dk);
+            Controls.Add(textBox1);
             Controls.Add(email);
+            Controls.Add(label1);
             Controls.Add(nlmk);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -154,5 +200,9 @@
         private TextBox mk;
         private TextBox email;
         private TextBox nlmk;
+        private Label label1;
+        private TextBox textBox1;
+        private Button button1;
+        private Label label6;
     }
 }

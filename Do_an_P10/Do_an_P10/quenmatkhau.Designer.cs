@@ -37,7 +37,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(114, 48);
+            label1.Location = new Point(117, 54);
             label1.Name = "label1";
             label1.Size = new Size(58, 19);
             label1.TabIndex = 0;
@@ -45,7 +45,7 @@
             // 
             // email
             // 
-            email.Location = new Point(231, 44);
+            email.Location = new Point(234, 50);
             email.Name = "email";
             email.Size = new Size(328, 27);
             email.TabIndex = 1;

@@ -56,7 +56,7 @@
             button2.Name = "button2";
             button2.Size = new Size(156, 29);
             button2.TabIndex = 2;
-            button2.Text = "Thanh toán";
+            button2.Text = "Đặt hàng";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
@@ -67,7 +67,7 @@
             button1.Name = "button1";
             button1.Size = new Size(156, 29);
             button1.TabIndex = 1;
-            button1.Text = "Mua Tiếp";
+            button1.Text = "Quay lại";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 

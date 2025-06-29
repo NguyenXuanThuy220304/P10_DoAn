@@ -48,6 +48,7 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
+            gio = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -67,6 +68,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Lime;
+            panel1.Controls.Add(gio);
             panel1.Controls.Add(linkLabel1);
             panel1.Controls.Add(t);
             panel1.Controls.Add(pictureBox2);
@@ -283,6 +285,18 @@
             label2.TabIndex = 3;
             label2.Text = "Ống hút gạo (size 4,5)";
             // 
+            // gio
+            // 
+            gio.BackgroundImage = Properties.Resources.giohanganh;
+            gio.BackgroundImageLayout = ImageLayout.Stretch;
+            gio.ImageAlign = ContentAlignment.BottomRight;
+            gio.Location = new Point(830, 12);
+            gio.Name = "gio";
+            gio.Size = new Size(44, 42);
+            gio.TabIndex = 4;
+            gio.UseVisualStyleBackColor = true;
+            gio.Click += gio_Click;
+            // 
             // EcoStraws
             // 
             AcceptButton = phi8;
@@ -328,5 +342,6 @@
         private PictureBox pictureBox2;
         private LinkLabel linkLabel1;
         private TextBox t;
+        private Button gio;
     }
 }

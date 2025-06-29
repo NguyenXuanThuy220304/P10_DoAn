@@ -57,5 +57,12 @@ namespace Do_an_P10
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dangnhap dn= new Dangnhap();
+            dn.Show();
+            this.Hide();
+        }
     }
 }

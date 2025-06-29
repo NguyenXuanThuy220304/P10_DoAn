@@ -72,8 +72,15 @@ namespace Do_an_P10
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
-            Dangnhap dangnhap = new Dangnhap(); 
+            Dangnhap dangnhap = new Dangnhap();
             dangnhap.Show();
+        }
+
+        private void gio_Click(object sender, EventArgs e)
+        {
+            GioHangForm gio = new GioHangForm(tentk);
+            gio.Show();
+            this.Hide();
         }
     }
 }
