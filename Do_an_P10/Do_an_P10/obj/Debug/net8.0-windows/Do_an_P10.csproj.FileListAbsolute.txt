@@ -50,3 +50,5 @@ D:\Du_An_Ban_Hang\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P1
 D:\Du_An_Ban_Hang\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.csproj.Up2Date
 D:\Du_An_Ban_Hang\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.QL_EcoStraws.resources
 D:\Du_An_Ban_Hang\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.Tt_khachhang.resources
+D:\Du_An_Ban_Hang\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.tt_muahang.resources
+D:\Du_An_Ban_Hang\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.GioHangForm.resources

@@ -134,6 +134,7 @@
             dk.TabIndex = 7;
             dk.TabStop = true;
             dk.Text = "Đăng ký";
+            dk.LinkClicked += dk_LinkClicked_1;
             // 
             // Dangnhap
             // 

@@ -18,37 +18,48 @@ namespace Do_an_P10
             InitializeComponent();
             this.tentk = tentk;
         }
-        Modify modify= new Modify();
+        Modify modify = new Modify();
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
         private void Tt_khachhang_Load(object sender, EventArgs e)
         {
-            tentaikhoan.Text = tentk; // nếu có label để hiển thị
+            MessageBox.Show("tentk: '" + tentk + "'");
+            ttk.Text = tentk; // nếu có label để hiển thị
+            ttk.ReadOnly = true;
+
+
         }
         private void luu_Click(object sender, EventArgs e)
         {
             String hoten = ht.Text;
             String sodt = sdt.Text;
             String diachi = add.Text;
-            if(hoten.Trim() == "") { MessageBox.Show("Vui long nhap ho va ten!"); return; }
+            if (hoten.Trim() == "") { MessageBox.Show("Vui long nhap ho va ten!"); return; }
             else if (sodt.Trim() == "") { MessageBox.Show("Vui long nhap so dien thoai!"); return; }
             else if (diachi.Trim() == "") { MessageBox.Show("Vui long nhap dia chi!"); return; }
             else
             {
-                String query = "Insert into khachhang (Hoten, SDT, Diachi, tentaikhoan) values ('"+hoten+"','"+sodt+"','"+diachi+"','"+tentk+"')";
-                if (modify.kh(query).Count != 0)
+                String query = "Insert into khachhang (Hoten, SDT, Diachi, tentaikhoan) values ('" + hoten + "','" + sodt + "','" + diachi + "','" + tentk + "')";
+                modify.Commad(query);
+                if (MessageBox.Show("Lưu thông tin thành công! Bạn có muốn đăng nhập ngay", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
-                    MessageBox.Show("Luu thong tin thanh cong!");
-                    EcoStraws ecoStraws = new EcoStraws();
+                    EcoStraws ecoStraws = new EcoStraws(tentk);
                     ecoStraws.Show();
                     this.Hide();
-                }else
+                }
+                else
                 {
                     MessageBox.Show("luu that bai!");
                 }
             }
+        }
+
+        private void Tt_khachhang_Load_1(object sender, EventArgs e)
+        {
+            ttk.Text = tentk; // nếu có label để hiển thị
+            ttk.ReadOnly = true;
         }
     }
 }

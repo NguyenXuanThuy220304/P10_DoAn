@@ -40,19 +40,21 @@ namespace Do_an_P10
                     MessageBox.Show("Dang nhap thanh cong!", "Thong bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (tentk.Equals("admin"))
                     {
-                        QL_EcoStraws ql= new QL_EcoStraws();
+                        QL_EcoStraws ql = new QL_EcoStraws();
                         ql.Show();
                         this.Hide();
-                    }else
+                    }
+                    else
                     {
-                        String sql = "Select * from khachhang where tentaikhoan = '"+ tentk +"' ";
-                        if(modify.kh(sql).Count() != 0)
+                        String sql = "Select * from khachhang where tentaikhoan = '" + tentk + "' ";
+                        if (modify.kh(sql).Count() != 0)
                         {
                             MessageBox.Show("Dang nhap thanh cong!");
-                            EcoStraws ec= new EcoStraws();
+                            EcoStraws ec = new EcoStraws(tentk);
                             ec.Show();
                             this.Hide();
-                        }else
+                        }
+                        else
                         {
                             MessageBox.Show("Dang nhap thanh cong! Ban chua co thong tin! Vui long nhap thong tin!");
                             Tt_khachhang tt_Khachhang = new Tt_khachhang(tentk);
@@ -70,7 +72,14 @@ namespace Do_an_P10
 
         private void dk_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Dangky dk = new Dangky();   
+            Dangky dk = new Dangky();
+            dk.Show();
+            this.Hide();
+        }
+
+        private void dk_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Dangky dk = new Dangky();
             dk.Show();
             this.Hide();
         }

@@ -22,7 +22,7 @@ namespace Do_an_P10
                 dataReader = sqlCommand.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    kh.Add(new khachhang(dataReader.GetString(1), dataReader.GetString(2), dataReader.GetString(3)));
+                    kh.Add(new khachhang(dataReader.GetString(0), dataReader.GetString(1), dataReader.GetString(2)));
                 }
 
                 sqlConnection.Close();
@@ -46,7 +46,6 @@ namespace Do_an_P10
             }
             return tk;
         }
-
         public void Commad(string query)// dùng để đăng ký tài khoản
         {
             using (SqlConnection sqlConnection = ketnoi.GetSqlConnection())

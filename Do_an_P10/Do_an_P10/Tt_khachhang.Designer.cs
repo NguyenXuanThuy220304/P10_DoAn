@@ -38,7 +38,7 @@
             sdt = new TextBox();
             add = new TextBox();
             luu = new Button();
-            tentaikhoan = new TextBox();
+            ttk = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -132,19 +132,20 @@
             luu.UseVisualStyleBackColor = true;
             luu.Click += luu_Click;
             // 
-            // tentaikhoan
+            // ttk
             // 
-            tentaikhoan.Location = new Point(224, 163);
-            tentaikhoan.Name = "tentaikhoan";
-            tentaikhoan.Size = new Size(121, 27);
-            tentaikhoan.TabIndex = 6;
+            ttk.Location = new Point(233, 163);
+            ttk.Name = "ttk";
+            ttk.ReadOnly = true;
+            ttk.Size = new Size(125, 27);
+            ttk.TabIndex = 6;
             // 
             // Tt_khachhang
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1045, 553);
-            Controls.Add(tentaikhoan);
+            Controls.Add(ttk);
             Controls.Add(luu);
             Controls.Add(add);
             Controls.Add(sdt);
@@ -157,6 +158,7 @@
             Controls.Add(pictureBox1);
             Name = "Tt_khachhang";
             Text = " ";
+            Load += Tt_khachhang_Load_1;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
@@ -175,6 +177,6 @@
         private TextBox sdt;
         private TextBox add;
         private Button luu;
-        private TextBox tentaikhoan;
+        private TextBox ttk;
     }
 }
