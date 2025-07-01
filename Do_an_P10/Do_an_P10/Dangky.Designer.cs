@@ -38,7 +38,7 @@
             email = new TextBox();
             dk = new Button();
             label1 = new Label();
-            textBox1 = new TextBox();
+            em = new TextBox();
             button1 = new Button();
             label6 = new Label();
             SuspendLayout();
@@ -132,12 +132,12 @@
             label1.TabIndex = 4;
             label1.Text = "Email";
             // 
-            // textBox1
+            // em
             // 
-            textBox1.Location = new Point(268, 259);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(335, 27);
-            textBox1.TabIndex = 5;
+            em.Location = new Point(268, 259);
+            em.Name = "em";
+            em.Size = new Size(335, 27);
+            em.TabIndex = 5;
             // 
             // button1
             // 
@@ -168,7 +168,7 @@
             Controls.Add(label6);
             Controls.Add(button1);
             Controls.Add(dk);
-            Controls.Add(textBox1);
+            Controls.Add(em);
             Controls.Add(email);
             Controls.Add(label1);
             Controls.Add(nlmk);
@@ -201,7 +201,7 @@
         private TextBox email;
         private TextBox nlmk;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox em;
         private Button button1;
         private Label label6;
     }

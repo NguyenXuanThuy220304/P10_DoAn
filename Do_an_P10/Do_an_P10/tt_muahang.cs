@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -36,20 +37,15 @@ namespace Do_an_P10
 
         private void dh_Click_1(object sender, EventArgs e)
         {
-            String query = "Select Hoten, SDT, Diachi from khachhang where tentaikhoan ='" + tentk + "'";
-            List<khachhang> ds = modify.kh(query); // trả về List<khachhang>
+            donhang dh = new donhang(DateTime.Now, maKH, tongTien);
+            int maDH = modify.ThemDonHang(dh, conn, tran);
 
-            if (ds.Count > 0)
-            {
-                string hoten = ds[0].Hoten;
-                string sdt = ds[0].Sdt;
-                string tensp = Sanpham.Tensanpham;
+            string tensp = Sanpham.Tensanpham;
                 decimal dongia = Sanpham.Dongia;
                 int soluong = Sanpham.Soluong;
-                decimal thanhtien = dongia * soluong;
-                String sql = "Insert into sanpham (Hoten, SDT, Tensanpham, Dongia, Soluong, Thanhtien) values ('" + hoten + "','" + sdt + "','" + tensp + "','" + dongia + "','" + soluong + "','" + thanhtien + "')";
+                String sql = "Insert into CT_DonHang (MaDH, MaSP, Tensanpham, SoLuong) values ('" + tensp + "','" + dongia + "','" + soluong + "')";
                 modify.Commad(sql);
-                if (MessageBox.Show("đã lưu thành công giao dịch!", $"Bạn có chắc mua:{tensp}, số lượng:{soluong},Thành tiền:{thanhtien}", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                if (MessageBox.Show("đã lưu thành công giao dịch!", $"Bạn có chắc mua:{tensp}, số lượng:{soluong}", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
                      {
                         // thêm sản phẩm vào danh sách giỏ hàng (giả sử bạn có List<GioHangItem> gioHang)
@@ -73,7 +69,7 @@ namespace Do_an_P10
                 {
                     MessageBox.Show("Thêm thất bại!");
                 }
-            }else MessageBox.Show("Không tìm thấy tài khoản khách hàng.");
+         
         }
     }
 }

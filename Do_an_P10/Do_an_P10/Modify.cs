@@ -22,7 +22,7 @@ namespace Do_an_P10
                 dataReader = sqlCommand.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    kh.Add(new khachhang(dataReader.GetString(0), dataReader.GetString(1), dataReader.GetString(2)));
+                    kh.Add(new khachhang(dataReader.GetInt32(0), dataReader.GetString(1), dataReader.GetString(2), dataReader.GetString(3), dataReader.GetString(4), dataReader.GetString(5)));
                 }
 
                 sqlConnection.Close();
@@ -39,13 +39,25 @@ namespace Do_an_P10
                 dataReader = sqlCommand.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    tk.Add(new taikhoan(dataReader.GetString(0), dataReader.GetString(1)));
+                    tk.Add(new taikhoan(dataReader.GetString(0), dataReader.GetString(1), dataReader.GetString(2)));
                 }
 
                 sqlConnection.Close();
             }
             return tk;
         }
+        public int ThemDonHang(donhang dh, SqlConnection conn, SqlTransaction tran)
+        {
+            string sql = "INSERT INTO DonHang (NgayLap, MaKH, TongTien) VALUES (@ngaylap, @makh, @tongtien); SELECT SCOPE_IDENTITY();";
+            SqlCommand cmd = new SqlCommand(sql, conn, tran);
+            cmd.Parameters.AddWithValue("@ngaylap", dh.NgayLap);
+            cmd.Parameters.AddWithValue("@makh", dh.MaKH);
+            cmd.Parameters.AddWithValue("@tongtien", dh.TongTien);
+
+            // Trả về MaDH vừa thêm
+            return Convert.ToInt32(cmd.ExecuteScalar());
+        }
+
         public void Commad(string query)// dùng để đăng ký tài khoản
         {
             using (SqlConnection sqlConnection = ketnoi.GetSqlConnection())

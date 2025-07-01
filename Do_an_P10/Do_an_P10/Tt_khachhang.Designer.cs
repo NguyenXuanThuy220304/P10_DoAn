@@ -36,9 +36,11 @@
             label4 = new Label();
             ht = new TextBox();
             sdt = new TextBox();
-            add = new TextBox();
+            mail = new TextBox();
             luu = new Button();
             ttk = new TextBox();
+            label5 = new Label();
+            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -95,11 +97,11 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(22, 361);
+            label4.Location = new Point(22, 353);
             label4.Name = "label4";
-            label4.Size = new Size(55, 20);
+            label4.Size = new Size(46, 20);
             label4.TabIndex = 3;
-            label4.Text = "Địa chỉ";
+            label4.Text = "Email";
             // 
             // ht
             // 
@@ -115,16 +117,16 @@
             sdt.Size = new Size(309, 27);
             sdt.TabIndex = 4;
             // 
-            // add
+            // mail
             // 
-            add.Location = new Point(132, 354);
-            add.Name = "add";
-            add.Size = new Size(309, 27);
-            add.TabIndex = 4;
+            mail.Location = new Point(132, 346);
+            mail.Name = "mail";
+            mail.Size = new Size(309, 27);
+            mail.TabIndex = 4;
             // 
             // luu
             // 
-            luu.Location = new Point(347, 427);
+            luu.Location = new Point(348, 485);
             luu.Name = "luu";
             luu.Size = new Size(94, 29);
             luu.TabIndex = 5;
@@ -140,6 +142,22 @@
             ttk.Size = new Size(125, 27);
             ttk.TabIndex = 6;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(22, 422);
+            label5.Name = "label5";
+            label5.Size = new Size(55, 20);
+            label5.TabIndex = 3;
+            label5.Text = "Địa chỉ";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(132, 415);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(309, 27);
+            textBox1.TabIndex = 4;
+            // 
             // Tt_khachhang
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -147,9 +165,11 @@
             ClientSize = new Size(1045, 553);
             Controls.Add(ttk);
             Controls.Add(luu);
-            Controls.Add(add);
+            Controls.Add(textBox1);
+            Controls.Add(mail);
             Controls.Add(sdt);
             Controls.Add(ht);
+            Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -178,5 +198,8 @@
         private TextBox add;
         private Button luu;
         private TextBox ttk;
+        private TextBox mail;
+        private Label label5;
+        private TextBox textBox1;
     }
 }

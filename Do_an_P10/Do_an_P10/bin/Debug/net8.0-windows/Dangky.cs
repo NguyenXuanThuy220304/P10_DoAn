@@ -18,23 +18,29 @@ namespace Do_an_P10
         }
         public bool checkacc(string ac)
         {
-            return Regex.IsMatch(ac, "^[a-zA-Z0-9]{6,24}$");
+            return Regex.IsMatch(ac, "^[a-zA-Z0-9]{5,24}$");
         }
         public bool checkemail(string e)
         {
-            return Regex.IsMatch(e, @"^[a-zA-Z0-9_.]{3,20}@gmail.com(.vn|)$");
+            if (string.IsNullOrWhiteSpace(e)) return false;
+            e = e.Trim(); // Xóa khoảng trắng đầu/cuối nếu có
+            return Regex.IsMatch(e, @"^[a-zA-Z0-9_.]{3,50}@gmail\.com(\.vn)?$");
         }
+
         Modify modify = new Modify();
         private void dk_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("email.Text = [" + em.Text + "]");
             String tentk = tk.Text;
             String matk = mk.Text;
             String xacnhanmk = nlmk.Text;
-            String Email = email.Text;
-            if (!checkacc(tentk)) { MessageBox.Show("vui long nhap ten tai khoan dai 6-24 ky tu, ky tu chu, so, chu hoa, chu thuong"); return; }
-            if (!checkacc(matk)) { MessageBox.Show("vui long nhap ten mat khau dai 6-24 ky tu, ky tu chu, so, chu hoa, chu thuong"); return; }
+            String Email = em.Text;
+            if (!checkacc(tentk)) { MessageBox.Show("vui long nhap ten tai khoan dai 5-24 ky tu, ky tu chu, so, chu hoa, chu thuong"); return; }
+            if (!checkacc(matk)) { MessageBox.Show("vui long nhap ten mat khau dai 5-24 ky tu, ky tu chu, so, chu hoa, chu thuong"); return; }
             if (xacnhanmk != matk) { MessageBox.Show("vui long kiem tra lai mat khau"); return; }
-            if (!checkemail(Email)) { MessageBox.Show("vui long nhap dung dinh dang email"); return; }
+            if (!checkemail(Email)) {
+                MessageBox.Show("Email nhập: [" + Email + "]");
+                MessageBox.Show("vui long nhap dung dinh dang email"); return; }
             if (modify.tk("Select * from taikhoan where email = '" + Email + "'").Count != 0) { MessageBox.Show("email nay da duoc su dung!"); return; }
             try
             {
@@ -56,6 +62,13 @@ namespace Do_an_P10
         private void Dangky_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dangnhap dn= new Dangnhap();
+            dn.Show();
+            this.Hide();
         }
     }
 }

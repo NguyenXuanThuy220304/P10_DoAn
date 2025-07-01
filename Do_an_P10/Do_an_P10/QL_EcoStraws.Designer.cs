@@ -28,95 +28,498 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox2 = new PictureBox();
+            components = new System.ComponentModel.Container();
             button1 = new Button();
-            button2 = new Button();
+            nutsp = new Button();
             button3 = new Button();
-            button4 = new Button();
             button5 = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            sp = new ToolStripMenuItem();
+            khach = new ToolStripMenuItem();
+            donh = new ToolStripMenuItem();
+            kho = new ToolStripMenuItem();
+            nhapk = new ToolStripMenuItem();
+            xuatk = new ToolStripMenuItem();
+            tonk = new ToolStripMenuItem();
+            dt = new ToolStripMenuItem();
+            menu = new Panel();
+            allnut = new Panel();
+            menukho = new Panel();
+            button7 = new Button();
+            button6 = new Button();
+            button2 = new Button();
+            button4 = new Button();
+            pictureBox1 = new PictureBox();
+            panelkhachhang = new Panel();
+            groupBox2 = new GroupBox();
+            tk = new TextBox();
+            linkLabel1 = new LinkLabel();
+            button11 = new Button();
+            button10 = new Button();
+            button9 = new Button();
+            button8 = new Button();
+            groupBox1 = new GroupBox();
+            dataGridView1 = new DataGridView();
+            label5 = new Label();
+            richTextBox1 = new RichTextBox();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            label3 = new Label();
+            label2 = new Label();
+            label4 = new Label();
+            label1 = new Label();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            contextMenuStrip1.SuspendLayout();
+            menu.SuspendLayout();
+            allnut.SuspendLayout();
+            menukho.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panelkhachhang.SuspendLayout();
+            groupBox2.SuspendLayout();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.logo;
-            pictureBox2.Location = new Point(12, 49);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(257, 208);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
             // 
             // button1
             // 
-            button1.Location = new Point(12, 320);
+            button1.Dock = DockStyle.Top;
+            button1.Location = new Point(0, 406);
             button1.Name = "button1";
-            button1.Size = new Size(257, 32);
+            button1.Size = new Size(236, 58);
             button1.TabIndex = 2;
             button1.Text = "Khách hàng";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
-            // button2
+            // nutsp
             // 
-            button2.Location = new Point(12, 282);
-            button2.Name = "button2";
-            button2.Size = new Size(257, 32);
-            button2.TabIndex = 2;
-            button2.Text = "Sản phẩm";
-            button2.UseVisualStyleBackColor = true;
+            nutsp.Dock = DockStyle.Top;
+            nutsp.Location = new Point(0, 464);
+            nutsp.Name = "nutsp";
+            nutsp.Size = new Size(236, 58);
+            nutsp.TabIndex = 2;
+            nutsp.Text = "Sản phẩm";
+            nutsp.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            button3.Location = new Point(12, 358);
+            button3.Dock = DockStyle.Top;
+            button3.Location = new Point(0, 0);
             button3.Name = "button3";
-            button3.Size = new Size(257, 32);
+            button3.Size = new Size(236, 66);
             button3.TabIndex = 2;
             button3.Text = "Đơn hàng";
             button3.UseVisualStyleBackColor = true;
             // 
-            // button4
-            // 
-            button4.Location = new Point(12, 396);
-            button4.Name = "button4";
-            button4.Size = new Size(257, 32);
-            button4.TabIndex = 2;
-            button4.Text = "Kho";
-            button4.UseVisualStyleBackColor = true;
-            // 
             // button5
             // 
-            button5.Location = new Point(12, 434);
+            button5.Dock = DockStyle.Top;
+            button5.Location = new Point(0, 340);
             button5.Name = "button5";
-            button5.Size = new Size(257, 32);
+            button5.Size = new Size(236, 66);
             button5.TabIndex = 2;
             button5.Text = "Doanh thu";
             button5.UseVisualStyleBackColor = true;
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
+            contextMenuStrip1.ImeMode = ImeMode.On;
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { sp, khach, donh, kho, dt });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.ShowImageMargin = false;
+            contextMenuStrip1.Size = new Size(131, 124);
+            // 
+            // sp
+            // 
+            sp.Name = "sp";
+            sp.Size = new Size(130, 24);
+            sp.Text = "Sản phẩm";
+            // 
+            // khach
+            // 
+            khach.Name = "khach";
+            khach.Size = new Size(130, 24);
+            khach.Text = "Khách hàng";
+            // 
+            // donh
+            // 
+            donh.Name = "donh";
+            donh.Size = new Size(130, 24);
+            donh.Text = "Đơn hàng";
+            // 
+            // kho
+            // 
+            kho.DropDownItems.AddRange(new ToolStripItem[] { nhapk, xuatk, tonk });
+            kho.Name = "kho";
+            kho.Size = new Size(130, 24);
+            kho.Text = "Kho";
+            // 
+            // nhapk
+            // 
+            nhapk.Name = "nhapk";
+            nhapk.Size = new Size(156, 26);
+            nhapk.Text = "Nhập kho";
+            // 
+            // xuatk
+            // 
+            xuatk.Name = "xuatk";
+            xuatk.Size = new Size(156, 26);
+            xuatk.Text = "Xuất kho";
+            // 
+            // tonk
+            // 
+            tonk.Name = "tonk";
+            tonk.Size = new Size(156, 26);
+            tonk.Text = "Tồn kho";
+            // 
+            // dt
+            // 
+            dt.Name = "dt";
+            dt.Size = new Size(130, 24);
+            dt.Text = "Doanh thu";
+            // 
+            // menu
+            // 
+            menu.BackColor = SystemColors.Control;
+            menu.Controls.Add(allnut);
+            menu.Location = new Point(2, 278);
+            menu.Name = "menu";
+            menu.Size = new Size(236, 337);
+            menu.TabIndex = 3;
+            // 
+            // allnut
+            // 
+            allnut.BackColor = SystemColors.Control;
+            allnut.Controls.Add(nutsp);
+            allnut.Controls.Add(button1);
+            allnut.Controls.Add(button5);
+            allnut.Controls.Add(menukho);
+            allnut.Controls.Add(button4);
+            allnut.Controls.Add(button3);
+            allnut.Dock = DockStyle.Left;
+            allnut.Location = new Point(0, 0);
+            allnut.Name = "allnut";
+            allnut.Size = new Size(236, 337);
+            allnut.TabIndex = 0;
+            // 
+            // menukho
+            // 
+            menukho.BackColor = SystemColors.ControlDarkDark;
+            menukho.Controls.Add(button7);
+            menukho.Controls.Add(button6);
+            menukho.Controls.Add(button2);
+            menukho.Dock = DockStyle.Top;
+            menukho.Location = new Point(0, 135);
+            menukho.Name = "menukho";
+            menukho.Size = new Size(236, 205);
+            menukho.TabIndex = 4;
+            menukho.Visible = false;
+            // 
+            // button7
+            // 
+            button7.Dock = DockStyle.Top;
+            button7.Location = new Point(0, 135);
+            button7.Name = "button7";
+            button7.Size = new Size(236, 68);
+            button7.TabIndex = 2;
+            button7.Text = "Tồn kho";
+            button7.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            button6.Dock = DockStyle.Top;
+            button6.Location = new Point(0, 68);
+            button6.Name = "button6";
+            button6.Size = new Size(236, 67);
+            button6.TabIndex = 1;
+            button6.Text = "Xuất kho";
+            button6.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Dock = DockStyle.Top;
+            button2.Location = new Point(0, 0);
+            button2.Name = "button2";
+            button2.Size = new Size(236, 68);
+            button2.TabIndex = 0;
+            button2.Text = "Nhập kho";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            button4.Dock = DockStyle.Top;
+            button4.Location = new Point(0, 66);
+            button4.Name = "button4";
+            button4.Size = new Size(236, 69);
+            button4.TabIndex = 5;
+            button4.Text = "Kho";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.logo;
+            pictureBox1.Location = new Point(2, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(236, 210);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
+            // 
+            // panelkhachhang
+            // 
+            panelkhachhang.Controls.Add(groupBox2);
+            panelkhachhang.Controls.Add(linkLabel1);
+            panelkhachhang.Controls.Add(button11);
+            panelkhachhang.Controls.Add(button10);
+            panelkhachhang.Controls.Add(button9);
+            panelkhachhang.Controls.Add(button8);
+            panelkhachhang.Controls.Add(groupBox1);
+            panelkhachhang.Controls.Add(label5);
+            panelkhachhang.Controls.Add(richTextBox1);
+            panelkhachhang.Controls.Add(textBox3);
+            panelkhachhang.Controls.Add(textBox2);
+            panelkhachhang.Controls.Add(textBox1);
+            panelkhachhang.Controls.Add(label3);
+            panelkhachhang.Controls.Add(label2);
+            panelkhachhang.Controls.Add(label4);
+            panelkhachhang.Controls.Add(label1);
+            panelkhachhang.Dock = DockStyle.Right;
+            panelkhachhang.Location = new Point(488, 0);
+            panelkhachhang.Name = "panelkhachhang";
+            panelkhachhang.Size = new Size(561, 615);
+            panelkhachhang.TabIndex = 5;
+            panelkhachhang.Visible = false;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(tk);
+            groupBox2.Location = new Point(10, 185);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(795, 63);
+            groupBox2.TabIndex = 11;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Tìm kiếm";
+            // 
+            // tk
+            // 
+            tk.Location = new Point(17, 26);
+            tk.Name = "tk";
+            tk.Size = new Size(771, 27);
+            tk.TabIndex = 0;
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Location = new Point(751, 578);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(47, 20);
+            linkLabel1.TabIndex = 10;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Thoát";
+            // 
+            // button11
+            // 
+            button11.Location = new Point(327, 575);
+            button11.Name = "button11";
+            button11.Size = new Size(94, 29);
+            button11.TabIndex = 9;
+            button11.Text = "Tìm kiếm";
+            button11.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            button10.Location = new Point(227, 574);
+            button10.Name = "button10";
+            button10.Size = new Size(94, 29);
+            button10.TabIndex = 8;
+            button10.Text = "Xóa";
+            button10.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            button9.Location = new Point(127, 574);
+            button9.Name = "button9";
+            button9.Size = new Size(94, 29);
+            button9.TabIndex = 7;
+            button9.Text = "Sửa";
+            button9.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            button8.Location = new Point(27, 574);
+            button8.Name = "button8";
+            button8.Size = new Size(94, 29);
+            button8.TabIndex = 6;
+            button8.Text = "Thêm";
+            button8.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(dataGridView1);
+            groupBox1.Location = new Point(0, 252);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(810, 308);
+            groupBox1.TabIndex = 5;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Danh sách";
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(27, 26);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(771, 271);
+            dataGridView1.TabIndex = 4;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(262, 9);
+            label5.Name = "label5";
+            label5.Size = new Size(278, 38);
+            label5.TabIndex = 3;
+            label5.Text = "Quản lý khách hàng";
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.Location = new Point(476, 74);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(322, 112);
+            richTextBox1.TabIndex = 2;
+            richTextBox1.Text = "";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(156, 159);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(220, 27);
+            textBox3.TabIndex = 1;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(156, 116);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(220, 27);
+            textBox2.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(156, 74);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(220, 27);
+            textBox1.TabIndex = 1;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(27, 162);
+            label3.Name = "label3";
+            label3.Size = new Size(46, 20);
+            label3.TabIndex = 0;
+            label3.Text = "Email";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(27, 119);
+            label2.Name = "label2";
+            label2.Size = new Size(97, 20);
+            label2.TabIndex = 0;
+            label2.Text = "Số điện thoại";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(415, 77);
+            label4.Name = "label4";
+            label4.Size = new Size(55, 20);
+            label4.TabIndex = 0;
+            label4.Text = "Địa chỉ";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(27, 77);
+            label1.Name = "label1";
+            label1.Size = new Size(133, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Họ tên khách hàng";
             // 
             // QL_EcoStraws
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1049, 552);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(pictureBox2);
+            ClientSize = new Size(1049, 615);
+            Controls.Add(panelkhachhang);
+            Controls.Add(pictureBox1);
+            Controls.Add(menu);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "QL_EcoStraws";
             Text = "QL_EcoStraws";
             TransparencyKey = Color.Black;
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            contextMenuStrip1.ResumeLayout(false);
+            menu.ResumeLayout(false);
+            allnut.ResumeLayout(false);
+            menukho.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panelkhachhang.ResumeLayout(false);
+            panelkhachhang.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
         private PictureBox pictureBox2;
         private Button button1;
-        private Button button2;
+        private Button nutsp;
         private Button button3;
-        private Button button4;
         private Button button5;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem sp;
+        private ToolStripMenuItem khach;
+        private ToolStripMenuItem donh;
+        private ToolStripMenuItem kho;
+        private ToolStripMenuItem nhapk;
+        private ToolStripMenuItem xuatk;
+        private ToolStripMenuItem dt;
+        private ToolStripMenuItem tonk;
+        private Panel menu;
+        private Panel allnut;
+        private Panel menukho;
+        private Button button6;
+        private Button button2;
+        private Button button7;
+        private Button button4;
+        private PictureBox pictureBox1;
+        private Panel panelkhachhang;
+        private Label label1;
+        private TextBox textBox3;
+        private TextBox textBox2;
+        private TextBox textBox1;
+        private Label label3;
+        private Label label2;
+        private Label label4;
+        private LinkLabel linkLabel1;
+        private Button button11;
+        private Button button10;
+        private Button button9;
+        private Button button8;
+        private GroupBox groupBox1;
+        private DataGridView dataGridView1;
+        private Label label5;
+        private RichTextBox richTextBox1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private GroupBox groupBox2;
+        private TextBox tk;
     }
 }

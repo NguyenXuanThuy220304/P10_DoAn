@@ -16,5 +16,19 @@ namespace Do_an_P10
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panelkhachhang.Visible= !panelkhachhang.Visible;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            menukho.Visible = !menukho.Visible;
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

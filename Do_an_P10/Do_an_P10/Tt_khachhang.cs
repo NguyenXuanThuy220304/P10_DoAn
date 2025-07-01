@@ -36,12 +36,27 @@ namespace Do_an_P10
             String hoten = ht.Text;
             String sodt = sdt.Text;
             String diachi = add.Text;
+            List<taikhoan> emails = modify.tk($"SELECT Email FROM taikhoan WHERE tentaikhoan = '{tentk}'");
+
+            if (emails.Count > 0)
+            {
+                string Email = emails[0].Email;  // Lấy email đầu tiên
+                mail.Text = Email;
+
+                string insert = $"INSERT INTO khachhang (email) VALUES ('{Email}')";
+                modify.Commad(insert);
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy email.");
+            }
+
             if (hoten.Trim() == "") { MessageBox.Show("Vui long nhap ho va ten!"); return; }
             else if (sodt.Trim() == "") { MessageBox.Show("Vui long nhap so dien thoai!"); return; }
             else if (diachi.Trim() == "") { MessageBox.Show("Vui long nhap dia chi!"); return; }
-            else
+            else 
             {
-                String query = "Insert into khachhang (Hoten, SDT, Diachi, tentaikhoan) values ('" + hoten + "','" + sodt + "','" + diachi + "','" + tentk + "')";
+                String query = "Insert into khachhang (Hoten, SDT, Diachi,Email, tentaikhoan) values ('" + hoten + "','" + sodt + "','" + diachi + "','"+mail+"', '" + tentk + "')";
                 modify.Commad(query);
                 if (MessageBox.Show("Lưu thông tin thành công! Bạn có muốn đăng nhập ngay", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
@@ -61,5 +76,6 @@ namespace Do_an_P10
             ttk.Text = tentk; // nếu có label để hiển thị
             ttk.ReadOnly = true;
         }
+
     }
 }

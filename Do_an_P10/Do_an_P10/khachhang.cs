@@ -6,22 +6,24 @@ using System.Threading.Tasks;
 
 namespace Do_an_P10
 {
-    internal class khachhang
+    public class khachhang
     {
-        private string hoten;
-        private string sdt;
-        private string diachi;
+        public int MaKH { get; set; }
+        public string Hoten { get; set; }
+        public string SDT { get; set; }
+        public string Diachi { get; set; }
+        public string Email { get; set; }
+        public string Tentaikhoan { get; set; }
 
-        public khachhang() { }
-
-        public khachhang(string hoten, string sdt, string diachi)
+        public khachhang(int makh, string hoten, string sdt, string diachi, string email, string tentaikhoan)
         {
-            this.hoten = hoten;
-            this.sdt = sdt;
-            this.diachi = diachi;
+            MaKH = makh;
+            Hoten = hoten;
+            SDT = sdt;
+            Diachi = diachi;
+            Email = email;
+            Tentaikhoan = tentaikhoan;
         }
-        public string Hoten { get => hoten; set => hoten = value; }
-        public string Sdt { get => sdt; set => sdt = value; }
-        public string Diachi { get => diachi; set => diachi = value; }
     }
+
 }
