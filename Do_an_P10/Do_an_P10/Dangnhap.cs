@@ -1,4 +1,4 @@
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 
 namespace Do_an_P10
 {
@@ -26,10 +26,10 @@ namespace Do_an_P10
         {
             String tentk = tk.Text;
             String matk = mk.Text;
-            if (tentk.Trim() == "") { MessageBox.Show("vui long nhap ten tai khoan!"); return; }
+            if (tentk.Trim() == "") { MessageBox.Show("Vui lòng nhập tên đăng nhập!"); return; }
             else if (matk.Trim() == "")
             {
-                MessageBox.Show("Vui long nhap mat khau!");
+                MessageBox.Show("Vui lòng nhập mật khẩu!");
                 return;
             }
             else
@@ -37,7 +37,7 @@ namespace Do_an_P10
                 string query = "select * from taikhoan where tentaikhoan= '" + tentk + "' and matkhau= '" + matk + "'";
                 if (modify.tk(query).Count() != 0)
                 {
-                    MessageBox.Show("Dang nhap thanh cong!", "Thong bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (tentk.Equals("admin"))
                     {
                         QL_EcoStraws ql = new QL_EcoStraws();
@@ -49,14 +49,14 @@ namespace Do_an_P10
                         String sql = "Select * from khachhang where tentaikhoan = '" + tentk + "' ";
                         if (modify.kh(sql).Count() != 0)
                         {
-                            MessageBox.Show("Dang nhap thanh cong!");
+                            MessageBox.Show("Đăng nhập thành công!");
                             EcoStraws ec = new EcoStraws(tentk);
                             ec.Show();
                             this.Hide();
                         }
                         else
                         {
-                            MessageBox.Show("Dang nhap thanh cong! Ban chua co thong tin! Vui long nhap thong tin!");
+                            MessageBox.Show("Đăng nhập thành công! Bạn chưa có thông tin! Vui lòng nhập thông tin!");
                             Tt_khachhang tt_Khachhang = new Tt_khachhang(tentk);
                             tt_Khachhang.Show();
                             this.Hide();
@@ -65,7 +65,7 @@ namespace Do_an_P10
                 }
                 else
                 {
-                    MessageBox.Show("Ten dang nhap hoac mat khau khong chinh xac!", "Thong bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Tên dăng nhập hoặc mật khẩu không chính xác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

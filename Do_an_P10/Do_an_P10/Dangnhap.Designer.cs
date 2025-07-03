@@ -147,7 +147,7 @@
             panel1.Controls.Add(mk);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(276, 92);
+            panel1.Location = new Point(275, 106);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
             panel1.Size = new Size(400, 350);
@@ -172,7 +172,7 @@
             BackColor = SystemColors.Control;
             BackgroundImage = Properties.Resources.phan_huy_03_thang;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(944, 515);
+            ClientSize = new Size(943, 542);
             Controls.Add(panel1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Dangnhap";

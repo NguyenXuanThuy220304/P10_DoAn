@@ -38,9 +38,11 @@ namespace Do_an_P10
             if (!checkacc(tentk)) { MessageBox.Show("vui long nhap ten tai khoan dai 5-24 ky tu, ky tu chu, so, chu hoa, chu thuong"); return; }
             if (!checkacc(matk)) { MessageBox.Show("vui long nhap ten mat khau dai 5-24 ky tu, ky tu chu, so, chu hoa, chu thuong"); return; }
             if (xacnhanmk != matk) { MessageBox.Show("vui long kiem tra lai mat khau"); return; }
-            if (!checkemail(Email)) {
+            if (!checkemail(Email))
+            {
                 MessageBox.Show("Email nhập: [" + Email + "]");
-                MessageBox.Show("vui long nhap dung dinh dang email"); return; }
+                MessageBox.Show("vui long nhap dung dinh dang email"); return;
+            }
             if (modify.tk("Select * from taikhoan where email = '" + Email + "'").Count != 0) { MessageBox.Show("email nay da duoc su dung!"); return; }
             try
             {
@@ -64,11 +66,12 @@ namespace Do_an_P10
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void linkDN_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Dangnhap dn= new Dangnhap();
+            Dangnhap dn = new Dangnhap();
             dn.Show();
             this.Hide();
         }
+
     }
 }
