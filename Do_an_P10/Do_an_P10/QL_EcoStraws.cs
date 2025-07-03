@@ -15,16 +15,32 @@ namespace Do_an_P10
         public QL_EcoStraws()
         {
             InitializeComponent();
+
+        }
+        private void anpanel()
+        {
+            panelkhachhang.Visible = false;
+            sp.Visible = false;
         }
         private void QL_EcoStraws_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
             this.WindowState = FormWindowState.Maximized;
         }
-
-        private void button3_Click_1(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            panelkhachhang.Visible = !panelkhachhang.Visible;
+            anpanel();
+            panelkhachhang.Visible = true;
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = !panel1.Visible;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            anpanel();
+            sp.Visible = true;
         }
     }
 }

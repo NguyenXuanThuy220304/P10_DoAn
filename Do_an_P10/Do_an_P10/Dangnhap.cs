@@ -86,8 +86,7 @@ namespace Do_an_P10
 
         private void Dangnhap_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
-            this.WindowState = FormWindowState.Maximized;
+        
         }
     }
 }
