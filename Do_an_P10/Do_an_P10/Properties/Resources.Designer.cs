@@ -193,6 +193,16 @@ namespace Do_an_P10.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap phan_huy_03_thang {
+            get {
+                object obj = ResourceManager.GetObject("phan-huy-03-thang", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap qc {
             get {
                 object obj = ResourceManager.GetObject("qc", resourceCulture);

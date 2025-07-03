@@ -93,3 +93,41 @@ C:\Users\Bui Thi Huong\OneDrive\Tài liệu\GitHub\P10_DoAn\Do_an_P10\Do_an_P1
 C:\Users\Bui Thi Huong\OneDrive\Tài liệu\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.genruntimeconfig.cache
 C:\Users\Bui Thi Huong\OneDrive\Tài liệu\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\ref\Do_an_P10.dll
 C:\Users\Bui Thi Huong\OneDrive\Tài liệu\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\Do_an_P10.dll.config
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\Do_an_P10.exe
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\Dangky.cs
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\Do_an_P10.dll.config
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\Do_an_P10.deps.json
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\Do_an_P10.runtimeconfig.json
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\Do_an_P10.dll
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\Do_an_P10.pdb
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\System.Data.SqlClient.dll
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\runtimes\win-arm64\native\sni.dll
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\runtimes\win-x64\native\sni.dll
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\System.Data.SqlClient.dll
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Data.SqlClient.dll
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.csproj.AssemblyReference.cache
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.Dangky.resources
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.Dangnhap.resources
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.EcoStraws.resources
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.GioHangForm.resources
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.Properties.Resources.resources
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.QL_Donhang.resources
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.QL_EcoStraws.resources
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.QL_Khachhang.resources
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.QL_Sanpham.resources
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.quenmatkhau.resources
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.Tt_khachhang.resources
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.tt_muahang.resources
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.csproj.GenerateResource.cache
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.GeneratedMSBuildEditorConfig.editorconfig
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.AssemblyInfoInputs.cache
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.AssemblyInfo.cs
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.csproj.CoreCompileInputs.cache
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.sourcelink.json
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.csproj.Up2Date
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.dll
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\refint\Do_an_P10.dll
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.pdb
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.genruntimeconfig.cache
+E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\ref\Do_an_P10.dll
