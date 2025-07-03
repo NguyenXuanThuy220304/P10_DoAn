@@ -16,19 +16,15 @@ namespace Do_an_P10
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void QL_EcoStraws_Load(object sender, EventArgs e)
         {
-            panelkhachhang.Visible= !panelkhachhang.Visible;
+            this.WindowState = FormWindowState.Maximized;
+            this.WindowState = FormWindowState.Maximized;
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button3_Click_1(object sender, EventArgs e)
         {
-            menukho.Visible = !menukho.Visible;
-        }
-        private void button3_Click(object sender, EventArgs e)
-        {
-
+            panelkhachhang.Visible = !panelkhachhang.Visible;
         }
     }
 }

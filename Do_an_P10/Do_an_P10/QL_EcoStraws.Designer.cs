@@ -28,28 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            button1 = new Button();
-            nutsp = new Button();
-            button3 = new Button();
-            button5 = new Button();
-            contextMenuStrip1 = new ContextMenuStrip(components);
-            sp = new ToolStripMenuItem();
-            khach = new ToolStripMenuItem();
-            donh = new ToolStripMenuItem();
-            kho = new ToolStripMenuItem();
-            nhapk = new ToolStripMenuItem();
-            xuatk = new ToolStripMenuItem();
-            tonk = new ToolStripMenuItem();
-            dt = new ToolStripMenuItem();
             menu = new Panel();
-            allnut = new Panel();
-            menukho = new Panel();
-            button7 = new Button();
-            button6 = new Button();
+            button3 = new Button();
             button2 = new Button();
-            button4 = new Button();
+            button1 = new Button();
             pictureBox1 = new PictureBox();
+            dateTimePicker1 = new DateTimePicker();
             panelkhachhang = new Panel();
             groupBox2 = new GroupBox();
             tk = new TextBox();
@@ -69,12 +53,7 @@
             label2 = new Label();
             label4 = new Label();
             label1 = new Label();
-            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            contextMenuStrip1.SuspendLayout();
             menu.SuspendLayout();
-            allnut.SuspendLayout();
-            menukho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelkhachhang.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -82,192 +61,69 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // button1
+            // menu
             // 
-            button1.Dock = DockStyle.Top;
-            button1.Location = new Point(0, 406);
-            button1.Name = "button1";
-            button1.Size = new Size(236, 58);
-            button1.TabIndex = 2;
-            button1.Text = "Khách hàng";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // nutsp
-            // 
-            nutsp.Dock = DockStyle.Top;
-            nutsp.Location = new Point(0, 464);
-            nutsp.Name = "nutsp";
-            nutsp.Size = new Size(236, 58);
-            nutsp.TabIndex = 2;
-            nutsp.Text = "Sản phẩm";
-            nutsp.UseVisualStyleBackColor = true;
+            menu.Anchor = AnchorStyles.None;
+            menu.BackColor = SystemColors.Control;
+            menu.Controls.Add(button3);
+            menu.Controls.Add(button2);
+            menu.Controls.Add(button1);
+            menu.Controls.Add(pictureBox1);
+            menu.Controls.Add(dateTimePicker1);
+            menu.Location = new Point(0, -77);
+            menu.Name = "menu";
+            menu.Size = new Size(235, 794);
+            menu.TabIndex = 3;
             // 
             // button3
             // 
             button3.Dock = DockStyle.Top;
-            button3.Location = new Point(0, 0);
+            button3.Location = new Point(0, 333);
             button3.Name = "button3";
-            button3.Size = new Size(236, 66);
-            button3.TabIndex = 2;
-            button3.Text = "Đơn hàng";
+            button3.Size = new Size(235, 60);
+            button3.TabIndex = 4;
+            button3.Text = "button3";
             button3.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            button5.Dock = DockStyle.Top;
-            button5.Location = new Point(0, 340);
-            button5.Name = "button5";
-            button5.Size = new Size(236, 66);
-            button5.TabIndex = 2;
-            button5.Text = "Doanh thu";
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // contextMenuStrip1
-            // 
-            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
-            contextMenuStrip1.ImeMode = ImeMode.On;
-            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { sp, khach, donh, kho, dt });
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.ShowImageMargin = false;
-            contextMenuStrip1.Size = new Size(131, 124);
-            // 
-            // sp
-            // 
-            sp.Name = "sp";
-            sp.Size = new Size(130, 24);
-            sp.Text = "Sản phẩm";
-            // 
-            // khach
-            // 
-            khach.Name = "khach";
-            khach.Size = new Size(130, 24);
-            khach.Text = "Khách hàng";
-            // 
-            // donh
-            // 
-            donh.Name = "donh";
-            donh.Size = new Size(130, 24);
-            donh.Text = "Đơn hàng";
-            // 
-            // kho
-            // 
-            kho.DropDownItems.AddRange(new ToolStripItem[] { nhapk, xuatk, tonk });
-            kho.Name = "kho";
-            kho.Size = new Size(130, 24);
-            kho.Text = "Kho";
-            // 
-            // nhapk
-            // 
-            nhapk.Name = "nhapk";
-            nhapk.Size = new Size(156, 26);
-            nhapk.Text = "Nhập kho";
-            // 
-            // xuatk
-            // 
-            xuatk.Name = "xuatk";
-            xuatk.Size = new Size(156, 26);
-            xuatk.Text = "Xuất kho";
-            // 
-            // tonk
-            // 
-            tonk.Name = "tonk";
-            tonk.Size = new Size(156, 26);
-            tonk.Text = "Tồn kho";
-            // 
-            // dt
-            // 
-            dt.Name = "dt";
-            dt.Size = new Size(130, 24);
-            dt.Text = "Doanh thu";
-            // 
-            // menu
-            // 
-            menu.BackColor = SystemColors.Control;
-            menu.Controls.Add(allnut);
-            menu.Location = new Point(2, 278);
-            menu.Name = "menu";
-            menu.Size = new Size(236, 337);
-            menu.TabIndex = 3;
-            // 
-            // allnut
-            // 
-            allnut.BackColor = SystemColors.Control;
-            allnut.Controls.Add(nutsp);
-            allnut.Controls.Add(button1);
-            allnut.Controls.Add(button5);
-            allnut.Controls.Add(menukho);
-            allnut.Controls.Add(button4);
-            allnut.Controls.Add(button3);
-            allnut.Dock = DockStyle.Left;
-            allnut.Location = new Point(0, 0);
-            allnut.Name = "allnut";
-            allnut.Size = new Size(236, 337);
-            allnut.TabIndex = 0;
-            // 
-            // menukho
-            // 
-            menukho.BackColor = SystemColors.ControlDarkDark;
-            menukho.Controls.Add(button7);
-            menukho.Controls.Add(button6);
-            menukho.Controls.Add(button2);
-            menukho.Dock = DockStyle.Top;
-            menukho.Location = new Point(0, 135);
-            menukho.Name = "menukho";
-            menukho.Size = new Size(236, 205);
-            menukho.TabIndex = 4;
-            menukho.Visible = false;
-            // 
-            // button7
-            // 
-            button7.Dock = DockStyle.Top;
-            button7.Location = new Point(0, 135);
-            button7.Name = "button7";
-            button7.Size = new Size(236, 68);
-            button7.TabIndex = 2;
-            button7.Text = "Tồn kho";
-            button7.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            button6.Dock = DockStyle.Top;
-            button6.Location = new Point(0, 68);
-            button6.Name = "button6";
-            button6.Size = new Size(236, 67);
-            button6.TabIndex = 1;
-            button6.Text = "Xuất kho";
-            button6.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click_1;
             // 
             // button2
             // 
             button2.Dock = DockStyle.Top;
-            button2.Location = new Point(0, 0);
+            button2.Location = new Point(0, 275);
             button2.Name = "button2";
-            button2.Size = new Size(236, 68);
-            button2.TabIndex = 0;
-            button2.Text = "Nhập kho";
+            button2.Size = new Size(235, 58);
+            button2.TabIndex = 3;
+            button2.Text = "button2";
             button2.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // button1
             // 
-            button4.Dock = DockStyle.Top;
-            button4.Location = new Point(0, 66);
-            button4.Name = "button4";
-            button4.Size = new Size(236, 69);
-            button4.TabIndex = 5;
-            button4.Text = "Kho";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            button1.Dock = DockStyle.Top;
+            button1.Location = new Point(0, 218);
+            button1.Name = "button1";
+            button1.Size = new Size(235, 57);
+            button1.TabIndex = 2;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.logo;
-            pictureBox1.Location = new Point(2, 0);
+            pictureBox1.Dock = DockStyle.Top;
+            pictureBox1.Image = Properties.Resources.logo2;
+            pictureBox1.Location = new Point(0, 27);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(236, 210);
+            pictureBox1.Size = new Size(235, 191);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 4;
+            pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Dock = DockStyle.Top;
+            dateTimePicker1.Location = new Point(0, 0);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(235, 27);
+            dateTimePicker1.TabIndex = 0;
             // 
             // panelkhachhang
             // 
@@ -288,9 +144,9 @@
             panelkhachhang.Controls.Add(label4);
             panelkhachhang.Controls.Add(label1);
             panelkhachhang.Dock = DockStyle.Right;
-            panelkhachhang.Location = new Point(488, 0);
+            panelkhachhang.Location = new Point(233, 0);
             panelkhachhang.Name = "panelkhachhang";
-            panelkhachhang.Size = new Size(561, 615);
+            panelkhachhang.Size = new Size(816, 640);
             panelkhachhang.TabIndex = 5;
             panelkhachhang.Visible = false;
             // 
@@ -455,18 +311,15 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1049, 615);
+            ClientSize = new Size(1049, 640);
             Controls.Add(panelkhachhang);
-            Controls.Add(pictureBox1);
             Controls.Add(menu);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "QL_EcoStraws";
             Text = "QL_EcoStraws";
             TransparencyKey = Color.Black;
-            contextMenuStrip1.ResumeLayout(false);
+            Load += QL_EcoStraws_Load;
             menu.ResumeLayout(false);
-            allnut.ResumeLayout(false);
-            menukho.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelkhachhang.ResumeLayout(false);
             panelkhachhang.PerformLayout();
@@ -483,15 +336,6 @@
         private Button nutsp;
         private Button button3;
         private Button button5;
-        private ContextMenuStrip contextMenuStrip1;
-        private ToolStripMenuItem sp;
-        private ToolStripMenuItem khach;
-        private ToolStripMenuItem donh;
-        private ToolStripMenuItem kho;
-        private ToolStripMenuItem nhapk;
-        private ToolStripMenuItem xuatk;
-        private ToolStripMenuItem dt;
-        private ToolStripMenuItem tonk;
         private Panel menu;
         private Panel allnut;
         private Panel menukho;
@@ -517,9 +361,9 @@
         private DataGridView dataGridView1;
         private Label label5;
         private RichTextBox richTextBox1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private GroupBox groupBox2;
         private TextBox tk;
+        private Panel panel1;
+        private DateTimePicker dateTimePicker1;
     }
 }

@@ -37,39 +37,47 @@ namespace Do_an_P10
 
         private void dh_Click_1(object sender, EventArgs e)
         {
-            donhang dh = new donhang(DateTime.Now, maKH, tongTien);
-            int maDH = modify.ThemDonHang(dh, conn, tran);
-
-            string tensp = Sanpham.Tensanpham;
+            String sql1 = "Select * from khachhang where Tentaikhoan = '" + tentk + "'";
+            List<khachhang> k = modify.kh(sql1);
+            if (k.Count != 0)
+            {
+                int maKH = k[0].MaKH;
+                int maSP = Sanpham.MaSP;
+                string tensp = Sanpham.Tensanpham;
                 decimal dongia = Sanpham.Dongia;
                 int soluong = Sanpham.Soluong;
-                String sql = "Insert into CT_DonHang (MaDH, MaSP, Tensanpham, SoLuong) values ('" + tensp + "','" + dongia + "','" + soluong + "')";
+                decimal tongTien = Sanpham.Dongia * soluong;
+                donhang dh = new donhang(DateTime.Now, maKH, tongTien);
+                int maDH = modify.ThemDonHang(dh); // ✅ lấy mã đơn hàng mới
+                
+                String sql = "Insert into CT_DonHang (MaDH, MaSP, Tensanpham, SoLuong, DonGia) values ('"+maDH+"','"+maSP+"','" + tensp + "','" + soluong + "','" + dongia + "')";
                 modify.Commad(sql);
                 if (MessageBox.Show("đã lưu thành công giao dịch!", $"Bạn có chắc mua:{tensp}, số lượng:{soluong}", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
-                     {
+                    {
                         // thêm sản phẩm vào danh sách giỏ hàng (giả sử bạn có List<GioHangItem> gioHang)
                         Giohang item = new Giohang
                         {
                             TenSanPham = Sanpham.Tensanpham,
                             DonGia = Sanpham.Dongia,
                             SoLuong = int.Parse(sl.Text) // hoặc Sanpham.Soluong nếu đã nhập đúng
-    }
+                        }
                         ;
                         GioHangData.Instance.ThemSanPham(item);
 
                         // mở form giỏ hàng
-                            GioHangForm rd = new GioHangForm(tentk); // truyền tên tài khoản nếu cần
-                            rd.Show();
-                            this.Hide();
-        }
+                        GioHangForm rd = new GioHangForm(tentk); // truyền tên tài khoản nếu cần
+                        rd.Show();
+                        this.Hide();
+                    }
 
-    }
+                }
                 else
                 {
                     MessageBox.Show("Thêm thất bại!");
                 }
-         
+
+            }
         }
     }
 }

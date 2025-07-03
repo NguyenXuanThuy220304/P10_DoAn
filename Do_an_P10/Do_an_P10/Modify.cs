@@ -46,16 +46,45 @@ namespace Do_an_P10
             }
             return tk;
         }
-        public int ThemDonHang(donhang dh, SqlConnection conn, SqlTransaction tran)
+        public int ThemDonHang(donhang dh)
         {
-            string sql = "INSERT INTO DonHang (NgayLap, MaKH, TongTien) VALUES (@ngaylap, @makh, @tongtien); SELECT SCOPE_IDENTITY();";
-            SqlCommand cmd = new SqlCommand(sql, conn, tran);
-            cmd.Parameters.AddWithValue("@ngaylap", dh.NgayLap);
-            cmd.Parameters.AddWithValue("@makh", dh.MaKH);
-            cmd.Parameters.AddWithValue("@tongtien", dh.TongTien);
+            int maDH = -1;
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
+            {
+                conn.Open();
+                string sql = @"INSERT INTO DonHang (NgayLap, MaKH, TongTien) 
+                       OUTPUT INSERTED.MaDH 
+                       VALUES (@ngaylap, @makh, @tongtien)";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@ngaylap", dh.NgayLap);
+                cmd.Parameters.AddWithValue("@makh", dh.MaKH);
+                cmd.Parameters.AddWithValue("@tongtien", dh.TongTien);
 
-            // Trả về MaDH vừa thêm
-            return Convert.ToInt32(cmd.ExecuteScalar());
+                object result = cmd.ExecuteScalar();
+                if (result != null)
+                {
+                    maDH = Convert.ToInt32(result);
+                }
+            }
+            return maDH;
+        }
+        public List<donhang> dh(string query)
+        {
+            List<donhang> dh= new List<donhang>();
+            using(SqlConnection sqlConnection = ketnoi.GetSqlConnection())
+            {
+                
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand(query, sqlConnection);
+                dataReader = sqlCommand.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    dh.Add(new donhang(dataReader.GetDateTime(0), dataReader.GetInt32(1), dataReader.GetDecimal(2)));
+                }
+                sqlConnection.Close();
+                
+            }
+            return dh;
         }
 
         public void Commad(string query)// dùng để đăng ký tài khoản
