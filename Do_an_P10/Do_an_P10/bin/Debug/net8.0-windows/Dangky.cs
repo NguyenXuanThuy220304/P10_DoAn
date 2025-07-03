@@ -30,12 +30,12 @@ namespace Do_an_P10
         Modify modify = new Modify();
         private void dk_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("email.Text = [" + em.Text + "]");
+            MessageBox.Show("Email.Text = [" + em.Text + "]");
             String tentk = tk.Text;
             String matk = mk.Text;
             String xacnhanmk = nlmk.Text;
             String Email = em.Text;
-            if (!checkacc(tentk)) { MessageBox.Show("vui long nhap ten tai khoan dai 5-24 ky tu, ky tu chu, so, chu hoa, chu thuong"); return; }
+            if (!checkacc(tentk)) { MessageBox.Show("Vui lòng nhập tên tài khoản dài 5-24 ky tu, ky tu chu, so, chu hoa, chu thuong"); return; }
             if (!checkacc(matk)) { MessageBox.Show("vui long nhap ten mat khau dai 5-24 ky tu, ky tu chu, so, chu hoa, chu thuong"); return; }
             if (xacnhanmk != matk) { MessageBox.Show("vui long kiem tra lai mat khau"); return; }
             if (!checkemail(Email))
