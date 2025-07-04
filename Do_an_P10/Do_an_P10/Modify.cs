@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
 namespace Do_an_P10
 {
     internal class Modify
@@ -85,6 +86,42 @@ namespace Do_an_P10
                 
             }
             return dh;
+        }
+        public DataTable GetDataTable(string query)
+        {
+            using (SqlConnection sqlConnection = ketnoi.GetSqlConnection())
+            {
+                sqlConnection.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                return dt;
+            }
+        }
+        public int ThemSanPham(sanpham sp)
+        {
+            int maSP = -1;
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
+            {
+                conn.Open();
+                string sql = @"INSERT INTO sanpham (TenSP, Loai, Kichthuoc, Mausac, Giaban)
+                       OUTPUT INSERTED.MaSP
+                       VALUES (@Ten, @Loai, @Kichthuoc, @Mausac, @Dongia)";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@Ten", sp.Tensanpham);
+                cmd.Parameters.AddWithValue("@Loai", sp.Loai);
+                cmd.Parameters.AddWithValue("@Kichthuoc", sp.Kichthuoc);
+                cmd.Parameters.AddWithValue("@Mausac", sp.Mausac);
+                cmd.Parameters.AddWithValue("@Dongia", sp.Dongia);
+
+                object result = cmd.ExecuteScalar();
+                if (result != null)
+                {
+                    maSP = Convert.ToInt32(result); // ✅ Lấy mã sản phẩm vừa được SQL sinh
+                }
+            }
+            return maSP;
         }
 
         public void Commad(string query)// dùng để đăng ký tài khoản
