@@ -1,42 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Bui Thi Huong\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\P10_DoAn\\Do_an_P10\\",
+  "WorkspaceRootPath": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|c:\\users\\bui thi huong\\onedrive\\ta\u0300i li\u00EA\u0323u\\github\\p10_doan\\do_an_p10\\do_an_p10\\ketnoi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\ketnoi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|e:\\\u0111\u1ED3\u00E1n\\p10_doan\\do_an_p10\\do_an_p10\\ql_ecostraws.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\ql_ecostraws.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|c:\\users\\bui thi huong\\onedrive\\ta\u0300i li\u00EA\u0323u\\github\\p10_doan\\do_an_p10\\do_an_p10\\tt_muahang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\tt_muahang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|e:\\\u0111\u1ED3\u00E1n\\p10_doan\\do_an_p10\\do_an_p10\\ql_ecostraws.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\ql_ecostraws.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|C:\\Users\\Bui Thi Huong\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\P10_DoAn\\Do_an_P10\\do_an_p10\\tt_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\tt_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|C:\\Users\\Bui Thi Huong\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\P10_DoAn\\Do_an_P10\\do_an_p10\\quenmatkhau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|e:\\\u0111\u1ED3\u00E1n\\p10_doan\\do_an_p10\\do_an_p10\\quenmatkhau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\quenmatkhau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|c:\\users\\bui thi huong\\onedrive\\ta\u0300i li\u00EA\u0323u\\github\\p10_doan\\do_an_p10\\do_an_p10\\quenmatkhau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\quenmatkhau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|e:\\\u0111\u1ED3\u00E1n\\p10_doan\\do_an_p10\\do_an_p10\\giohangform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\giohangform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|c:\\users\\bui thi huong\\onedrive\\ta\u0300i li\u00EA\u0323u\\github\\p10_doan\\do_an_p10\\do_an_p10\\dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|C:\\Users\\Bui Thi Huong\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\P10_DoAn\\Do_an_P10\\do_an_p10\\dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|C:\\Users\\Bui Thi Huong\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\P10_DoAn\\Do_an_P10\\do_an_p10\\dangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\dangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|c:\\users\\bui thi huong\\onedrive\\ta\u0300i li\u00EA\u0323u\\github\\p10_doan\\do_an_p10\\do_an_p10\\dangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\dangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|e:\\\u0111\u1ED3\u00E1n\\p10_doan\\do_an_p10\\do_an_p10\\ketnoi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\ketnoi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,113 +30,69 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ketnoi.cs",
-              "DocumentMoniker": "C:\\Users\\Bui Thi Huong\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\P10_DoAn\\Do_an_P10\\Do_an_P10\\ketnoi.cs",
-              "RelativeDocumentMoniker": "Do_an_P10\\ketnoi.cs",
-              "ToolTip": "C:\\Users\\Bui Thi Huong\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\P10_DoAn\\Do_an_P10\\Do_an_P10\\ketnoi.cs",
-              "RelativeToolTip": "Do_an_P10\\ketnoi.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAADTAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "quenmatkhau.cs [Design]",
+              "DocumentMoniker": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\quenmatkhau.cs",
+              "RelativeDocumentMoniker": "Do_an_P10\\quenmatkhau.cs",
+              "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\quenmatkhau.cs [Design]",
+              "RelativeToolTip": "Do_an_P10\\quenmatkhau.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T00:31:03.892Z",
+              "WhenOpened": "2025-07-04T04:42:12.757Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "QL_EcoStraws.cs",
+              "DocumentMoniker": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\QL_EcoStraws.cs",
+              "RelativeDocumentMoniker": "Do_an_P10\\QL_EcoStraws.cs",
+              "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\QL_EcoStraws.cs",
+              "RelativeToolTip": "Do_an_P10\\QL_EcoStraws.cs",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAQwJoAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-04T04:38:18.394Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "tt_muahang.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Bui Thi Huong\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\P10_DoAn\\Do_an_P10\\Do_an_P10\\tt_muahang.cs",
-              "RelativeDocumentMoniker": "Do_an_P10\\tt_muahang.cs",
-              "ToolTip": "C:\\Users\\Bui Thi Huong\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\P10_DoAn\\Do_an_P10\\Do_an_P10\\tt_muahang.cs [Design]",
-              "RelativeToolTip": "Do_an_P10\\tt_muahang.cs [Design]",
+              "Title": "QL_EcoStraws.cs [Design]",
+              "DocumentMoniker": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\QL_EcoStraws.cs",
+              "RelativeDocumentMoniker": "Do_an_P10\\QL_EcoStraws.cs",
+              "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\QL_EcoStraws.cs [Design]",
+              "RelativeToolTip": "Do_an_P10\\QL_EcoStraws.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T19:18:18.156Z",
+              "WhenOpened": "2025-07-04T04:38:05.561Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Tt_khachhang.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Bui Thi Huong\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Tt_khachhang.cs",
-              "RelativeDocumentMoniker": "Do_an_P10\\Tt_khachhang.cs",
-              "ToolTip": "C:\\Users\\Bui Thi Huong\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Tt_khachhang.cs [Design]",
-              "RelativeToolTip": "Do_an_P10\\Tt_khachhang.cs [Design]",
+              "DocumentIndex": 3,
+              "Title": "GioHangForm.cs [Design]",
+              "DocumentMoniker": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\GioHangForm.cs",
+              "RelativeDocumentMoniker": "Do_an_P10\\GioHangForm.cs",
+              "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\GioHangForm.cs [Design]",
+              "RelativeToolTip": "Do_an_P10\\GioHangForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T19:18:14.811Z",
+              "WhenOpened": "2025-07-04T04:37:58.905Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "quenmatkhau.cs",
-              "DocumentMoniker": "C:\\Users\\Bui Thi Huong\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\P10_DoAn\\Do_an_P10\\Do_an_P10\\quenmatkhau.cs",
-              "RelativeDocumentMoniker": "Do_an_P10\\quenmatkhau.cs",
-              "ToolTip": "C:\\Users\\Bui Thi Huong\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\P10_DoAn\\Do_an_P10\\Do_an_P10\\quenmatkhau.cs",
-              "RelativeToolTip": "Do_an_P10\\quenmatkhau.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAqwCEAAABaAAAAAAAAAA==",
+              "Title": "ketnoi.cs",
+              "DocumentMoniker": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\ketnoi.cs",
+              "RelativeDocumentMoniker": "Do_an_P10\\ketnoi.cs",
+              "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\ketnoi.cs",
+              "RelativeToolTip": "Do_an_P10\\ketnoi.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAClAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T19:14:18.733Z",
+              "WhenOpened": "2025-07-04T04:37:21.899Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "quenmatkhau.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Bui Thi Huong\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\P10_DoAn\\Do_an_P10\\Do_an_P10\\quenmatkhau.cs",
-              "RelativeDocumentMoniker": "Do_an_P10\\quenmatkhau.cs",
-              "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\quenmatkhau.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T18:37:48.638Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Dangky.cs",
-              "DocumentMoniker": "C:\\Users\\Bui Thi Huong\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Dangky.cs",
-              "RelativeDocumentMoniker": "Do_an_P10\\Dangky.cs",
-              "ToolTip": "C:\\Users\\Bui Thi Huong\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Dangky.cs",
-              "RelativeToolTip": "Do_an_P10\\Dangky.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAgwB4AAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T17:18:01.203Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Dangky.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Bui Thi Huong\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Dangky.cs",
-              "RelativeDocumentMoniker": "Do_an_P10\\Dangky.cs",
-              "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Dangky.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T17:13:43.054Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Dangnhap.cs",
-              "DocumentMoniker": "C:\\Users\\Bui Thi Huong\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Dangnhap.cs",
-              "RelativeDocumentMoniker": "Do_an_P10\\Dangnhap.cs",
-              "ToolTip": "C:\\Users\\Bui Thi Huong\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Dangnhap.cs",
-              "RelativeToolTip": "Do_an_P10\\Dangnhap.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAUwFEAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T17:00:21.798Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Dangnhap.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Bui Thi Huong\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Dangnhap.cs",
-              "RelativeDocumentMoniker": "Do_an_P10\\Dangnhap.cs",
-              "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Dangnhap.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T17:00:19.528Z"
             }
           ]
         }

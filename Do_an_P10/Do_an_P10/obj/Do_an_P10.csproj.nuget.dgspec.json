@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bui Thi Huong\\OneDrive\\Tài liệu\\GitHub\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Do_an_P10.csproj": {}
+    "E:\\ĐồÁn\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Do_an_P10.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bui Thi Huong\\OneDrive\\Tài liệu\\GitHub\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Do_an_P10.csproj": {
+    "E:\\ĐồÁn\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Do_an_P10.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bui Thi Huong\\OneDrive\\Tài liệu\\GitHub\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Do_an_P10.csproj",
+        "projectUniqueName": "E:\\ĐồÁn\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Do_an_P10.csproj",
         "projectName": "Do_an_P10",
-        "projectPath": "C:\\Users\\Bui Thi Huong\\OneDrive\\Tài liệu\\GitHub\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Do_an_P10.csproj",
-        "packagesPath": "C:\\Users\\Bui Thi Huong\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bui Thi Huong\\OneDrive\\Tài liệu\\GitHub\\P10_DoAn\\Do_an_P10\\Do_an_P10\\obj\\",
+        "projectPath": "E:\\ĐồÁn\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Do_an_P10.csproj",
+        "packagesPath": "C:\\Users\\FPT SHOP\\.nuget\\packages\\",
+        "outputPath": "E:\\ĐồÁn\\P10_DoAn\\Do_an_P10\\Do_an_P10\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Bui Thi Huong\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\FPT SHOP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

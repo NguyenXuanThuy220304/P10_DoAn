@@ -13,16 +13,7 @@
     <Compile Update="GioHangForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="QL_Donhang.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="QL_EcoStraws.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="QL_Khachhang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="QL_Sanpham.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Tt_khachhang.cs">

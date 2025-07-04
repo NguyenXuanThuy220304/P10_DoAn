@@ -149,5 +149,12 @@ namespace Do_an_P10
             t.Focus();
             datasp.ClearSelection();
         }
+
+        private void kh_Click(object sender, EventArgs e)
+        {
+            sanp.Visible = false;
+            panelKhachHang.Visible = !panelKhachHang.Visible;
+
+        }
     }
 }
