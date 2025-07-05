@@ -49,8 +49,8 @@ namespace Do_an_P10
                 decimal tongTien = Sanpham.Dongia * soluong;
                 donhang dh = new donhang(DateTime.Now, maKH, tongTien);
                 int maDH = modify.ThemDonHang(dh); // ✅ lấy mã đơn hàng mới
-                
-                String sql = "Insert into CT_DonHang (MaDH, MaSP, Tensanpham, SoLuong, DonGia) values ('"+maDH+"','"+maSP+"','" + tensp + "','" + soluong + "','" + dongia + "')";
+
+                String sql = "Insert into CT_DonHang (MaDH, MaSP, Tensanpham, SoLuong, DonGia) values ('" + maDH + "','" + maSP + "','" + tensp + "','" + soluong + "','" + dongia + "')";
                 modify.Commad(sql);
                 if (MessageBox.Show("đã lưu thành công giao dịch!", $"Bạn có chắc mua:{tensp}, số lượng:{soluong}", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {

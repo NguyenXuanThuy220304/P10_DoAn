@@ -143,6 +143,46 @@ namespace Do_an_P10.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo22 {
+            get {
+                object obj = ResourceManager.GetObject("logo22", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo23 {
+            get {
+                object obj = ResourceManager.GetObject("logo23", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo24 {
+            get {
+                object obj = ResourceManager.GetObject("logo24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo25 {
+            get {
+                object obj = ResourceManager.GetObject("logo25", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lua {
             get {
                 object obj = ResourceManager.GetObject("lua", resourceCulture);
@@ -156,6 +196,16 @@ namespace Do_an_P10.Properties {
         internal static System.Drawing.Bitmap mi_cau_vong {
             get {
                 object obj = ResourceManager.GetObject("mi_cau_vong", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ong_hut_gao_duoc_lam_tu_bot_gao_va_tinh_bot_san {
+            get {
+                object obj = ResourceManager.GetObject("ong-hut-gao-duoc-lam-tu-bot-gao-va-tinh-bot-san", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,6 +266,16 @@ namespace Do_an_P10.Properties {
         internal static System.Drawing.Bitmap phan_huy_03_thang1 {
             get {
                 object obj = ResourceManager.GetObject("phan-huy-03-thang1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap phan_huy_03_thang2 {
+            get {
+                object obj = ResourceManager.GetObject("phan-huy-03-thang2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
