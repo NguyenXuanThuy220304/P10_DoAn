@@ -32,10 +32,10 @@ namespace Do_an_P10
         private void EcoStraws_Load(object sender, EventArgs e)
         {
             t.Text = tentk;
-            phi45.Tag = new sanpham(1,"Ống hút phi 4,5",45000, 1, Properties.Resources.Ong_hut_gao_phi_4_5, "Gạo", "phi 4.5", "trắng" );
-            phi6.Tag = new sanpham(2,"Ống hút phi 6", 55000, 1, Properties.Resources.Ong_hut_gao_phi_6, "Gạo", "phi 6", "Vàng");
-            phi8.Tag = new sanpham(3,"Ống hút phi 8", 65000, 1, Properties.Resources.Ong_hut_gao_phi_8, "Gạo", "phi 8", "hồng");
-            phi13.Tag = new sanpham(4,"Ống hút phi 13", 75000, 1, Properties.Resources.Ong_hut_gao_phi_13, "Gạo", "phi 13", "nâu");
+            phi45.Tag = new sanpham(1, "Ống hút phi 4,5", 45000, 1, Properties.Resources.Ong_hut_gao_phi_4_5, "Gạo", "phi 4.5", "trắng");
+            phi6.Tag = new sanpham(2, "Ống hút phi 6", 55000, 1, Properties.Resources.Ong_hut_gao_phi_6, "Gạo", "phi 6", "Vàng");
+            phi8.Tag = new sanpham(3, "Ống hút phi 8", 65000, 1, Properties.Resources.Ong_hut_gao_phi_8, "Gạo", "phi 8", "hồng");
+            phi13.Tag = new sanpham(4, "Ống hút phi 13", 75000, 1, Properties.Resources.Ong_hut_gao_phi_13, "Gạo", "phi 13", "nâu");
 
         }
 

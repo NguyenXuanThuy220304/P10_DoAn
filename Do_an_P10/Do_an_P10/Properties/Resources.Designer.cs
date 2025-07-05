@@ -183,6 +183,16 @@ namespace Do_an_P10.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo26 {
+            get {
+                object obj = ResourceManager.GetObject("logo26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lua {
             get {
                 object obj = ResourceManager.GetObject("lua", resourceCulture);
@@ -216,6 +226,26 @@ namespace Do_an_P10.Properties {
         internal static System.Drawing.Bitmap ong_hut_gao_duoc_lam_tu_bot_gao_va_tinh_bot_san1 {
             get {
                 object obj = ResourceManager.GetObject("ong-hut-gao-duoc-lam-tu-bot-gao-va-tinh-bot-san1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ong_hut_gao_duoc_lam_tu_bot_gao_va_tinh_bot_san2 {
+            get {
+                object obj = ResourceManager.GetObject("ong-hut-gao-duoc-lam-tu-bot-gao-va-tinh-bot-san2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ong_hut_gao_duoc_lam_tu_bot_gao_va_tinh_bot_san3 {
+            get {
+                object obj = ResourceManager.GetObject("ong-hut-gao-duoc-lam-tu-bot-gao-va-tinh-bot-san3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -286,6 +316,16 @@ namespace Do_an_P10.Properties {
         internal static System.Drawing.Bitmap phan_huy_03_thang2 {
             get {
                 object obj = ResourceManager.GetObject("phan-huy-03-thang2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap phan_huy_03_thang3 {
+            get {
+                object obj = ResourceManager.GetObject("phan-huy-03-thang3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
