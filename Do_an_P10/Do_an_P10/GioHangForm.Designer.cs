@@ -29,35 +29,146 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            groupBox2 = new GroupBox();
+            txtEmail = new TextBox();
+            txtDiaChi = new TextBox();
+            txtSDT = new TextBox();
+            txtHoTen = new TextBox();
+            labelEmail = new Label();
+            labelDC = new Label();
+            labelSDT = new Label();
+            labelHT = new Label();
             button2 = new Button();
             button1 = new Button();
             dataGridView1 = new DataGridView();
             groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = SystemColors.Control;
+            groupBox1.Controls.Add(groupBox2);
             groupBox1.Controls.Add(button2);
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(dataGridView1);
-            groupBox1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox1.Font = new Font("Times New Roman", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox1.ForeColor = SystemColors.ControlText;
             groupBox1.Location = new Point(1, 1);
             groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(938, 552);
+            groupBox1.Size = new Size(948, 552);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Giỏ hàng của bạn";
             // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(txtEmail);
+            groupBox2.Controls.Add(txtDiaChi);
+            groupBox2.Controls.Add(txtSDT);
+            groupBox2.Controls.Add(txtHoTen);
+            groupBox2.Controls.Add(labelEmail);
+            groupBox2.Controls.Add(labelDC);
+            groupBox2.Controls.Add(labelSDT);
+            groupBox2.Controls.Add(labelHT);
+            groupBox2.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox2.Location = new Point(22, 70);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(404, 402);
+            groupBox2.TabIndex = 3;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Thông Tin Khách hàng";
+            // 
+            // txtEmail
+            // 
+            txtEmail.BackColor = Color.White;
+            txtEmail.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtEmail.Location = new Point(19, 329);
+            txtEmail.Name = "txtEmail";
+            txtEmail.ReadOnly = true;
+            txtEmail.Size = new Size(361, 29);
+            txtEmail.TabIndex = 7;
+            // 
+            // txtDiaChi
+            // 
+            txtDiaChi.BackColor = Color.White;
+            txtDiaChi.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtDiaChi.Location = new Point(19, 239);
+            txtDiaChi.Name = "txtDiaChi";
+            txtDiaChi.ReadOnly = true;
+            txtDiaChi.Size = new Size(361, 29);
+            txtDiaChi.TabIndex = 6;
+            // 
+            // txtSDT
+            // 
+            txtSDT.BackColor = Color.White;
+            txtSDT.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtSDT.Location = new Point(19, 154);
+            txtSDT.Name = "txtSDT";
+            txtSDT.ReadOnly = true;
+            txtSDT.Size = new Size(361, 29);
+            txtSDT.TabIndex = 5;
+            // 
+            // txtHoTen
+            // 
+            txtHoTen.BackColor = Color.White;
+            txtHoTen.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtHoTen.Location = new Point(19, 75);
+            txtHoTen.Name = "txtHoTen";
+            txtHoTen.ReadOnly = true;
+            txtHoTen.Size = new Size(361, 29);
+            txtHoTen.TabIndex = 4;
+            // 
+            // labelEmail
+            // 
+            labelEmail.AutoSize = true;
+            labelEmail.Font = new Font("Times New Roman", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelEmail.Location = new Point(19, 303);
+            labelEmail.Name = "labelEmail";
+            labelEmail.Size = new Size(58, 23);
+            labelEmail.TabIndex = 3;
+            labelEmail.Text = "Email";
+            // 
+            // labelDC
+            // 
+            labelDC.AutoSize = true;
+            labelDC.Font = new Font("Times New Roman", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelDC.Location = new Point(19, 213);
+            labelDC.Name = "labelDC";
+            labelDC.Size = new Size(73, 23);
+            labelDC.TabIndex = 2;
+            labelDC.Text = "Địa Chỉ";
+            // 
+            // labelSDT
+            // 
+            labelSDT.AutoSize = true;
+            labelSDT.Font = new Font("Times New Roman", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelSDT.Location = new Point(19, 128);
+            labelSDT.Name = "labelSDT";
+            labelSDT.Size = new Size(118, 23);
+            labelSDT.TabIndex = 1;
+            labelSDT.Text = "Số điện thoại";
+            // 
+            // labelHT
+            // 
+            labelHT.AutoSize = true;
+            labelHT.Font = new Font("Times New Roman", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelHT.Location = new Point(19, 49);
+            labelHT.Name = "labelHT";
+            labelHT.Size = new Size(66, 23);
+            labelHT.TabIndex = 0;
+            labelHT.Text = "Họ tên";
+            // 
             // button2
             // 
-            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(785, 516);
+            button2.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Location = new Point(770, 511);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(136, 22);
+            button2.Size = new Size(136, 31);
             button2.TabIndex = 2;
             button2.Text = "Đặt hàng";
             button2.UseVisualStyleBackColor = true;
@@ -65,11 +176,11 @@
             // 
             // button1
             // 
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(47, 516);
+            button1.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(23, 507);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(136, 22);
+            button1.Size = new Size(136, 31);
             button1.TabIndex = 1;
             button1.Text = "Quay lại";
             button1.UseVisualStyleBackColor = true;
@@ -79,11 +190,11 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.ImeMode = ImeMode.NoControl;
-            dataGridView1.Location = new Point(398, 40);
+            dataGridView1.Location = new Point(446, 36);
             dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(508, 450);
+            dataGridView1.Size = new Size(460, 450);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -98,6 +209,8 @@
             Text = "GioHangForm";
             Load += GioHangForm_Load;
             groupBox1.ResumeLayout(false);
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
@@ -108,5 +221,14 @@
         private DataGridView dataGridView1;
         private Button button2;
         private Button button1;
+        private GroupBox groupBox2;
+        private Label labelHT;
+        private Label labelSDT;
+        private Label labelDC;
+        private Label labelEmail;
+        private TextBox txtHoTen;
+        private TextBox txtEmail;
+        private TextBox txtDiaChi;
+        private TextBox txtSDT;
     }
 }

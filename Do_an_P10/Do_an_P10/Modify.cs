@@ -12,14 +12,14 @@ namespace Do_an_P10
         public Modify() { }
         SqlCommand sqlCommand;// truy vaans
         SqlDataReader dataReader; //dùng để đặt dữ liệu trong bảng
-        
+
         public List<khachhang> kh(string query)
         {
-            List<khachhang>  kh= new List<khachhang>();
+            List<khachhang> kh = new List<khachhang>();
             using (SqlConnection sqlConnection = ketnoi.GetSqlConnection())
             {
                 sqlConnection.Open();
-                sqlCommand = new SqlCommand(query , sqlConnection);
+                sqlCommand = new SqlCommand(query, sqlConnection);
                 dataReader = sqlCommand.ExecuteReader();
                 while (dataReader.Read())
                 {
@@ -71,10 +71,10 @@ namespace Do_an_P10
         }
         public List<donhang> dh(string query)
         {
-            List<donhang> dh= new List<donhang>();
-            using(SqlConnection sqlConnection = ketnoi.GetSqlConnection())
+            List<donhang> dh = new List<donhang>();
+            using (SqlConnection sqlConnection = ketnoi.GetSqlConnection())
             {
-                
+
                 sqlConnection.Open();
                 sqlCommand = new SqlCommand(query, sqlConnection);
                 dataReader = sqlCommand.ExecuteReader();
@@ -83,7 +83,7 @@ namespace Do_an_P10
                     dh.Add(new donhang(dataReader.GetDateTime(0), dataReader.GetInt32(1), dataReader.GetDecimal(2)));
                 }
                 sqlConnection.Close();
-                
+
             }
             return dh;
         }
@@ -132,6 +132,25 @@ namespace Do_an_P10
                 sqlCommand = new SqlCommand(query, sqlConnection);
                 sqlCommand.ExecuteNonQuery();
                 sqlConnection.Close();
+            }
+        }
+
+        public static DataRow LayThongTinKhachHang(string tenTaiKhoan)
+        {
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
+            {
+                string query = "SELECT * FROM khachhang WHERE Tentaikhoan = @tk";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@tk", tenTaiKhoan);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                if (dt.Rows.Count > 0)
+                    return dt.Rows[0];
+                else
+                    return null;
             }
         }
     }

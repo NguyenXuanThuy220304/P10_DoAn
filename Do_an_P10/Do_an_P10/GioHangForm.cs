@@ -20,10 +20,27 @@ namespace Do_an_P10
             this.tentk = tentk;
             LoadGioHang();
         }
+        private void HienThiThongTinKhachHang()
+        {
+            DataRow row = Modify.LayThongTinKhachHang(tentk);
+            if (row != null)
+            {
+                txtHoTen.Text = row["Hoten"].ToString();
+                txtSDT.Text = row["SDT"].ToString();
+                txtDiaChi.Text = row["Diachi"].ToString();
+                txtEmail.Text = row["Email"].ToString();
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy thông tin khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
         private void LoadGioHang()
         {
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = GioHangData.Instance.DanhSachSanPham;
+
+            HienThiThongTinKhachHang();
         }
 
         private void button1_Click(object sender, EventArgs e)
