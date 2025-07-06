@@ -58,6 +58,7 @@
             // tk
             // 
             tk.Anchor = AnchorStyles.None;
+            tk.BorderStyle = BorderStyle.FixedSingle;
             tk.Location = new Point(33, 131);
             tk.Margin = new Padding(3, 2, 3, 2);
             tk.Name = "tk";
@@ -67,6 +68,7 @@
             // mk
             // 
             mk.Anchor = AnchorStyles.None;
+            mk.BorderStyle = BorderStyle.FixedSingle;
             mk.Location = new Point(33, 194);
             mk.Margin = new Padding(3, 2, 3, 2);
             mk.Name = "mk";

@@ -31,8 +31,15 @@ namespace Do_an_P10
 
         private void sp_Click(object sender, EventArgs e)
         {
+            // Toggle panel sản phẩm
             sanp.Visible = !sanp.Visible;
 
+            // Nếu đang mở sản phẩm thì tắt các panel khác
+            if (sanp.Visible)
+            {
+                panelKhachHang.Visible = false;
+                panelkho.Visible = false;
+            }
         }
 
         private void k_Click(object sender, EventArgs e)
@@ -45,6 +52,12 @@ namespace Do_an_P10
             datasp.DataSource = modify.GetDataTable(query);
         }
         List<sanpham> ds = new List<sanpham>();
+        private void loadKhachHang()
+        {
+            string query = "SELECT * FROM khachhang";
+            dGVKhachHang.DataSource = modify.GetDataTable(query);
+        }
+
         private void btnthem_Click(object sender, EventArgs e)
         {
             sanpham sp = new sanpham
@@ -152,8 +165,43 @@ namespace Do_an_P10
 
         private void kh_Click(object sender, EventArgs e)
         {
-            sanp.Visible = false;
             panelKhachHang.Visible = !panelKhachHang.Visible;
+
+            if (panelKhachHang.Visible)
+            {
+                sanp.Visible = false;
+                panelkho.Visible = false;
+                loadKhachHang();
+            }
+        }
+
+        private void ThemBtnKH_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SuaBtnKH_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void XoaBtnKH_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LamMoiBtnKH_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TimKiemBtnKH_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LuuBtn_Click(object sender, EventArgs e)
+        {
 
         }
     }

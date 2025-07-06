@@ -58,6 +58,7 @@
             // 
             // tk
             // 
+            tk.BorderStyle = BorderStyle.FixedSingle;
             tk.Location = new Point(48, 153);
             tk.Margin = new Padding(3, 2, 3, 2);
             tk.Name = "tk";
@@ -66,6 +67,7 @@
             // 
             // mk
             // 
+            mk.BorderStyle = BorderStyle.FixedSingle;
             mk.Location = new Point(48, 247);
             mk.Margin = new Padding(3, 2, 3, 2);
             mk.Name = "mk";
@@ -84,6 +86,7 @@
             // 
             // nlmk
             // 
+            nlmk.BorderStyle = BorderStyle.FixedSingle;
             nlmk.Location = new Point(48, 320);
             nlmk.Margin = new Padding(3, 2, 3, 2);
             nlmk.Name = "nlmk";
@@ -142,6 +145,7 @@
             // 
             // em
             // 
+            em.BorderStyle = BorderStyle.FixedSingle;
             em.Location = new Point(48, 403);
             em.Margin = new Padding(3, 2, 3, 2);
             em.Name = "em";

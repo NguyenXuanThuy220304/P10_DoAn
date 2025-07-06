@@ -92,6 +92,7 @@
             // 
             // t
             // 
+            t.BorderStyle = BorderStyle.FixedSingle;
             t.Location = new Point(889, 4);
             t.Margin = new Padding(3, 2, 3, 2);
             t.Name = "t";

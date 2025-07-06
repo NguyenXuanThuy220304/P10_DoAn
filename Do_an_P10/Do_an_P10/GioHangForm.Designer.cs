@@ -85,6 +85,7 @@
             // txtEmail
             // 
             txtEmail.BackColor = Color.White;
+            txtEmail.BorderStyle = BorderStyle.FixedSingle;
             txtEmail.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtEmail.Location = new Point(19, 329);
             txtEmail.Name = "txtEmail";
@@ -95,6 +96,7 @@
             // txtDiaChi
             // 
             txtDiaChi.BackColor = Color.White;
+            txtDiaChi.BorderStyle = BorderStyle.FixedSingle;
             txtDiaChi.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtDiaChi.Location = new Point(19, 239);
             txtDiaChi.Name = "txtDiaChi";
@@ -105,6 +107,7 @@
             // txtSDT
             // 
             txtSDT.BackColor = Color.White;
+            txtSDT.BorderStyle = BorderStyle.FixedSingle;
             txtSDT.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtSDT.Location = new Point(19, 154);
             txtSDT.Name = "txtSDT";
@@ -115,6 +118,7 @@
             // txtHoTen
             // 
             txtHoTen.BackColor = Color.White;
+            txtHoTen.BorderStyle = BorderStyle.FixedSingle;
             txtHoTen.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtHoTen.Location = new Point(19, 75);
             txtHoTen.Name = "txtHoTen";

@@ -49,6 +49,7 @@
             // 
             // email
             // 
+            email.BorderStyle = BorderStyle.FixedSingle;
             email.Location = new Point(40, 171);
             email.Margin = new Padding(3, 2, 3, 2);
             email.Name = "email";

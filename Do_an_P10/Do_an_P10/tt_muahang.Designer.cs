@@ -46,20 +46,22 @@
             // 
             // tensp
             // 
-            tensp.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            tensp.BorderStyle = BorderStyle.FixedSingle;
+            tensp.Font = new Font("Times New Roman", 11.25F);
             tensp.Location = new Point(209, 293);
             tensp.Margin = new Padding(3, 2, 3, 2);
             tensp.Name = "tensp";
-            tensp.Size = new Size(245, 26);
+            tensp.Size = new Size(245, 25);
             tensp.TabIndex = 5;
             // 
             // gia
             // 
-            gia.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            gia.BorderStyle = BorderStyle.FixedSingle;
+            gia.Font = new Font("Times New Roman", 11.25F);
             gia.Location = new Point(209, 151);
             gia.Margin = new Padding(3, 2, 3, 2);
             gia.Name = "gia";
-            gia.Size = new Size(245, 26);
+            gia.Size = new Size(245, 25);
             gia.TabIndex = 5;
             // 
             // label3
