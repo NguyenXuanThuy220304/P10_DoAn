@@ -103,7 +103,7 @@
             // 
             button3.Dock = DockStyle.Top;
             button3.Location = new Point(3, 488);
-            button3.Margin = new Padding(2, 2, 2, 2);
+            button3.Margin = new Padding(2);
             button3.Name = "button3";
             button3.Size = new Size(178, 37);
             button3.TabIndex = 8;
@@ -113,7 +113,7 @@
             // 
             button2.Dock = DockStyle.Top;
             button2.Location = new Point(3, 451);
-            button2.Margin = new Padding(2, 2, 2, 2);
+            button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(178, 37);
             button2.TabIndex = 7;
@@ -123,7 +123,7 @@
             // 
             button1.Dock = DockStyle.Top;
             button1.Location = new Point(3, 414);
-            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(178, 37);
             button1.TabIndex = 6;
@@ -136,7 +136,7 @@
             panelkho.Controls.Add(nhapk);
             panelkho.Dock = DockStyle.Top;
             panelkho.Location = new Point(3, 304);
-            panelkho.Margin = new Padding(2, 2, 2, 2);
+            panelkho.Margin = new Padding(2);
             panelkho.Name = "panelkho";
             panelkho.Size = new Size(178, 110);
             panelkho.TabIndex = 5;
@@ -146,7 +146,7 @@
             // 
             ton.Dock = DockStyle.Top;
             ton.Location = new Point(0, 74);
-            ton.Margin = new Padding(2, 2, 2, 2);
+            ton.Margin = new Padding(2);
             ton.Name = "ton";
             ton.Size = new Size(178, 37);
             ton.TabIndex = 2;
@@ -157,7 +157,7 @@
             // 
             xuatk.Dock = DockStyle.Top;
             xuatk.Location = new Point(0, 37);
-            xuatk.Margin = new Padding(2, 2, 2, 2);
+            xuatk.Margin = new Padding(2);
             xuatk.Name = "xuatk";
             xuatk.Size = new Size(178, 37);
             xuatk.TabIndex = 1;
@@ -168,7 +168,7 @@
             // 
             nhapk.Dock = DockStyle.Top;
             nhapk.Location = new Point(0, 0);
-            nhapk.Margin = new Padding(2, 2, 2, 2);
+            nhapk.Margin = new Padding(2);
             nhapk.Name = "nhapk";
             nhapk.Size = new Size(178, 37);
             nhapk.TabIndex = 0;
@@ -179,7 +179,7 @@
             // 
             k.Dock = DockStyle.Top;
             k.Location = new Point(3, 267);
-            k.Margin = new Padding(2, 2, 2, 2);
+            k.Margin = new Padding(2);
             k.Name = "k";
             k.Size = new Size(178, 37);
             k.TabIndex = 4;
@@ -191,7 +191,7 @@
             // 
             dh.Dock = DockStyle.Top;
             dh.Location = new Point(3, 230);
-            dh.Margin = new Padding(2, 2, 2, 2);
+            dh.Margin = new Padding(2);
             dh.Name = "dh";
             dh.Size = new Size(178, 37);
             dh.TabIndex = 3;
@@ -202,7 +202,7 @@
             // 
             kh.Dock = DockStyle.Top;
             kh.Location = new Point(3, 193);
-            kh.Margin = new Padding(2, 2, 2, 2);
+            kh.Margin = new Padding(2);
             kh.Name = "kh";
             kh.Size = new Size(178, 37);
             kh.TabIndex = 2;
@@ -214,7 +214,7 @@
             // 
             sp.Dock = DockStyle.Top;
             sp.Location = new Point(3, 156);
-            sp.Margin = new Padding(2, 2, 2, 2);
+            sp.Margin = new Padding(2);
             sp.Name = "sp";
             sp.Size = new Size(178, 37);
             sp.TabIndex = 1;
@@ -230,7 +230,7 @@
             pictureBox1.ErrorImage = null;
             pictureBox1.Image = Properties.Resources.logo2;
             pictureBox1.Location = new Point(3, 2);
-            pictureBox1.Margin = new Padding(2, 2, 2, 2);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(178, 154);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -246,7 +246,7 @@
             sanp.Controls.Add(groupBox1);
             sanp.Controls.Add(panel1);
             sanp.Location = new Point(215, 25);
-            sanp.Margin = new Padding(2, 2, 2, 2);
+            sanp.Margin = new Padding(2);
             sanp.Name = "sanp";
             sanp.Size = new Size(718, 462);
             sanp.TabIndex = 1;
@@ -257,9 +257,9 @@
             groupBox3.Controls.Add(datasp);
             groupBox3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox3.Location = new Point(302, 81);
-            groupBox3.Margin = new Padding(2, 2, 2, 2);
+            groupBox3.Margin = new Padding(2);
             groupBox3.Name = "groupBox3";
-            groupBox3.Padding = new Padding(2, 2, 2, 2);
+            groupBox3.Padding = new Padding(2);
             groupBox3.Size = new Size(404, 368);
             groupBox3.TabIndex = 3;
             groupBox3.TabStop = false;
@@ -270,7 +270,7 @@
             datasp.BackgroundColor = SystemColors.Control;
             datasp.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             datasp.Location = new Point(17, 33);
-            datasp.Margin = new Padding(2, 2, 2, 2);
+            datasp.Margin = new Padding(2);
             datasp.Name = "datasp";
             datasp.RowHeadersWidth = 62;
             datasp.Size = new Size(371, 317);
@@ -282,9 +282,9 @@
             groupBox2.Controls.Add(tk);
             groupBox2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox2.Location = new Point(302, 8);
-            groupBox2.Margin = new Padding(2, 2, 2, 2);
+            groupBox2.Margin = new Padding(2);
             groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(2, 2, 2, 2);
+            groupBox2.Padding = new Padding(2);
             groupBox2.Size = new Size(404, 57);
             groupBox2.TabIndex = 3;
             groupBox2.TabStop = false;
@@ -294,7 +294,7 @@
             // 
             tk.BorderStyle = BorderStyle.FixedSingle;
             tk.Location = new Point(17, 23);
-            tk.Margin = new Padding(2, 2, 2, 2);
+            tk.Margin = new Padding(2);
             tk.Name = "tk";
             tk.Size = new Size(376, 29);
             tk.TabIndex = 0;
@@ -321,9 +321,9 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.Location = new Point(9, 81);
-            groupBox1.Margin = new Padding(2, 2, 2, 2);
+            groupBox1.Margin = new Padding(2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(2, 2, 2, 2);
+            groupBox1.Padding = new Padding(2);
             groupBox1.Size = new Size(270, 368);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
@@ -333,7 +333,7 @@
             // 
             rs.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rs.Location = new Point(8, 338);
-            rs.Margin = new Padding(2, 2, 2, 2);
+            rs.Margin = new Padding(2);
             rs.Name = "rs";
             rs.Size = new Size(70, 21);
             rs.TabIndex = 3;
@@ -345,7 +345,7 @@
             // 
             btnxoa.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnxoa.Location = new Point(196, 307);
-            btnxoa.Margin = new Padding(2, 2, 2, 2);
+            btnxoa.Margin = new Padding(2);
             btnxoa.Name = "btnxoa";
             btnxoa.Size = new Size(70, 21);
             btnxoa.TabIndex = 2;
@@ -357,7 +357,7 @@
             // 
             btnsua.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnsua.Location = new Point(99, 307);
-            btnsua.Margin = new Padding(2, 2, 2, 2);
+            btnsua.Margin = new Padding(2);
             btnsua.Name = "btnsua";
             btnsua.Size = new Size(70, 21);
             btnsua.TabIndex = 2;
@@ -369,7 +369,7 @@
             // 
             btntimkiem.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btntimkiem.Location = new Point(99, 337);
-            btntimkiem.Margin = new Padding(2, 2, 2, 2);
+            btntimkiem.Margin = new Padding(2);
             btntimkiem.Name = "btntimkiem";
             btntimkiem.Size = new Size(70, 21);
             btntimkiem.TabIndex = 2;
@@ -381,7 +381,7 @@
             // 
             btnluu.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnluu.Location = new Point(196, 337);
-            btnluu.Margin = new Padding(2, 2, 2, 2);
+            btnluu.Margin = new Padding(2);
             btnluu.Name = "btnluu";
             btnluu.Size = new Size(70, 21);
             btnluu.TabIndex = 2;
@@ -393,7 +393,7 @@
             // 
             btnthem.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnthem.Location = new Point(8, 307);
-            btnthem.Margin = new Padding(2, 2, 2, 2);
+            btnthem.Margin = new Padding(2);
             btnthem.Name = "btnthem";
             btnthem.Size = new Size(70, 21);
             btnthem.TabIndex = 2;
@@ -405,7 +405,7 @@
             // 
             g.BorderStyle = BorderStyle.FixedSingle;
             g.Location = new Point(99, 246);
-            g.Margin = new Padding(2, 2, 2, 2);
+            g.Margin = new Padding(2);
             g.Name = "g";
             g.Size = new Size(168, 29);
             g.TabIndex = 1;
@@ -426,7 +426,7 @@
             // 
             m.BorderStyle = BorderStyle.FixedSingle;
             m.Location = new Point(99, 202);
-            m.Margin = new Padding(2, 2, 2, 2);
+            m.Margin = new Padding(2);
             m.Name = "m";
             m.Size = new Size(168, 29);
             m.TabIndex = 1;
@@ -447,7 +447,7 @@
             // 
             kt.BorderStyle = BorderStyle.FixedSingle;
             kt.Location = new Point(99, 160);
-            kt.Margin = new Padding(2, 2, 2, 2);
+            kt.Margin = new Padding(2);
             kt.Name = "kt";
             kt.Size = new Size(168, 29);
             kt.TabIndex = 1;
@@ -467,7 +467,7 @@
             // 
             l.BorderStyle = BorderStyle.FixedSingle;
             l.Location = new Point(99, 115);
-            l.Margin = new Padding(2, 2, 2, 2);
+            l.Margin = new Padding(2);
             l.Name = "l";
             l.Size = new Size(168, 29);
             l.TabIndex = 1;
@@ -487,7 +487,7 @@
             // 
             t.BorderStyle = BorderStyle.FixedSingle;
             t.Location = new Point(99, 73);
-            t.Margin = new Padding(2, 2, 2, 2);
+            t.Margin = new Padding(2);
             t.Name = "t";
             t.Size = new Size(168, 29);
             t.TabIndex = 1;
@@ -507,7 +507,7 @@
             // 
             msp.BorderStyle = BorderStyle.FixedSingle;
             msp.Location = new Point(99, 30);
-            msp.Margin = new Padding(2, 2, 2, 2);
+            msp.Margin = new Padding(2);
             msp.Name = "msp";
             msp.Size = new Size(168, 29);
             msp.TabIndex = 1;
@@ -529,7 +529,7 @@
             panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(label1);
             panel1.Location = new Point(9, 8);
-            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
             panel1.Size = new Size(271, 59);
             panel1.TabIndex = 1;
@@ -564,8 +564,9 @@
             Controls.Add(panelKhachHang);
             Controls.Add(sanp);
             Controls.Add(menu);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "QL_EcoStraws";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "QL_EcoStraws";
             Load += QL_EcoStraws_Load;
             menu.ResumeLayout(false);

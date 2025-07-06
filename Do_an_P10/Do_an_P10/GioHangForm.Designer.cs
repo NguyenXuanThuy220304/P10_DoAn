@@ -206,6 +206,7 @@
             Controls.Add(groupBox1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "GioHangForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "GioHangForm";
             Load += GioHangForm_Load;
             groupBox1.ResumeLayout(false);
