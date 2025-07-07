@@ -15,6 +15,8 @@ namespace Do_an_P10
         public string Email { get; set; }
         public string Tentaikhoan { get; set; }
 
+        public khachhang() { }
+
         public khachhang(int makh, string hoten, string sdt, string diachi, string email, string tentaikhoan)
         {
             MaKH = makh;

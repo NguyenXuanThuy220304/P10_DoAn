@@ -57,33 +57,58 @@ namespace Do_an_P10
             string query = "SELECT * FROM khachhang";
             dGVKhachHang.DataSource = modify.GetDataTable(query);
         }
-
+        List<khachhang> dskh = new List<khachhang>();
         private void btnthem_Click(object sender, EventArgs e)
         {
+            if (!int.TryParse(msp.Text, out int masp))
+            {
+                MessageBox.Show("Mã sản phẩm không hợp lệ!");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(t.Text) || string.IsNullOrWhiteSpace(g.Text))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ tên sản phẩm và giá.");
+                return;
+            }
+
+            if (!decimal.TryParse(g.Text, out decimal gia))
+            {
+                MessageBox.Show("Giá không hợp lệ!");
+                return;
+            }
+
             sanpham sp = new sanpham
             {
+                MaSP = masp,
                 Tensanpham = t.Text,
                 Loai = l.Text,
                 Kichthuoc = kt.Text,
                 Mausac = m.Text,
-                Dongia = decimal.Parse(g.Text)
+                Dongia = gia
             };
-            sp.MaSP = modify.ThemSanPham(sp);
-            msp.Text = sp.MaSP.ToString(); // ✅ Hiển thị mã vừa tạo vào ô textbox msp
-            ds.Add(sp);
+
+            ds.Add(sp); // ➕ Lưu vào danh sách tạm
+
             datasp.DataSource = null;
             datasp.DataSource = ds;
+
+            rs_Click(sender, e); // Xoá trắng các textbox nhập
         }
 
         private void btnluu_Click(object sender, EventArgs e)
         {
+            if (ds.Count == 0)
+            {
+                MessageBox.Show("Không có sản phẩm nào để lưu.");
+                return;
+            }
+
             foreach (var sp in ds)
             {
-                string query = $"INSERT INTO sanpham (TenSP, Loai, Kichthuoc, Mausac, Giaban) " +
-                               $"VALUES (N'{sp.Tensanpham}', N'{sp.Loai}', N'{sp.Kichthuoc}', N'{sp.Mausac}', {sp.Dongia})";
-                modify.Commad(query);
-
+                modify.ThemSanPham(sp); // ✅ Chỉ cần gọi hàm này là đủ!
             }
+
             MessageBox.Show("Lưu thành công vào cơ sở dữ liệu!");
 
             ds.Clear(); // Xóa danh sách tạm
@@ -175,11 +200,6 @@ namespace Do_an_P10
             }
         }
 
-        private void ThemBtnKH_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void SuaBtnKH_Click(object sender, EventArgs e)
         {
 
@@ -192,24 +212,84 @@ namespace Do_an_P10
 
         private void LamMoiBtnKH_Click(object sender, EventArgs e)
         {
+            msp.Text = "";
+            t.Text = "";
+            l.Text = "";
+            kt.Text = "";
+            m.Text = "";
+            g.Text = "";
 
+            // Nếu cần, đưa focus về ô nhập đầu tiên
+            t.Focus();
+            datasp.ClearSelection();
         }
 
         private void TimKiemBtnKH_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void LuuBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void linkThoat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-           Dangnhap dn = new Dangnhap();
+            Dangnhap dn = new Dangnhap();
             dn.Show();
             this.Hide();
+        }
+
+        private void ThemKHBtn_Click(object sender, EventArgs e)
+        {
+            if (!int.TryParse(txtMaKH.Text, out int makh))
+            {
+                MessageBox.Show("Mã khách hàng không hợp lệ!");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtHoTen.Text))
+            {
+                MessageBox.Show("Vui lòng nhập họ tên khách hàng.");
+                return;
+            }
+
+            // Tạo đối tượng khách hàng, chấp nhận null cho tài khoản
+            khachhang kh = new khachhang
+            {
+                MaKH = makh,
+                Hoten = txtHoTen.Text,
+                SDT = txtSDT.Text,
+                Diachi = txtDiaChi.Text,
+                Email = txtEmail.Text,
+                Tentaikhoan = string.IsNullOrWhiteSpace(txtTenTK.Text) ? null : txtTenTK.Text
+            };
+
+            dskh.Add(kh); // Thêm vào danh sách tạm
+
+            dGVKhachHang.DataSource = null;
+            dGVKhachHang.DataSource = dskh;
+
+            LamMoiBtnKH_Click(sender, e); // Xoá trắng các ô nhập
+        }
+
+        private void btnLuuKH_Click(object sender, EventArgs e)
+        {
+            if (dskh.Count == 0)
+            {
+                MessageBox.Show("Không có khách hàng nào để lưu.");
+                return;
+            }
+
+            foreach (var kh in dskh)
+            {
+                bool thanhCong = modify.ThemKhachHang(kh);
+                if (!thanhCong)
+                {
+                    MessageBox.Show($"Không thể thêm khách hàng có mã: {kh.MaKH}");
+                }
+            }
+
+            MessageBox.Show("Lưu thành công vào cơ sở dữ liệu!");
+
+            dskh.Clear(); // Xoá danh sách tạm
+            dGVKhachHang.DataSource = null;
+            loadKhachHang(); // Load lại danh sách từ DB
         }
     }
 }

@@ -38,6 +38,7 @@ namespace Do_an_P10
             else if (sodt.Trim() == "") { MessageBox.Show("Vui lòng nhập số điện thoại!"); return; }
             else if (diachi.Trim() == "") { MessageBox.Show("Vui lòng nhập địa chỉ!"); return; }
 
+            // Lấy email từ bảng tài khoản
             List<taikhoan> emails = modify.tk($"SELECT * FROM taikhoan WHERE tentaikhoan = '{tentk}'");
 
             if (emails.Count > 0)
@@ -45,8 +46,12 @@ namespace Do_an_P10
                 string Email = emails[0].Email;
                 mail.Text = Email;
 
-                string query = $"INSERT INTO khachhang (Hoten, SDT, Diachi, Email, tentaikhoan) " +
-                               $"VALUES ('{hoten}', '{sodt}', '{diachi}', '{Email}', '{tentk}')";
+                // ✅ Tự sinh MaKH mới (lớn nhất + 1)
+                DataTable dt = modify.GetDataTable("SELECT ISNULL(MAX(MaKH), 0) + 1 FROM khachhang");
+                int makh = Convert.ToInt32(dt.Rows[0][0]);
+
+                string query = $"INSERT INTO khachhang (MaKH, Hoten, SDT, Diachi, Email, tentaikhoan) " +
+                               $"VALUES ({makh}, N'{hoten}', '{sodt}', N'{diachi}', '{Email}', '{tentk}')";
 
                 modify.Commad(query);
 

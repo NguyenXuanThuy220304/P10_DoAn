@@ -98,32 +98,102 @@ namespace Do_an_P10
                 return dt;
             }
         }
-        public int ThemSanPham(sanpham sp)
+        public bool ThemSanPham(sanpham sp)
         {
             int maSP = -1;
             using (SqlConnection conn = ketnoi.GetSqlConnection())
             {
                 conn.Open();
-                string sql = @"INSERT INTO sanpham (TenSP, Loai, Kichthuoc, Mausac, Giaban)
+
+                // Kiểm tra MaSP có bị trùng không
+                string checkQuery = "SELECT COUNT(*) FROM sanpham WHERE MaSP = @MaSP";
+                SqlCommand checkCmd = new SqlCommand(checkQuery, conn);
+                checkCmd.Parameters.AddWithValue("@MaSP", sp.MaSP);
+                int count = (int)checkCmd.ExecuteScalar();
+
+                if (count > 0)
+                {
+                    MessageBox.Show("Mã sản phẩm đã tồn tại!");
+                    return false;
+                }
+
+                string sql = @"INSERT INTO sanpham (MaSP, TenSP, Loai, Kichthuoc, Mausac, Giaban)
                        OUTPUT INSERTED.MaSP
-                       VALUES (@Ten, @Loai, @Kichthuoc, @Mausac, @Dongia)";
+                       VALUES (@MaSP, @Ten, @Loai, @Kichthuoc, @Mausac, @Dongia)";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@MaSP", sp.MaSP);
                 cmd.Parameters.AddWithValue("@Ten", sp.Tensanpham);
                 cmd.Parameters.AddWithValue("@Loai", sp.Loai);
                 cmd.Parameters.AddWithValue("@Kichthuoc", sp.Kichthuoc);
                 cmd.Parameters.AddWithValue("@Mausac", sp.Mausac);
                 cmd.Parameters.AddWithValue("@Dongia", sp.Dongia);
 
-                object result = cmd.ExecuteScalar();
-                if (result != null)
-                {
-                    maSP = Convert.ToInt32(result); // ✅ Lấy mã sản phẩm vừa được SQL sinh
-                }
+                cmd.ExecuteNonQuery(); // Không cần lấy lại ID nữa
             }
-            return maSP;
+            return true;
         }
 
+        public bool ThemKhachHang(khachhang kh)
+        {
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
+            {
+                conn.Open();
+
+                // 1. Kiểm tra MaKH trùng
+                string checkMaKHQuery = "SELECT COUNT(*) FROM khachhang WHERE MaKH = @MaKH";
+                using (SqlCommand checkCmd = new SqlCommand(checkMaKHQuery, conn))
+                {
+                    checkCmd.Parameters.AddWithValue("@MaKH", kh.MaKH);
+                    int count = (int)checkCmd.ExecuteScalar();
+                    if (count > 0)
+                    {
+                        MessageBox.Show("Mã khách hàng đã tồn tại!");
+                        return false;
+                    }
+                }
+
+                // 2. Nếu có tài khoản, kiểm tra tồn tại trong bảng taikhoan
+                if (!string.IsNullOrEmpty(kh.Tentaikhoan))
+                {
+                    string checkTKQuery = "SELECT COUNT(*) FROM taikhoan WHERE Tentaikhoan = @tk";
+                    using (SqlCommand checkTKCmd = new SqlCommand(checkTKQuery, conn))
+                    {
+                        checkTKCmd.Parameters.AddWithValue("@tk", kh.Tentaikhoan);
+                        int countTK = (int)checkTKCmd.ExecuteScalar();
+
+                        // Nếu chưa có thì thêm mới tài khoản
+                        if (countTK == 0)
+                        {
+                            string insertTK = "INSERT INTO taikhoan (Tentaikhoan, Matkhau, Email) VALUES (@tk, @pass, @email)";
+                            using (SqlCommand insertTKCmd = new SqlCommand(insertTK, conn))
+                            {
+                                insertTKCmd.Parameters.AddWithValue("@tk", kh.Tentaikhoan);
+                                insertTKCmd.Parameters.AddWithValue("@pass", "123"); // Mật khẩu mặc định
+                                insertTKCmd.Parameters.AddWithValue("@email", string.IsNullOrEmpty(kh.Email) ? "unknown@email.com" : kh.Email);
+                                insertTKCmd.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                }
+
+                // 3. Thêm khách hàng
+                string insertKH = @"INSERT INTO khachhang (MaKH, Hoten, SDT, Diachi, Email, Tentaikhoan)
+                            VALUES (@MaKH, @HoTen, @SDT, @Diachi, @Email, @Tentaikhoan)";
+                using (SqlCommand cmd = new SqlCommand(insertKH, conn))
+                {
+                    cmd.Parameters.AddWithValue("@MaKH", kh.MaKH);
+                    cmd.Parameters.AddWithValue("@HoTen", kh.Hoten);
+                    cmd.Parameters.AddWithValue("@SDT", string.IsNullOrEmpty(kh.SDT) ? (object)DBNull.Value : kh.SDT);
+                    cmd.Parameters.AddWithValue("@Diachi", string.IsNullOrEmpty(kh.Diachi) ? (object)DBNull.Value : kh.Diachi);
+                    cmd.Parameters.AddWithValue("@Email", string.IsNullOrEmpty(kh.Email) ? (object)DBNull.Value : kh.Email);
+                    cmd.Parameters.AddWithValue("@Tentaikhoan", string.IsNullOrEmpty(kh.Tentaikhoan) ? (object)DBNull.Value : kh.Tentaikhoan);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            return true;
+        }
         public void Commad(string query)// dùng để đăng ký tài khoản
         {
             using (SqlConnection sqlConnection = ketnoi.GetSqlConnection())

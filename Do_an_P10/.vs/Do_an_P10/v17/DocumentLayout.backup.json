@@ -3,47 +3,16 @@
   "WorkspaceRootPath": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|e:\\\u0111\u1ED3\u00E1n\\p10_doan\\do_an_p10\\do_an_p10\\tt_muahang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\tt_muahang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\do_an_p10\\tt_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\tt_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|e:\\\u0111\u1ED3\u00E1n\\p10_doan\\do_an_p10\\do_an_p10\\tt_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\tt_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|e:\\\u0111\u1ED3\u00E1n\\p10_doan\\do_an_p10\\do_an_p10\\quenmatkhau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\quenmatkhau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|e:\\\u0111\u1ED3\u00E1n\\p10_doan\\do_an_p10\\do_an_p10\\tt_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\tt_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|e:\\\u0111\u1ED3\u00E1n\\p10_doan\\do_an_p10\\do_an_p10\\ql_ecostraws.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\ql_ecostraws.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|e:\\\u0111\u1ED3\u00E1n\\p10_doan\\do_an_p10\\do_an_p10\\giohangform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\giohangform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|e:\\\u0111\u1ED3\u00E1n\\p10_doan\\do_an_p10\\do_an_p10\\ecostraws.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\ecostraws.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\do_an_p10\\dangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\dangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/E__\u0110\u1ED2\u00C1N_P10_DOAN_DO_AN_P10_DO_AN_P10_DATA_DO_AN.MDF/True/SqlTable/dbo.khachhang.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|e:\\\u0111\u1ED3\u00E1n\\p10_doan\\do_an_p10\\do_an_p10\\ql_ecostraws.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\ql_ecostraws.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\do_an_p10\\dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|e:\\\u0111\u1ED3\u00E1n\\p10_doan\\do_an_p10\\do_an_p10\\modify.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\modify.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,120 +27,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "tt_muahang.cs [Design]",
-              "DocumentMoniker": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\tt_muahang.cs",
-              "RelativeDocumentMoniker": "Do_an_P10\\tt_muahang.cs",
-              "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\tt_muahang.cs [Design]",
-              "RelativeToolTip": "Do_an_P10\\tt_muahang.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T04:28:23.763Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "quenmatkhau.cs [Design]",
-              "DocumentMoniker": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\quenmatkhau.cs",
-              "RelativeDocumentMoniker": "Do_an_P10\\quenmatkhau.cs",
-              "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\quenmatkhau.cs [Design]",
-              "RelativeToolTip": "Do_an_P10\\quenmatkhau.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T04:26:25.714Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GioHangForm.cs [Design]",
-              "DocumentMoniker": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\GioHangForm.cs",
-              "RelativeDocumentMoniker": "Do_an_P10\\GioHangForm.cs",
-              "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\GioHangForm.cs [Design]",
-              "RelativeToolTip": "Do_an_P10\\GioHangForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T04:26:08.446Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "EcoStraws.cs [Design]",
-              "DocumentMoniker": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\EcoStraws.cs",
-              "RelativeDocumentMoniker": "Do_an_P10\\EcoStraws.cs",
-              "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\EcoStraws.cs [Design]",
-              "RelativeToolTip": "Do_an_P10\\EcoStraws.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T04:25:34.208Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "dbo.khachhang [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/E__\u0110\u1ED2\u00C1N_P10_DOAN_DO_AN_P10_DO_AN_P10_DATA_DO_AN.MDF/True/SqlTable/dbo.khachhang.sql",
-              "ToolTip": "dbo.khachhang [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-07-07T04:24:21.469Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "QL_EcoStraws.cs",
-              "DocumentMoniker": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\QL_EcoStraws.cs",
-              "RelativeDocumentMoniker": "Do_an_P10\\QL_EcoStraws.cs",
-              "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\QL_EcoStraws.cs",
-              "RelativeToolTip": "Do_an_P10\\QL_EcoStraws.cs",
-              "ViewState": "AgIAAMMAAAAAAAAAAAAkwNMAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T03:07:20.984Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "QL_EcoStraws.cs [Design]",
-              "DocumentMoniker": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\QL_EcoStraws.cs",
-              "RelativeDocumentMoniker": "Do_an_P10\\QL_EcoStraws.cs",
-              "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\QL_EcoStraws.cs [Design]",
-              "RelativeToolTip": "Do_an_P10\\QL_EcoStraws.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T03:04:16.357Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Dangky.cs [Design]",
-              "DocumentMoniker": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Dangky.cs",
-              "RelativeDocumentMoniker": "Do_an_P10\\Dangky.cs",
-              "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Dangky.cs [Design]",
-              "RelativeToolTip": "Do_an_P10\\Dangky.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T02:59:05.257Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Dangnhap.cs [Design]",
-              "DocumentMoniker": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Dangnhap.cs",
-              "RelativeDocumentMoniker": "Do_an_P10\\Dangnhap.cs",
-              "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Dangnhap.cs [Design]",
-              "RelativeToolTip": "Do_an_P10\\Dangnhap.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T02:59:03.281Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Tt_khachhang.cs",
               "DocumentMoniker": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Tt_khachhang.cs",
               "RelativeDocumentMoniker": "Do_an_P10\\Tt_khachhang.cs",
               "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Tt_khachhang.cs",
               "RelativeToolTip": "Do_an_P10\\Tt_khachhang.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAMwEEAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAA8wEMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T02:48:18.753Z",
+              "WhenOpened": "2025-07-07T20:37:40.305Z",
               "EditorCaption": ""
             },
             {
@@ -183,8 +46,21 @@
               "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Tt_khachhang.cs [Design]",
               "RelativeToolTip": "Do_an_P10\\Tt_khachhang.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T02:43:05.371Z",
+              "WhenOpened": "2025-07-07T20:37:37.272Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Modify.cs",
+              "DocumentMoniker": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Modify.cs",
+              "RelativeDocumentMoniker": "Do_an_P10\\Modify.cs",
+              "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Modify.cs",
+              "RelativeToolTip": "Do_an_P10\\Modify.cs",
+              "ViewState": "AgIAAJ4AAAAAAAAAAAAmwNgAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T18:22:40.537Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -53,7 +53,7 @@
             btnxoa = new Button();
             btnsua = new Button();
             btntimkiem = new Button();
-            btnluu = new Button();
+            btnThemKH = new Button();
             btnthem = new Button();
             g = new TextBox();
             label7 = new Label();
@@ -73,12 +73,10 @@
             grpDS = new GroupBox();
             dGVKhachHang = new DataGridView();
             grpDM = new GroupBox();
-            LuuBtn = new Button();
             TimKiemBtnKH = new Button();
             LamMoiBtnKH = new Button();
             XoaBtnKH = new Button();
             SuaBtnKH = new Button();
-            ThemBtnKH = new Button();
             txtTenTK = new TextBox();
             txtEmail = new TextBox();
             txtDiaChi = new TextBox();
@@ -95,6 +93,8 @@
             txtTimKiem = new TextBox();
             panel2 = new Panel();
             label8 = new Label();
+            ThemKHBtn = new Button();
+            btnLuuKH = new Button();
             menu.SuspendLayout();
             panelkho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -353,7 +353,7 @@
             groupBox1.Controls.Add(btnxoa);
             groupBox1.Controls.Add(btnsua);
             groupBox1.Controls.Add(btntimkiem);
-            groupBox1.Controls.Add(btnluu);
+            groupBox1.Controls.Add(btnThemKH);
             groupBox1.Controls.Add(btnthem);
             groupBox1.Controls.Add(g);
             groupBox1.Controls.Add(label7);
@@ -425,17 +425,17 @@
             btntimkiem.UseVisualStyleBackColor = true;
             btntimkiem.Click += btntimkiem_Click;
             // 
-            // btnluu
+            // btnThemKH
             // 
-            btnluu.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnluu.Location = new Point(187, 337);
-            btnluu.Margin = new Padding(2);
-            btnluu.Name = "btnluu";
-            btnluu.Size = new Size(70, 21);
-            btnluu.TabIndex = 2;
-            btnluu.Text = "Lưu";
-            btnluu.UseVisualStyleBackColor = true;
-            btnluu.Click += btnluu_Click;
+            btnThemKH.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnThemKH.Location = new Point(187, 337);
+            btnThemKH.Margin = new Padding(2);
+            btnThemKH.Name = "btnThemKH";
+            btnThemKH.Size = new Size(70, 21);
+            btnThemKH.TabIndex = 2;
+            btnThemKH.Text = "Lưu";
+            btnThemKH.UseVisualStyleBackColor = true;
+            btnThemKH.Click += btnluu_Click;
             // 
             // btnthem
             // 
@@ -608,7 +608,7 @@
             panelKhachHang.Controls.Add(grpDM);
             panelKhachHang.Controls.Add(grpTimKIem);
             panelKhachHang.Controls.Add(panel2);
-            panelKhachHang.Location = new Point(215, 48);
+            panelKhachHang.Location = new Point(215, 51);
             panelKhachHang.Name = "panelKhachHang";
             panelKhachHang.Size = new Size(718, 462);
             panelKhachHang.TabIndex = 2;
@@ -636,12 +636,12 @@
             // 
             // grpDM
             // 
-            grpDM.Controls.Add(LuuBtn);
+            grpDM.Controls.Add(btnLuuKH);
+            grpDM.Controls.Add(ThemKHBtn);
             grpDM.Controls.Add(TimKiemBtnKH);
             grpDM.Controls.Add(LamMoiBtnKH);
             grpDM.Controls.Add(XoaBtnKH);
             grpDM.Controls.Add(SuaBtnKH);
-            grpDM.Controls.Add(ThemBtnKH);
             grpDM.Controls.Add(txtTenTK);
             grpDM.Controls.Add(txtEmail);
             grpDM.Controls.Add(txtDiaChi);
@@ -661,17 +661,6 @@
             grpDM.TabIndex = 2;
             grpDM.TabStop = false;
             grpDM.Text = "Danh Mục";
-            // 
-            // LuuBtn
-            // 
-            LuuBtn.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            LuuBtn.Location = new Point(182, 339);
-            LuuBtn.Name = "LuuBtn";
-            LuuBtn.Size = new Size(75, 23);
-            LuuBtn.TabIndex = 17;
-            LuuBtn.Text = "Lưu";
-            LuuBtn.UseVisualStyleBackColor = true;
-            LuuBtn.Click += LuuBtn_Click;
             // 
             // TimKiemBtnKH
             // 
@@ -716,17 +705,6 @@
             SuaBtnKH.Text = "Sửa";
             SuaBtnKH.UseVisualStyleBackColor = true;
             SuaBtnKH.Click += SuaBtnKH_Click;
-            // 
-            // ThemBtnKH
-            // 
-            ThemBtnKH.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ThemBtnKH.Location = new Point(11, 313);
-            ThemBtnKH.Name = "ThemBtnKH";
-            ThemBtnKH.Size = new Size(75, 23);
-            ThemBtnKH.TabIndex = 12;
-            ThemBtnKH.Text = "Thêm";
-            ThemBtnKH.UseVisualStyleBackColor = true;
-            ThemBtnKH.Click += ThemBtnKH_Click;
             // 
             // txtTenTK
             // 
@@ -882,6 +860,28 @@
             label8.TabIndex = 0;
             label8.Text = "QUẢN LÝ KHÁCH HÀNG";
             // 
+            // ThemKHBtn
+            // 
+            ThemKHBtn.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ThemKHBtn.Location = new Point(11, 313);
+            ThemKHBtn.Name = "ThemKHBtn";
+            ThemKHBtn.Size = new Size(75, 23);
+            ThemKHBtn.TabIndex = 17;
+            ThemKHBtn.Text = "Thêm";
+            ThemKHBtn.UseVisualStyleBackColor = true;
+            ThemKHBtn.Click += ThemKHBtn_Click;
+            // 
+            // btnLuuKH
+            // 
+            btnLuuKH.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLuuKH.Location = new Point(182, 339);
+            btnLuuKH.Name = "btnLuuKH";
+            btnLuuKH.Size = new Size(75, 23);
+            btnLuuKH.TabIndex = 18;
+            btnLuuKH.Text = "Lưu";
+            btnLuuKH.UseVisualStyleBackColor = true;
+            btnLuuKH.Click += btnLuuKH_Click;
+            // 
             // QL_EcoStraws
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -960,7 +960,7 @@
         private GroupBox groupBox2;
         private TextBox tk;
         private Button btntimkiem;
-        private Button btnluu;
+        private Button btnThemKH;
         private DataGridView datasp;
         private Button rs;
         private Panel panelKhachHang;
@@ -984,11 +984,11 @@
         private TextBox txtEmail;
         private Button XoaBtnKH;
         private Button SuaBtnKH;
-        private Button ThemBtnKH;
-        private Button LuuBtn;
         private Button TimKiemBtnKH;
         private Button LamMoiBtnKH;
         private DataGridView dGVKhachHang;
         private LinkLabel linkThoat;
+        private Button btnLuuKH;
+        private Button ThemKHBtn;
     }
 }
