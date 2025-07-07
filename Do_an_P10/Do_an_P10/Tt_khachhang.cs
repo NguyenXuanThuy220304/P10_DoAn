@@ -19,10 +19,7 @@ namespace Do_an_P10
             this.tentk = tentk;
         }
         Modify modify = new Modify();
-        private void label2_Click(object sender, EventArgs e)
-        {
 
-        }
         private void Tt_khachhang_Load(object sender, EventArgs e)
         {
             MessageBox.Show("tentk: '" + tentk + "'");
@@ -32,7 +29,7 @@ namespace Do_an_P10
 
         }
         private void luu_Click(object sender, EventArgs e)
-        {   
+        {
             String hoten = ht.Text;
             String sodt = sdt.Text;
             String diachi = ad.Text;
@@ -72,5 +69,11 @@ namespace Do_an_P10
             ttk.ReadOnly = true;
         }
 
+        private void btnQL_Click(object sender, EventArgs e)
+        {
+            Dangnhap dn = new Dangnhap();
+            dn.Show();
+            this.Hide();
+        }
     }
 }

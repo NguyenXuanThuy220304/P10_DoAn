@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QL_EcoStraws));
             menu = new Panel();
+            linkThoat = new LinkLabel();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
@@ -113,7 +114,8 @@
             // 
             // menu
             // 
-            menu.BackColor = Color.MediumSpringGreen;
+            menu.BackColor = Color.Honeydew;
+            menu.Controls.Add(linkThoat);
             menu.Controls.Add(button3);
             menu.Controls.Add(button2);
             menu.Controls.Add(button1);
@@ -128,8 +130,21 @@
             menu.Margin = new Padding(3, 2, 3, 2);
             menu.Name = "menu";
             menu.Padding = new Padding(3, 2, 3, 2);
-            menu.Size = new Size(184, 506);
+            menu.Size = new Size(184, 553);
             menu.TabIndex = 0;
+            // 
+            // linkThoat
+            // 
+            linkThoat.AutoSize = true;
+            linkThoat.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            linkThoat.LinkColor = Color.Black;
+            linkThoat.Location = new Point(6, 527);
+            linkThoat.Name = "linkThoat";
+            linkThoat.Size = new Size(65, 15);
+            linkThoat.TabIndex = 9;
+            linkThoat.TabStop = true;
+            linkThoat.Text = "Đăng Xuất";
+            linkThoat.LinkClicked += linkThoat_LinkClicked;
             // 
             // button3
             // 
@@ -277,7 +292,7 @@
             sanp.Controls.Add(groupBox2);
             sanp.Controls.Add(groupBox1);
             sanp.Controls.Add(panel1);
-            sanp.Location = new Point(215, 26);
+            sanp.Location = new Point(215, 47);
             sanp.Margin = new Padding(2);
             sanp.Name = "sanp";
             sanp.Size = new Size(718, 462);
@@ -593,7 +608,7 @@
             panelKhachHang.Controls.Add(grpDM);
             panelKhachHang.Controls.Add(grpTimKIem);
             panelKhachHang.Controls.Add(panel2);
-            panelKhachHang.Location = new Point(215, 26);
+            panelKhachHang.Location = new Point(215, 48);
             panelKhachHang.Name = "panelKhachHang";
             panelKhachHang.Size = new Size(718, 462);
             panelKhachHang.TabIndex = 2;
@@ -873,7 +888,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(965, 506);
+            ClientSize = new Size(965, 553);
             Controls.Add(panelKhachHang);
             Controls.Add(sanp);
             Controls.Add(menu);
@@ -883,6 +898,7 @@
             Text = "QL_EcoStraws";
             Load += QL_EcoStraws_Load;
             menu.ResumeLayout(false);
+            menu.PerformLayout();
             panelkho.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             sanp.ResumeLayout(false);
@@ -973,5 +989,6 @@
         private Button TimKiemBtnKH;
         private Button LamMoiBtnKH;
         private DataGridView dGVKhachHang;
+        private LinkLabel linkThoat;
     }
 }

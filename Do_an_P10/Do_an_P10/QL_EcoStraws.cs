@@ -204,5 +204,12 @@ namespace Do_an_P10
         {
 
         }
+
+        private void linkThoat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+           Dangnhap dn = new Dangnhap();
+            dn.Show();
+            this.Hide();
+        }
     }
 }
