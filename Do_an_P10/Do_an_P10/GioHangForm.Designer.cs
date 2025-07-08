@@ -56,10 +56,8 @@
             groupBox1.Font = new Font("Times New Roman", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.ForeColor = SystemColors.ControlText;
             groupBox1.Location = new Point(1, 1);
-            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(948, 552);
+            groupBox1.Size = new Size(1083, 736);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Giỏ hàng của bạn";
@@ -75,9 +73,11 @@
             groupBox2.Controls.Add(labelSDT);
             groupBox2.Controls.Add(labelHT);
             groupBox2.Font = new Font("Times New Roman", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox2.Location = new Point(22, 70);
+            groupBox2.Location = new Point(25, 93);
+            groupBox2.Margin = new Padding(3, 4, 3, 4);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(404, 402);
+            groupBox2.Padding = new Padding(3, 4, 3, 4);
+            groupBox2.Size = new Size(462, 536);
             groupBox2.TabIndex = 3;
             groupBox2.TabStop = false;
             groupBox2.Text = "Thông Tin Khách hàng";
@@ -87,10 +87,11 @@
             txtEmail.BackColor = Color.White;
             txtEmail.BorderStyle = BorderStyle.FixedSingle;
             txtEmail.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtEmail.Location = new Point(19, 329);
+            txtEmail.Location = new Point(22, 439);
+            txtEmail.Margin = new Padding(3, 4, 3, 4);
             txtEmail.Name = "txtEmail";
             txtEmail.ReadOnly = true;
-            txtEmail.Size = new Size(361, 29);
+            txtEmail.Size = new Size(412, 35);
             txtEmail.TabIndex = 7;
             // 
             // txtDiaChi
@@ -98,10 +99,11 @@
             txtDiaChi.BackColor = Color.White;
             txtDiaChi.BorderStyle = BorderStyle.FixedSingle;
             txtDiaChi.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtDiaChi.Location = new Point(19, 239);
+            txtDiaChi.Location = new Point(22, 319);
+            txtDiaChi.Margin = new Padding(3, 4, 3, 4);
             txtDiaChi.Name = "txtDiaChi";
             txtDiaChi.ReadOnly = true;
-            txtDiaChi.Size = new Size(361, 29);
+            txtDiaChi.Size = new Size(412, 35);
             txtDiaChi.TabIndex = 6;
             // 
             // txtSDT
@@ -109,10 +111,11 @@
             txtSDT.BackColor = Color.White;
             txtSDT.BorderStyle = BorderStyle.FixedSingle;
             txtSDT.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtSDT.Location = new Point(19, 154);
+            txtSDT.Location = new Point(22, 205);
+            txtSDT.Margin = new Padding(3, 4, 3, 4);
             txtSDT.Name = "txtSDT";
             txtSDT.ReadOnly = true;
-            txtSDT.Size = new Size(361, 29);
+            txtSDT.Size = new Size(412, 35);
             txtSDT.TabIndex = 5;
             // 
             // txtHoTen
@@ -120,19 +123,20 @@
             txtHoTen.BackColor = Color.White;
             txtHoTen.BorderStyle = BorderStyle.FixedSingle;
             txtHoTen.Font = new Font("Times New Roman", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtHoTen.Location = new Point(19, 75);
+            txtHoTen.Location = new Point(22, 100);
+            txtHoTen.Margin = new Padding(3, 4, 3, 4);
             txtHoTen.Name = "txtHoTen";
             txtHoTen.ReadOnly = true;
-            txtHoTen.Size = new Size(361, 29);
+            txtHoTen.Size = new Size(412, 35);
             txtHoTen.TabIndex = 4;
             // 
             // labelEmail
             // 
             labelEmail.AutoSize = true;
             labelEmail.Font = new Font("Times New Roman", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelEmail.Location = new Point(19, 303);
+            labelEmail.Location = new Point(22, 404);
             labelEmail.Name = "labelEmail";
-            labelEmail.Size = new Size(58, 23);
+            labelEmail.Size = new Size(77, 29);
             labelEmail.TabIndex = 3;
             labelEmail.Text = "Email";
             // 
@@ -140,9 +144,9 @@
             // 
             labelDC.AutoSize = true;
             labelDC.Font = new Font("Times New Roman", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelDC.Location = new Point(19, 213);
+            labelDC.Location = new Point(22, 284);
             labelDC.Name = "labelDC";
-            labelDC.Size = new Size(73, 23);
+            labelDC.Size = new Size(94, 29);
             labelDC.TabIndex = 2;
             labelDC.Text = "Địa Chỉ";
             // 
@@ -150,9 +154,9 @@
             // 
             labelSDT.AutoSize = true;
             labelSDT.Font = new Font("Times New Roman", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelSDT.Location = new Point(19, 128);
+            labelSDT.Location = new Point(22, 171);
             labelSDT.Name = "labelSDT";
-            labelSDT.Size = new Size(118, 23);
+            labelSDT.Size = new Size(150, 29);
             labelSDT.TabIndex = 1;
             labelSDT.Text = "Số điện thoại";
             // 
@@ -160,31 +164,29 @@
             // 
             labelHT.AutoSize = true;
             labelHT.Font = new Font("Times New Roman", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelHT.Location = new Point(19, 49);
+            labelHT.Location = new Point(22, 65);
             labelHT.Name = "labelHT";
-            labelHT.Size = new Size(66, 23);
+            labelHT.Size = new Size(82, 29);
             labelHT.TabIndex = 0;
             labelHT.Text = "Họ tên";
             // 
             // button2
             // 
             button2.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(770, 511);
-            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Location = new Point(880, 681);
             button2.Name = "button2";
-            button2.Size = new Size(136, 31);
+            button2.Size = new Size(155, 41);
             button2.TabIndex = 2;
             button2.Text = "Đặt hàng";
             button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            button2.Click += button2_Click_1;
             // 
             // button1
             // 
             button1.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(23, 507);
-            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Location = new Point(26, 676);
             button1.Name = "button1";
-            button1.Size = new Size(136, 31);
+            button1.Size = new Size(155, 41);
             button1.TabIndex = 1;
             button1.Text = "Quay lại";
             button1.UseVisualStyleBackColor = true;
@@ -194,21 +196,19 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.ImeMode = ImeMode.NoControl;
-            dataGridView1.Location = new Point(446, 36);
-            dataGridView1.Margin = new Padding(3, 2, 3, 2);
+            dataGridView1.Location = new Point(510, 48);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(460, 450);
+            dataGridView1.Size = new Size(526, 600);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // GioHangForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(951, 564);
+            ClientSize = new Size(1087, 752);
             Controls.Add(groupBox1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "GioHangForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "GioHangForm";

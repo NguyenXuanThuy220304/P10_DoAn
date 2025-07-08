@@ -1,44 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Do_an_P10;
 
-namespace Do_an_P10
+public class GioHangData
 {
-    public class GioHangData
+    private static GioHangData instance;
+    public static GioHangData Instance
     {
-        private static GioHangData instance;
-        public static GioHangData Instance
+        get
         {
-            get
-            {
-                if (instance == null)
-                    instance = new GioHangData();
-                return instance;
-            }
+            if (instance == null)
+                instance = new GioHangData();
+            return instance;
         }
+    }
 
-        public List<Giohang> DanhSachSanPham { get; private set; }
+    public List<Giohang> DanhSachSanPham { get; private set; }
 
-        private GioHangData()
+    private GioHangData()
+    {
+        DanhSachSanPham = new List<Giohang>();
+    }
+
+    public void ThemSanPham(Giohang item)
+    {
+        var spTonTai = DanhSachSanPham.FirstOrDefault(x => x.MaSP == item.MaSP);
+        if (spTonTai != null)
         {
-            DanhSachSanPham = new List<Giohang>();
+            spTonTai.SoLuong += item.SoLuong;
         }
-
-        public void ThemSanPham(Giohang item)
+        else
         {
             DanhSachSanPham.Add(item);
         }
+    }
 
-        public void XoaTatCa()
-        {
-            DanhSachSanPham.Clear();
-        }
+    public void XoaTatCa()
+    {
+        DanhSachSanPham.Clear();
+    }
 
-        public decimal TongTien()
-        {
-            return DanhSachSanPham.Sum(x => x.ThanhTien);
-        }
+    public decimal TongTien()
+    {
+        return DanhSachSanPham.Sum(x => x.ThanhTien);
     }
 }

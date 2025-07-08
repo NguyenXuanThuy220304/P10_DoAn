@@ -52,11 +52,39 @@ namespace Do_an_P10
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Thanh toán thành công!");
-            EcoStraws eco = new EcoStraws(tentk); eco.Show();
-            this.Hide();
+            var danhSachSanPham = GioHangData.Instance.DanhSachSanPham;
 
+            if (danhSachSanPham.Count == 0)
+            {
+                MessageBox.Show("Giỏ hàng đang trống!");
+                return;
+            }
+
+            int maKH = Modify.LayMaKhachHang(tentk);
+            DateTime ngayLap = DateTime.Now;
+            decimal tongTien = GioHangData.Instance.TongTien();
+
+            // 1. Thêm đơn hàng mới, lấy mã đơn hàng vừa thêm
+            int maDonHang = Modify.ThemDonHangVaLayMa(ngayLap, maKH, tongTien);
+
+            // 2. Thêm từng sản phẩm vào bảng ChiTietDonHang
+            foreach (var sp in danhSachSanPham)
+            {
+                Modify.ThemChiTietDonHang(maDonHang, sp.MaSP, sp.TenSanPham, sp.SoLuong, sp.DonGia);
+            }
+
+            MessageBox.Show("Thanh toán thành công!");
+
+            // Xóa giỏ hàng
+            GioHangData.Instance.XoaTatCa();
+
+            // Quay lại trang chính
+            EcoStraws eco = new EcoStraws(tentk);
+            eco.Show();
+            this.Hide();
         }
+
+
 
         private void GioHangForm_Load(object sender, EventArgs e)
         {
@@ -68,6 +96,39 @@ namespace Do_an_P10
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            var danhSachSanPham = GioHangData.Instance.DanhSachSanPham;
+            if (danhSachSanPham.Count == 0)
+            {
+                MessageBox.Show("Giỏ hàng đang trống!");
+                return;
+            }
+
+            int maKH = Modify.LayMaKhachHang(tentk); // Lấy mã khách từ tài khoản đăng nhập
+            DateTime ngayLap = DateTime.Now;
+            decimal tongTien = GioHangData.Instance.TongTien();
+
+            // Thêm đơn hàng mới và lấy mã đơn hàng vừa tạo
+            int maDonHang = Modify.ThemDonHangVaLayMa(ngayLap, maKH, tongTien);
+
+            // Thêm chi tiết đơn hàng
+            foreach (var sp in danhSachSanPham)
+            {
+                Modify.ThemChiTietDonHang(maDonHang, sp.MaSP,sp.TenSanPham, sp.SoLuong, sp.DonGia);
+            }
+
+            MessageBox.Show("Đặt hàng thành công!");
+
+            // Xóa giỏ hàng sau khi đặt
+            GioHangData.Instance.XoaTatCa();
+
+            // Mở form hóa đơn và truyền mã đơn hàng và mã khách
+            HoaDon hoaDonForm = new HoaDon(maDonHang, maKH, tentk);
+            hoaDonForm.Show();
+            this.Hide();
         }
     }
 }

@@ -8,6 +8,7 @@ namespace Do_an_P10
 {
     public class Giohang
     {
+        public int MaSP {  get; set; }
         public string TenSanPham { get; set; }
         public decimal DonGia { get; set; }
         public int SoLuong { get; set; }

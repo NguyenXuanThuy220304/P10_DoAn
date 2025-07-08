@@ -220,5 +220,140 @@ namespace Do_an_P10
                     return null;
             }
         }
+        public static int ThemDonHangVaLayMa(DateTime ngayLap, int maKH, decimal tongTien)
+        {
+            string query = "INSERT INTO DonHang (NgayLap, MaKH, TongTien, TrangThai) " +
+                           "OUTPUT INSERTED.MaDH " +
+                           "VALUES (@ngayLap, @maKH, @tongTien, N'Chưa thanh toán!')";
+
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@ngayLap", ngayLap);
+                cmd.Parameters.AddWithValue("@maKH", maKH);
+                cmd.Parameters.AddWithValue("@tongTien", tongTien);
+
+                conn.Open();
+                return (int)cmd.ExecuteScalar();
+            }
+        }
+
+        public static void ThemChiTietDonHang(int maDonHang, int maSP, string tensp, int soLuong, decimal donGia)
+        {
+            string query = "INSERT INTO CT_DonHang (MaDH, MaSP, Tensanpham, SoLuong, DonGia) " +
+                           "VALUES (@maDonHang, @maSP, @tensp, @soLuong, @donGia)";
+
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@maDonHang", maDonHang);
+                cmd.Parameters.AddWithValue("@maSP", maSP);
+                cmd.Parameters.AddWithValue("@tensp", tensp);
+                cmd.Parameters.AddWithValue("@soLuong", soLuong);
+                cmd.Parameters.AddWithValue("@donGia", donGia);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public static int LayMaKhachHang(string tenTaiKhoan)
+        {
+            int maKH = -1;
+
+            string query = "SELECT MaKH FROM khachhang WHERE Tentaikhoan = @tenTK";
+
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@TenTK", tenTaiKhoan);
+
+                conn.Open();
+                object result = cmd.ExecuteScalar();
+
+                if (result != null)
+                {
+                    maKH = Convert.ToInt32(result);
+                }
+            }
+
+            return maKH;
+        }
+        public static DataTable LayDonHang(int maDonHang)
+        {
+            DataTable dt = new DataTable();
+
+            string query = "SELECT MaDH, NgayLap, MaKH, TongTien, TrangThai FROM DonHang WHERE MaDH = @maDonHang";
+
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@maDonHang", maDonHang);
+                conn.Open();
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    dt.Load(reader);
+                }
+            }
+
+            return dt;
+        }
+        public static DataTable LayChiTietDonHang(int maDonHang)
+        {
+            DataTable dt = new DataTable();
+
+            string query = "SELECT MaSP, Tensanpham, SoLuong, DonGia FROM CT_DonHang WHERE MaDH = @maDonHang";
+
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@maDonHang", maDonHang);
+                conn.Open();
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    dt.Load(reader);
+                }
+            }
+
+            return dt;
+        }
+        public static DataTable LayThongTinKhachHang(int maKH)
+        {
+            DataTable dt = new DataTable();
+
+            string query = "SELECT Hoten, SDT, Diachi, Email FROM khachhang WHERE MaKH = @maKH";
+
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@maKH", maKH);
+                conn.Open();
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    dt.Load(reader);
+                }
+            }
+
+            return dt;
+        }
+        public static void CapNhatTrangThaiDonHang(int maDH, string trangThai)
+        {
+            string query = "UPDATE DonHang SET TrangThai = @trangThai WHERE MaDH = @maDH";
+
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@trangThai", trangThai);
+                cmd.Parameters.AddWithValue("@maDH", maDH);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+
     }
 }

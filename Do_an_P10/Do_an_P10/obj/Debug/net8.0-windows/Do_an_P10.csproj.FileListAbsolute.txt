@@ -128,3 +128,39 @@ C:\Users\Bui Thi Huong\OneDrive\Tài liệu\GitHub\P10_DoAn\Do_an_P10\Do_an_P1
 C:\Users\Bui Thi Huong\OneDrive\Tài liệu\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.pdb
 C:\Users\Bui Thi Huong\OneDrive\Tài liệu\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.genruntimeconfig.cache
 C:\Users\Bui Thi Huong\OneDrive\Tài liệu\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\ref\Do_an_P10.dll
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.csproj.AssemblyReference.cache
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.Dangky.resources
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.Dangnhap.resources
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.EcoStraws.resources
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.GioHangForm.resources
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.Properties.Resources.resources
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.QL_EcoStraws.resources
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.quenmatkhau.resources
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.Tt_khachhang.resources
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.tt_muahang.resources
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.csproj.GenerateResource.cache
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.AssemblyInfoInputs.cache
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.AssemblyInfo.cs
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.sourcelink.json
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.dll
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\refint\Do_an_P10.dll
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.pdb
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\Do_an_P10.exe
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\Dangky.cs
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\Do_an_P10.dll.config
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\Do_an_P10.deps.json
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\Do_an_P10.runtimeconfig.json
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\Do_an_P10.dll
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\Do_an_P10.pdb
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\System.Data.SqlClient.dll
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\System.Data.SqlClient.dll
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Data.SqlClient.dll
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.csproj.Up2Date
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.genruntimeconfig.cache
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\ref\Do_an_P10.dll
+C:\Users\HP\Documents\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.HoaDon.resources
