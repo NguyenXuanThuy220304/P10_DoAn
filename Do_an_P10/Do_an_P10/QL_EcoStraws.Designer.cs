@@ -73,6 +73,8 @@
             grpDS = new GroupBox();
             dGVKhachHang = new DataGridView();
             grpDM = new GroupBox();
+            btnLuuKH = new Button();
+            ThemKHBtn = new Button();
             TimKiemBtnKH = new Button();
             LamMoiBtnKH = new Button();
             XoaBtnKH = new Button();
@@ -93,8 +95,6 @@
             txtTimKiem = new TextBox();
             panel2 = new Panel();
             label8 = new Label();
-            ThemKHBtn = new Button();
-            btnLuuKH = new Button();
             menu.SuspendLayout();
             panelkho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -633,6 +633,7 @@
             dGVKhachHang.Name = "dGVKhachHang";
             dGVKhachHang.Size = new Size(384, 330);
             dGVKhachHang.TabIndex = 0;
+            dGVKhachHang.CellClick += sdGVKhachHang_CellClick;
             // 
             // grpDM
             // 
@@ -661,6 +662,28 @@
             grpDM.TabIndex = 2;
             grpDM.TabStop = false;
             grpDM.Text = "Danh Mục";
+            // 
+            // btnLuuKH
+            // 
+            btnLuuKH.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLuuKH.Location = new Point(182, 339);
+            btnLuuKH.Name = "btnLuuKH";
+            btnLuuKH.Size = new Size(75, 23);
+            btnLuuKH.TabIndex = 18;
+            btnLuuKH.Text = "Lưu";
+            btnLuuKH.UseVisualStyleBackColor = true;
+            btnLuuKH.Click += btnLuuKH_Click;
+            // 
+            // ThemKHBtn
+            // 
+            ThemKHBtn.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ThemKHBtn.Location = new Point(11, 313);
+            ThemKHBtn.Name = "ThemKHBtn";
+            ThemKHBtn.Size = new Size(75, 23);
+            ThemKHBtn.TabIndex = 17;
+            ThemKHBtn.Text = "Thêm";
+            ThemKHBtn.UseVisualStyleBackColor = true;
+            ThemKHBtn.Click += ThemKHBtn_Click;
             // 
             // TimKiemBtnKH
             // 
@@ -859,28 +882,6 @@
             label8.Size = new Size(256, 24);
             label8.TabIndex = 0;
             label8.Text = "QUẢN LÝ KHÁCH HÀNG";
-            // 
-            // ThemKHBtn
-            // 
-            ThemKHBtn.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ThemKHBtn.Location = new Point(11, 313);
-            ThemKHBtn.Name = "ThemKHBtn";
-            ThemKHBtn.Size = new Size(75, 23);
-            ThemKHBtn.TabIndex = 17;
-            ThemKHBtn.Text = "Thêm";
-            ThemKHBtn.UseVisualStyleBackColor = true;
-            ThemKHBtn.Click += ThemKHBtn_Click;
-            // 
-            // btnLuuKH
-            // 
-            btnLuuKH.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLuuKH.Location = new Point(182, 339);
-            btnLuuKH.Name = "btnLuuKH";
-            btnLuuKH.Size = new Size(75, 23);
-            btnLuuKH.TabIndex = 18;
-            btnLuuKH.Text = "Lưu";
-            btnLuuKH.UseVisualStyleBackColor = true;
-            btnLuuKH.Click += btnLuuKH_Click;
             // 
             // QL_EcoStraws
             // 

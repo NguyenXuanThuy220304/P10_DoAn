@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -28,7 +29,6 @@ namespace Do_an_P10
         {
             loaddata(); // Gọi hàm tải dữ liệu khi mở form
         }
-
         private void sp_Click(object sender, EventArgs e)
         {
             // Toggle panel sản phẩm
@@ -41,7 +41,6 @@ namespace Do_an_P10
                 panelkho.Visible = false;
             }
         }
-
         private void k_Click(object sender, EventArgs e)
         {
             panelkho.Visible = !panelkho.Visible;
@@ -52,12 +51,14 @@ namespace Do_an_P10
             datasp.DataSource = modify.GetDataTable(query);
         }
         List<sanpham> ds = new List<sanpham>();
+        bool dangThemSanPham = false;
         private void loadKhachHang()
         {
             string query = "SELECT * FROM khachhang";
             dGVKhachHang.DataSource = modify.GetDataTable(query);
         }
         List<khachhang> dskh = new List<khachhang>();
+        bool dangThemKhachHang = false; // Cờ xác định đang trong chế độ thêm
         private void btnthem_Click(object sender, EventArgs e)
         {
             if (!int.TryParse(msp.Text, out int masp))
@@ -78,6 +79,12 @@ namespace Do_an_P10
                 return;
             }
 
+            if (ds.Any(sp => sp.MaSP == masp))
+            {
+                MessageBox.Show("Mã sản phẩm đã tồn tại trong danh sách tạm!");
+                return;
+            }
+
             sanpham sp = new sanpham
             {
                 MaSP = masp,
@@ -88,14 +95,14 @@ namespace Do_an_P10
                 Dongia = gia
             };
 
-            ds.Add(sp); // ➕ Lưu vào danh sách tạm
-
+            ds.Add(sp);
             datasp.DataSource = null;
             datasp.DataSource = ds;
 
-            rs_Click(sender, e); // Xoá trắng các textbox nhập
-        }
+            dangThemSanPham = true;
 
+            ClearSanPhamForm();
+        }
         private void btnluu_Click(object sender, EventArgs e)
         {
             if (ds.Count == 0)
@@ -106,29 +113,31 @@ namespace Do_an_P10
 
             foreach (var sp in ds)
             {
-                modify.ThemSanPham(sp); // ✅ Chỉ cần gọi hàm này là đủ!
+                modify.ThemSanPham(sp);
             }
 
             MessageBox.Show("Lưu thành công vào cơ sở dữ liệu!");
 
-            ds.Clear(); // Xóa danh sách tạm
-            datasp.DataSource = null;
-            loaddata();
-        }
+            ds.Clear();
+            dangThemSanPham = false;
 
+            datasp.DataSource = null;
+            loaddata(); // Load từ CSDL
+        }
         private void btntimkiem_Click(object sender, EventArgs e)
         {
             if (int.TryParse(tk.Text, out int masp))
             {
                 string query = $"SELECT * FROM sanpham WHERE MaSP = {masp}";
                 datasp.DataSource = modify.GetDataTable(query);
+
+                dangThemSanPham = false;
             }
             else
             {
                 MessageBox.Show("Mã sản phẩm không hợp lệ!");
             }
         }
-
         private void btnsua_Click(object sender, EventArgs e)
         {
             if (!int.TryParse(msp.Text, out int masp)) { MessageBox.Show("Chọn sản phẩm để sửa!"); return; }
@@ -144,7 +153,6 @@ namespace Do_an_P10
             MessageBox.Show("Cập nhật thành công!");
             loaddata();
         }
-
         private void btnxoa_Click(object sender, EventArgs e)
         {
             if (!int.TryParse(msp.Text, out int masp)) { MessageBox.Show("Chọn sản phẩm để xóa!"); return; }
@@ -158,7 +166,6 @@ namespace Do_an_P10
                 loaddata();
             }
         }
-
         private void datasp_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -173,8 +180,7 @@ namespace Do_an_P10
                 g.Text = row.Cells["Giaban"].Value.ToString();
             }
         }
-
-        private void rs_Click(object sender, EventArgs e)
+        private void ClearSanPhamForm()
         {
             msp.Text = "";
             t.Text = "";
@@ -182,12 +188,24 @@ namespace Do_an_P10
             kt.Text = "";
             m.Text = "";
             g.Text = "";
-
-            // Nếu cần, đưa focus về ô nhập đầu tiên
+            tk.Text = "";
             t.Focus();
-            datasp.ClearSelection();
         }
+        private void rs_Click(object sender, EventArgs e)
+        {
+            ClearSanPhamForm();
+            datasp.ClearSelection();
 
+            if (dangThemSanPham)
+            {
+                datasp.DataSource = null;
+                datasp.DataSource = ds;
+            }
+            else
+            {
+                loaddata();
+            }
+        }
         private void kh_Click(object sender, EventArgs e)
         {
             panelKhachHang.Visible = !panelKhachHang.Visible;
@@ -199,34 +217,129 @@ namespace Do_an_P10
                 loadKhachHang();
             }
         }
-
+        private void sdGVKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dGVKhachHang.Rows[e.RowIndex];
+                txtMaKH.Text = row.Cells["MaKH"].Value.ToString();
+                txtHoTen.Text = row.Cells["Hoten"].Value.ToString();
+                txtSDT.Text = row.Cells["SDT"].Value.ToString();
+                txtDiaChi.Text = row.Cells["Diachi"].Value.ToString();
+                txtEmail.Text = row.Cells["Email"].Value.ToString();
+                txtTenTK.Text = row.Cells["Tentaikhoan"].Value.ToString();
+            }
+        }
         private void SuaBtnKH_Click(object sender, EventArgs e)
         {
+            if (!int.TryParse(txtMaKH.Text, out int makh))
+            {
+                MessageBox.Show("Chọn khách để sửa!");
+                return;
+            }
 
+            string query = @"UPDATE khachhang 
+                     SET Hoten = @hoten, SDT = @sdt, Diachi = @diachi, Email = @email, Tentaikhoan = @tentk 
+                     WHERE MaKH = @makh";
+
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@hoten", txtHoTen.Text);
+                    cmd.Parameters.AddWithValue("@sdt", txtSDT.Text);
+                    cmd.Parameters.AddWithValue("@diachi", txtDiaChi.Text);
+                    cmd.Parameters.AddWithValue("@email", txtEmail.Text);
+                    cmd.Parameters.AddWithValue("@tentk", txtTenTK.Text);
+                    cmd.Parameters.AddWithValue("@makh", makh);
+
+                    int rows = cmd.ExecuteNonQuery();
+                    if (rows > 0)
+                    {
+                        MessageBox.Show("Cập nhật thành công!");
+                        loadKhachHang();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy khách hàng để cập nhật.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
+            }
         }
-
         private void XoaBtnKH_Click(object sender, EventArgs e)
         {
+            if (!int.TryParse(txtMaKH.Text, out int makh))
+            {
+                MessageBox.Show("Vui lòng chọn khách hàng để xóa.");
+                return;
+            }
 
+            // Kiểm tra xem khách có đơn hàng không
+            string checkQuery = $"SELECT COUNT(*) FROM DonHang WHERE MaKH = {makh}";
+            int count = (int)modify.ExecuteScalar(checkQuery); // Giả sử bạn có hàm này trong lớp Modify
+
+            if (count > 0)
+            {
+                MessageBox.Show("Không thể xóa khách hàng vì đang có đơn hàng liên kết.");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng này?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                string query = $"DELETE FROM khachhang WHERE MaKH = {makh}";
+                modify.Commad(query);
+                MessageBox.Show("Xóa thành công!");
+                loadKhachHang();
+                LamMoiBtnKH_Click(sender, e);
+            }
         }
-
-        private void LamMoiBtnKH_Click(object sender, EventArgs e)
+        private void ClearKhachHangForm()
         {
             txtMaKH.Text = "";
             txtHoTen.Text = "";
             txtSDT.Text = "";
             txtDiaChi.Text = "";
             txtEmail.Text = "";
-            //txtTenTK = " ";
-
-            // Nếu cần, đưa focus về ô nhập đầu tiên
-            txtTenTK.Focus();
-            dGVKhachHang.ClearSelection();
+            txtTenTK.Text = "";
+            txtTimKiem.Text = "";
+            txtHoTen.Focus();
         }
+        private void LamMoiBtnKH_Click(object sender, EventArgs e)
+        {
+            ClearKhachHangForm();
+            dGVKhachHang.ClearSelection();
 
+            if (dangThemKhachHang)
+            {
+                dGVKhachHang.DataSource = null;
+                dGVKhachHang.DataSource = dskh;
+            }
+            else
+            {
+                loadKhachHang();
+            }
+        }
         private void TimKiemBtnKH_Click(object sender, EventArgs e)
         {
+            string tukhoa = txtTimKiem.Text.Trim();
 
+            if (string.IsNullOrEmpty(tukhoa))
+            {
+                MessageBox.Show("Vui lòng nhập tên hoặc email để tìm kiếm.");
+                return;
+            }
+
+            string query = $"SELECT * FROM khachhang WHERE Hoten LIKE N'%{tukhoa}%' OR Email LIKE N'%{tukhoa}%'";
+            dGVKhachHang.DataSource = modify.GetDataTable(query);
+
+            dangThemKhachHang = false;
         }
         private void linkThoat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -234,7 +347,6 @@ namespace Do_an_P10
             dn.Show();
             this.Hide();
         }
-
         private void ThemKHBtn_Click(object sender, EventArgs e)
         {
             if (!int.TryParse(txtMaKH.Text, out int makh))
@@ -249,7 +361,13 @@ namespace Do_an_P10
                 return;
             }
 
-            // Tạo đối tượng khách hàng, chấp nhận null cho tài khoản
+            // Kiểm tra trùng mã trong danh sách tạm
+            if (dskh.Any(x => x.MaKH == makh))
+            {
+                MessageBox.Show("Mã khách hàng đã tồn tại trong danh sách tạm!");
+                return;
+            }
+
             khachhang kh = new khachhang
             {
                 MaKH = makh,
@@ -260,14 +378,14 @@ namespace Do_an_P10
                 Tentaikhoan = string.IsNullOrWhiteSpace(txtTenTK.Text) ? null : txtTenTK.Text
             };
 
-            dskh.Add(kh); // Thêm vào danh sách tạm
-
+            dskh.Add(kh);
             dGVKhachHang.DataSource = null;
             dGVKhachHang.DataSource = dskh;
 
-            LamMoiBtnKH_Click(sender, e); // Xoá trắng các ô nhập
-        }
+            dangThemKhachHang = true;
 
+            ClearKhachHangForm();
+        }
         private void btnLuuKH_Click(object sender, EventArgs e)
         {
             if (dskh.Count == 0)
@@ -288,6 +406,8 @@ namespace Do_an_P10
             MessageBox.Show("Lưu thành công vào cơ sở dữ liệu!");
 
             dskh.Clear(); // Xoá danh sách tạm
+            dangThemKhachHang = false;
+
             dGVKhachHang.DataSource = null;
             loadKhachHang(); // Load lại danh sách từ DB
         }

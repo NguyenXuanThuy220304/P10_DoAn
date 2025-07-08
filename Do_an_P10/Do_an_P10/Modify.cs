@@ -353,7 +353,23 @@ namespace Do_an_P10
                 cmd.ExecuteNonQuery();
             }
         }
-
+        public object ExecuteScalar(string query)
+        {
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    return cmd.ExecuteScalar(); // Trả về giá trị duy nhất
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi truy vấn: " + ex.Message);
+                    return null;
+                }
+            }
+        }
 
     }
 }
