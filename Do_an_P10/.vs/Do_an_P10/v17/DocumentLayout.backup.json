@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|e:\\\u0111\u1ED3\u00E1n\\p10_doan\\do_an_p10\\do_an_p10\\modify.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\modify.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|e:\\\u0111\u1ED3\u00E1n\\p10_doan\\do_an_p10\\do_an_p10\\tt_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\tt_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|e:\\\u0111\u1ED3\u00E1n\\p10_doan\\do_an_p10\\do_an_p10\\tt_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\tt_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|e:\\\u0111\u1ED3\u00E1n\\p10_doan\\do_an_p10\\do_an_p10\\taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|e:\\\u0111\u1ED3\u00E1n\\p10_doan\\do_an_p10\\do_an_p10\\modify.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\modify.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\do_an_p10\\tt_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\tt_khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,24 +26,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Tt_khachhang.cs",
-              "DocumentMoniker": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Tt_khachhang.cs",
-              "RelativeDocumentMoniker": "Do_an_P10\\Tt_khachhang.cs",
-              "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Tt_khachhang.cs",
-              "RelativeToolTip": "Do_an_P10\\Tt_khachhang.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAA8wEMAAAANAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "taikhoan.cs",
+              "DocumentMoniker": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\taikhoan.cs",
+              "RelativeDocumentMoniker": "Do_an_P10\\taikhoan.cs",
+              "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\taikhoan.cs",
+              "RelativeToolTip": "Do_an_P10\\taikhoan.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAowBQAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T20:37:40.305Z",
+              "WhenOpened": "2025-07-08T01:42:14.818Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Tt_khachhang.cs",
+              "DocumentMoniker": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Tt_khachhang.cs",
+              "RelativeDocumentMoniker": "Do_an_P10\\Tt_khachhang.cs",
+              "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Tt_khachhang.cs",
+              "RelativeToolTip": "Do_an_P10\\Tt_khachhang.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAiwCAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-08T01:39:22.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Tt_khachhang.cs [Design]",
               "DocumentMoniker": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Tt_khachhang.cs",
               "RelativeDocumentMoniker": "Do_an_P10\\Tt_khachhang.cs",
@@ -51,13 +68,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Modify.cs",
               "DocumentMoniker": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Modify.cs",
               "RelativeDocumentMoniker": "Do_an_P10\\Modify.cs",
               "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Modify.cs",
               "RelativeToolTip": "Do_an_P10\\Modify.cs",
-              "ViewState": "AgIAAJ4AAAAAAAAAAAAmwNgAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAALMAAAAAAAAAAAAmwMwAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-07T18:22:40.537Z",
               "EditorCaption": ""

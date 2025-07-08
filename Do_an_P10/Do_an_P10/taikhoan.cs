@@ -18,7 +18,7 @@ namespace Do_an_P10
         {
             this.tentaikhoan = tentaikhoan;
             this.matkhau = matkhau;
-            email = email;
+            this.email = email;
         }
         public string Tentaikhoan { get => tentaikhoan; set => tentaikhoan = value; }
         public string Matkhau { get => matkhau; set => matkhau = value; }

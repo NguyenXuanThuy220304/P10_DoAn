@@ -152,7 +152,6 @@ namespace Do_an_P10
                         return false;
                     }
                 }
-
                 // 2. Nếu có tài khoản, kiểm tra tồn tại trong bảng taikhoan
                 if (!string.IsNullOrEmpty(kh.Tentaikhoan))
                 {
@@ -161,7 +160,6 @@ namespace Do_an_P10
                     {
                         checkTKCmd.Parameters.AddWithValue("@tk", kh.Tentaikhoan);
                         int countTK = (int)checkTKCmd.ExecuteScalar();
-
                         // Nếu chưa có thì thêm mới tài khoản
                         if (countTK == 0)
                         {
@@ -176,7 +174,6 @@ namespace Do_an_P10
                         }
                     }
                 }
-
                 // 3. Thêm khách hàng
                 string insertKH = @"INSERT INTO khachhang (MaKH, Hoten, SDT, Diachi, Email, Tentaikhoan)
                             VALUES (@MaKH, @HoTen, @SDT, @Diachi, @Email, @Tentaikhoan)";

@@ -212,16 +212,16 @@ namespace Do_an_P10
 
         private void LamMoiBtnKH_Click(object sender, EventArgs e)
         {
-            msp.Text = "";
-            t.Text = "";
-            l.Text = "";
-            kt.Text = "";
-            m.Text = "";
-            g.Text = "";
+            txtMaKH.Text = "";
+            txtHoTen.Text = "";
+            txtSDT.Text = "";
+            txtDiaChi.Text = "";
+            txtEmail.Text = "";
+            //txtTenTK = " ";
 
             // Nếu cần, đưa focus về ô nhập đầu tiên
-            t.Focus();
-            datasp.ClearSelection();
+            txtTenTK.Focus();
+            dGVKhachHang.ClearSelection();
         }
 
         private void TimKiemBtnKH_Click(object sender, EventArgs e)
