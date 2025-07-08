@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\HP\\Documents\\GitHub\\P10_DoAn\\Do_an_P10\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|c:\\users\\hp\\documents\\github\\p10_doan\\do_an_p10\\do_an_p10\\tyvexoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\tyvexoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Tyvexoa.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Documents\\GitHub\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Tyvexoa.cs",
+              "RelativeDocumentMoniker": "Do_an_P10\\Tyvexoa.cs",
+              "ToolTip": "C:\\Users\\HP\\Documents\\GitHub\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Tyvexoa.cs",
+              "RelativeToolTip": "Do_an_P10\\Tyvexoa.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-08T05:50:11.034Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
