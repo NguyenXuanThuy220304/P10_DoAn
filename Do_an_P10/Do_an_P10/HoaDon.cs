@@ -16,7 +16,7 @@ namespace Do_an_P10
         private int maKH;
         private int maDH;
         private string tentk;
-        public HoaDon(int maKH, int maDH, string tentk)
+        public HoaDon(int maDH, int maKH, string tentk)
         {
             InitializeComponent();
             this.maKH = maKH;
@@ -33,12 +33,13 @@ namespace Do_an_P10
             if (dtDonHang.Rows.Count > 0)
             {
                 var rowDH = dtDonHang.Rows[0];
-                mak.Text = rowDH["maKH"].ToString();
-                mad.Text = rowDH["maDH"].ToString();
+                mak.Text = rowDH["MaKH"].ToString();
+                mad.Text = rowDH["MaDH"].ToString();
                 date.Text = Convert.ToDateTime(rowDH["NgayLap"]).ToString("dd/MM/yyyy");
                 thanht.Text = string.Format("{0:N0} đ", rowDH["TongTien"]);
                 trangt.Text = rowDH["TrangThai"].ToString();
             }
+
         }
         private void label3_Click(object sender, EventArgs e)
         {

@@ -52,36 +52,6 @@ namespace Do_an_P10
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var danhSachSanPham = GioHangData.Instance.DanhSachSanPham;
-
-            if (danhSachSanPham.Count == 0)
-            {
-                MessageBox.Show("Giỏ hàng đang trống!");
-                return;
-            }
-
-            int maKH = Modify.LayMaKhachHang(tentk);
-            DateTime ngayLap = DateTime.Now;
-            decimal tongTien = GioHangData.Instance.TongTien();
-
-            // 1. Thêm đơn hàng mới, lấy mã đơn hàng vừa thêm
-            int maDonHang = Modify.ThemDonHangVaLayMa(ngayLap, maKH, tongTien);
-
-            // 2. Thêm từng sản phẩm vào bảng ChiTietDonHang
-            foreach (var sp in danhSachSanPham)
-            {
-                Modify.ThemChiTietDonHang(maDonHang, sp.MaSP, sp.TenSanPham, sp.SoLuong, sp.DonGia);
-            }
-
-            MessageBox.Show("Thanh toán thành công!");
-
-            // Xóa giỏ hàng
-            GioHangData.Instance.XoaTatCa();
-
-            // Quay lại trang chính
-            EcoStraws eco = new EcoStraws(tentk);
-            eco.Show();
-            this.Hide();
         }
 
 

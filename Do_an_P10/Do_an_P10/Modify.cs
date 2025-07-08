@@ -261,12 +261,12 @@ namespace Do_an_P10
         {
             int maKH = -1;
 
-            string query = "SELECT MaKH FROM khachhang WHERE Tentaikhoan = @tenTK";
+            string query = "SELECT MaKH FROM khachhang WHERE Tentaikhoan = @tk";
 
             using (SqlConnection conn = ketnoi.GetSqlConnection())
             using (SqlCommand cmd = new SqlCommand(query, conn))
             {
-                cmd.Parameters.AddWithValue("@TenTK", tenTaiKhoan);
+                cmd.Parameters.AddWithValue("@tk", tenTaiKhoan);
 
                 conn.Open();
                 object result = cmd.ExecuteScalar();
