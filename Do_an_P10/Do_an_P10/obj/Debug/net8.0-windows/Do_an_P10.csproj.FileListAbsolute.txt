@@ -52,9 +52,6 @@ D:\Du_An_Ban_Hang\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P1
 D:\Du_An_Ban_Hang\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.Tt_khachhang.resources
 D:\Du_An_Ban_Hang\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.tt_muahang.resources
 D:\Du_An_Ban_Hang\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.GioHangForm.resources
-D:\Du_An_Ban_Hang\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.QL_Donhang.resources
-D:\Du_An_Ban_Hang\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.QL_Khachhang.resources
-D:\Du_An_Ban_Hang\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.QL_Sanpham.resources
 C:\Users\Bui Thi Huong\OneDrive\Tài liệu\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\Do_an_P10.exe
 C:\Users\Bui Thi Huong\OneDrive\Tài liệu\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\Dangky.cs
 C:\Users\Bui Thi Huong\OneDrive\Tài liệu\GitHub\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\Do_an_P10.dll.config
@@ -165,3 +162,5 @@ E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\refint\Do_an_P
 E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.pdb
 E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.genruntimeconfig.cache
 E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\ref\Do_an_P10.dll
+D:\Du_An_Ban_Hang\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\Do_an_P10.dll.config
+D:\Du_An_Ban_Hang\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.HoaDon.resources

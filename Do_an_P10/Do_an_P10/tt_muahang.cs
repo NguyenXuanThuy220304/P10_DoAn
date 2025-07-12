@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace Do_an_P10
@@ -19,10 +20,11 @@ namespace Do_an_P10
             gia.Text = sp.Dongia.ToString();
             tensp.Text = sp.Tensanpham;
             anh.Image = sp.Hinhanh;
-
+            int slt = sp.Soluong ;
+            slton.Text = $"Số lượng: {slt}";
             // Thêm số lượng từ 1 đến 10 vào ListBox (hoặc ComboBox)
             sl.Items.Clear();
-            for (int i = 1; i <= 10; i++)
+            for (int i = 1; i <= slt; i++)
             {
                 sl.Items.Add(i.ToString());
             }
@@ -62,6 +64,11 @@ namespace Do_an_P10
             GioHangForm gioHangForm = new GioHangForm(tentk);
             gioHangForm.Show();
             this.Hide();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
