@@ -39,6 +39,8 @@ namespace Do_an_P10
             {
                 panelKhachHang.Visible = false;
                 panelkho.Visible = false;
+                
+                loaddata();
             }
         }
         private void k_Click(object sender, EventArgs e)
@@ -79,6 +81,12 @@ namespace Do_an_P10
                 return;
             }
 
+            if (!int.TryParse(txtSLNhap.Text, out int slnhap))
+            {
+                MessageBox.Show("Số lượng nhập không hợp lệ!");
+                return;
+            }
+
             if (ds.Any(sp => sp.MaSP == masp))
             {
                 MessageBox.Show("Mã sản phẩm đã tồn tại trong danh sách tạm!");
@@ -92,7 +100,9 @@ namespace Do_an_P10
                 Loai = l.Text,
                 Kichthuoc = kt.Text,
                 Mausac = m.Text,
-                Dongia = gia
+                Dongia = gia,
+                NgayNhap = dateNgayNhap.Value, // Giả sử đây là DateTimePicker
+                SoLuongNhap = slnhap
             };
 
             ds.Add(sp);
@@ -111,18 +121,22 @@ namespace Do_an_P10
                 return;
             }
 
+            int demThanhCong = 0;
             foreach (var sp in ds)
             {
-                modify.ThemSanPham(sp);
+                bool thanhCong = modify.ThemSanPham(sp); // Sửa phương thức này cho phù hợp
+                if (thanhCong)
+                    demThanhCong++;
             }
 
-            MessageBox.Show("Lưu thành công vào cơ sở dữ liệu!");
+            MessageBox.Show($"Đã lưu {demThanhCong} sản phẩm vào cơ sở dữ liệu.");
 
             ds.Clear();
             dangThemSanPham = false;
 
             datasp.DataSource = null;
             loaddata(); // Load từ CSDL
+
         }
         private void btntimkiem_Click(object sender, EventArgs e)
         {
@@ -147,23 +161,64 @@ namespace Do_an_P10
                 MessageBox.Show("Giá không hợp lệ!"); return;
             }
 
-            string query = $"UPDATE sanpham SET TenSP = N'{t.Text}', Loai = N'{l.Text}', Kichthuoc = N'{kt.Text}', Mausac = N'{m.Text}', Giaban = {dongia.ToString(System.Globalization.CultureInfo.InvariantCulture)} WHERE MaSP = {masp}";
-            modify.Commad(query);
+            if (!int.TryParse(txtSLNhap.Text, out int soluong))
+            {
+                MessageBox.Show("Số lượng nhập không hợp lệ!");
+                return;
+            }
+
+            DateTime ngaynhap = dateNgayNhap.Value;
+
+            string query = $@"
+                UPDATE sanpham 
+                SET 
+                TenSP = N'{t.Text}', 
+                Loai = N'{l.Text}', 
+                Kichthuoc = N'{kt.Text}', 
+                Mausac = N'{m.Text}', 
+                Giaban = {dongia.ToString(System.Globalization.CultureInfo.InvariantCulture)}, 
+                NgayNhap = @NgayNhap, 
+                SoLuongNhap = @SoLuongNhap
+                WHERE MaSP = {masp}";
+
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@NgayNhap", ngaynhap);
+                cmd.Parameters.AddWithValue("@SoLuongNhap", soluong);
+                cmd.ExecuteNonQuery();
+            }
 
             MessageBox.Show("Cập nhật thành công!");
             loaddata();
         }
         private void btnxoa_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(msp.Text, out int masp)) { MessageBox.Show("Chọn sản phẩm để xóa!"); return; }
+            if (!int.TryParse(msp.Text, out int masp))
+            {
+                MessageBox.Show("Vui lòng chọn sản phẩm hợp lệ để xóa!");
+                return;
+            }
 
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Xác nhận", MessageBoxButtons.YesNo);
+            // Xác nhận người dùng
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa sản phẩm này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
             if (result == DialogResult.Yes)
             {
-                string query = $"DELETE FROM sanpham WHERE MaSP = {masp}";
-                modify.Commad(query);
-                MessageBox.Show("Xóa thành công!");
-                loaddata();
+                try
+                {
+                    string query = $"DELETE FROM sanpham WHERE MaSP = {masp}";
+                    modify.Commad(query);
+
+                    MessageBox.Show("Đã xóa sản phẩm thành công!");
+                    loaddata();          // Reload DataGridView
+                    ClearSanPhamForm();  // Xoá dữ liệu nhập trên form
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khi xóa: " + ex.Message);
+                }
             }
         }
         private void datasp_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -189,6 +244,7 @@ namespace Do_an_P10
             m.Text = "";
             g.Text = "";
             tk.Text = "";
+            txtSLNhap.Text = "";
             t.Focus();
         }
         private void rs_Click(object sender, EventArgs e)
@@ -214,6 +270,7 @@ namespace Do_an_P10
             {
                 sanp.Visible = false;
                 panelkho.Visible = false;
+
                 loadKhachHang();
             }
         }
@@ -410,6 +467,16 @@ namespace Do_an_P10
 
             dGVKhachHang.DataSource = null;
             loadKhachHang(); // Load lại danh sách từ DB
+        }
+
+        private void panelKhachHang_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dh_Click(object sender, EventArgs e)
+        {
+         
         }
     }
 }

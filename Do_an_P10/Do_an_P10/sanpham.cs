@@ -17,6 +17,8 @@ namespace Do_an_P10
         public decimal Dongia { get; set; }
         public int Soluong { get; set; }
         public Image Hinhanh { get; set; }
+        public DateTime NgayNhap { get; set; }
+        public int SoLuongNhap { get; set; }
 
         public sanpham() { }
 
@@ -30,6 +32,7 @@ namespace Do_an_P10
             Loai = loai;
             Kichthuoc = kichthuoc;
             Mausac = mausac;
+           
         }
     }
 }

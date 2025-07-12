@@ -100,36 +100,40 @@ namespace Do_an_P10
         }
         public bool ThemSanPham(sanpham sp)
         {
-            int maSP = -1;
             using (SqlConnection conn = ketnoi.GetSqlConnection())
             {
                 conn.Open();
 
-                // Kiểm tra MaSP có bị trùng không
+                // Kiểm tra mã sản phẩm trùng
                 string checkQuery = "SELECT COUNT(*) FROM sanpham WHERE MaSP = @MaSP";
-                SqlCommand checkCmd = new SqlCommand(checkQuery, conn);
-                checkCmd.Parameters.AddWithValue("@MaSP", sp.MaSP);
-                int count = (int)checkCmd.ExecuteScalar();
-
-                if (count > 0)
+                using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
                 {
-                    MessageBox.Show("Mã sản phẩm đã tồn tại!");
-                    return false;
+                    checkCmd.Parameters.AddWithValue("@MaSP", sp.MaSP);
+                    int count = (int)checkCmd.ExecuteScalar();
+
+                    if (count > 0)
+                    {
+                        MessageBox.Show("Mã sản phẩm đã tồn tại!");
+                        return false;
+                    }
                 }
 
-                string sql = @"INSERT INTO sanpham (MaSP, TenSP, Loai, Kichthuoc, Mausac, Giaban)
-                       OUTPUT INSERTED.MaSP
-                       VALUES (@MaSP, @Ten, @Loai, @Kichthuoc, @Mausac, @Dongia)";
+                string sql = @"INSERT INTO sanpham (MaSP, TenSP, Loai, Kichthuoc, Mausac, Giaban, NgayNhap, SoLuongNhap)
+                       VALUES (@MaSP, @Ten, @Loai, @Kichthuoc, @Mausac, @Dongia, @NgayNhap, @SoLuongNhap)";
 
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@MaSP", sp.MaSP);
-                cmd.Parameters.AddWithValue("@Ten", sp.Tensanpham);
-                cmd.Parameters.AddWithValue("@Loai", sp.Loai);
-                cmd.Parameters.AddWithValue("@Kichthuoc", sp.Kichthuoc);
-                cmd.Parameters.AddWithValue("@Mausac", sp.Mausac);
-                cmd.Parameters.AddWithValue("@Dongia", sp.Dongia);
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@MaSP", sp.MaSP);
+                    cmd.Parameters.AddWithValue("@Ten", sp.Tensanpham);
+                    cmd.Parameters.AddWithValue("@Loai", sp.Loai);
+                    cmd.Parameters.AddWithValue("@Kichthuoc", sp.Kichthuoc);
+                    cmd.Parameters.AddWithValue("@Mausac", sp.Mausac);
+                    cmd.Parameters.AddWithValue("@Dongia", sp.Dongia);
+                    cmd.Parameters.AddWithValue("@NgayNhap", sp.NgayNhap);
+                    cmd.Parameters.AddWithValue("@SoLuongNhap", sp.SoLuongNhap);
 
-                cmd.ExecuteNonQuery(); // Không cần lấy lại ID nữa
+                    cmd.ExecuteNonQuery();
+                }
             }
             return true;
         }
