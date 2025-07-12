@@ -3,23 +3,30 @@
   "WorkspaceRootPath": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/E__\u0110\u1ED2\u00C1N_P10_DOAN_DO_AN_P10_DO_AN_P10_DATA_DO_AN.MDF/True/SqlTable/dbo.sanpham.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|e:\\\u0111\u1ED3\u00E1n\\p10_doan\\do_an_p10\\do_an_p10\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|e:\\\u0111\u1ED3\u00E1n\\p10_doan\\do_an_p10\\do_an_p10\\ql_ecostraws.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\ql_ecostraws.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|e:\\\u0111\u1ED3\u00E1n\\p10_doan\\do_an_p10\\do_an_p10\\ql_ecostraws.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|e:\\\u0111\u1ED3\u00E1n\\p10_doan\\do_an_p10\\do_an_p10\\modify.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\modify.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|e:\\\u0111\u1ED3\u00E1n\\p10_doan\\do_an_p10\\do_an_p10\\sanphaminfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\sanphaminfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\do_an_p10\\ql_ecostraws.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\ql_ecostraws.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|e:\\\u0111\u1ED3\u00E1n\\p10_doan\\do_an_p10\\do_an_p10\\modify.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\modify.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|e:\\\u0111\u1ED3\u00E1n\\p10_doan\\do_an_p10\\do_an_p10\\chitietgiohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14C58308-F782-4A9D-AD09-B856B3C33E54}|Do_an_P10\\Do_an_P10.csproj|solutionrelative:do_an_p10\\chitietgiohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/E__\u0110\u1ED2\u00C1N_P10_DOAN_DO_AN_P10_DO_AN_P10_DATA_DO_AN.MDF/True/SqlTable/dbo.DonHang.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/E__\u0110\u1ED2\u00C1N_P10_DOAN_DO_AN_P10_DO_AN_P10_DATA_DO_AN.MDF/True/SqlTable/dbo.CT_DonHang.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,47 +36,83 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Modify.cs",
-              "DocumentMoniker": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Modify.cs",
-              "RelativeDocumentMoniker": "Do_an_P10\\Modify.cs",
-              "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Modify.cs",
-              "RelativeToolTip": "Do_an_P10\\Modify.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAgwHcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T18:20:27.989Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "dbo.sanpham [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/E__\u0110\u1ED2\u00C1N_P10_DOAN_DO_AN_P10_DO_AN_P10_DATA_DO_AN.MDF/True/SqlTable/dbo.sanpham.sql",
-              "ToolTip": "dbo.sanpham [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-07-12T18:19:07.818Z",
+              "DocumentIndex": 2,
+              "Title": "SanPhamInfo.cs",
+              "DocumentMoniker": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\SanPhamInfo.cs",
+              "RelativeDocumentMoniker": "Do_an_P10\\SanPhamInfo.cs",
+              "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\SanPhamInfo.cs",
+              "RelativeToolTip": "Do_an_P10\\SanPhamInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T22:13:32.374Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "sanpham.cs",
-              "DocumentMoniker": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\sanpham.cs",
-              "RelativeDocumentMoniker": "Do_an_P10\\sanpham.cs",
-              "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\sanpham.cs",
-              "RelativeToolTip": "Do_an_P10\\sanpham.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAA8wCIAAAALAAAAAAAAAA==",
+              "Title": "Modify.cs",
+              "DocumentMoniker": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Modify.cs",
+              "RelativeDocumentMoniker": "Do_an_P10\\Modify.cs",
+              "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\Modify.cs",
+              "RelativeToolTip": "Do_an_P10\\Modify.cs",
+              "ViewState": "AgIAAHgBAAAAAAAAAAAzwJYBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T18:02:56.487Z",
+              "WhenOpened": "2025-07-12T21:50:49.529Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "dbo.CT_DonHang [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/E__\u0110\u1ED2\u00C1N_P10_DOAN_DO_AN_P10_DO_AN_P10_DATA_DO_AN.MDF/True/SqlTable/dbo.CT_DonHang.sql",
+              "ToolTip": "dbo.CT_DonHang [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-07-12T21:15:51.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "dbo.DonHang [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/E__\u0110\u1ED2\u00C1N_P10_DOAN_DO_AN_P10_DO_AN_P10_DATA_DO_AN.MDF/True/SqlTable/dbo.DonHang.sql",
+              "ToolTip": "dbo.DonHang [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-07-12T21:11:18.374Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ChiTietGioHang.cs",
+              "DocumentMoniker": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\ChiTietGioHang.cs",
+              "RelativeDocumentMoniker": "Do_an_P10\\ChiTietGioHang.cs",
+              "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\ChiTietGioHang.cs",
+              "RelativeToolTip": "Do_an_P10\\ChiTietGioHang.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T20:23:18.447Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "QL_EcoStraws.cs",
+              "DocumentMoniker": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\QL_EcoStraws.cs",
+              "RelativeDocumentMoniker": "Do_an_P10\\QL_EcoStraws.cs",
+              "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\QL_EcoStraws.cs",
+              "RelativeToolTip": "Do_an_P10\\QL_EcoStraws.cs",
+              "ViewState": "AgIAAOkCAAAAAAAAAAAqwPgCAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-08T15:33:23.758Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -82,19 +125,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-12T18:02:43.538Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "QL_EcoStraws.cs",
-              "DocumentMoniker": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\QL_EcoStraws.cs",
-              "RelativeDocumentMoniker": "Do_an_P10\\QL_EcoStraws.cs",
-              "ToolTip": "E:\\\u0110\u1ED3\u00C1n\\P10_DoAn\\Do_an_P10\\Do_an_P10\\QL_EcoStraws.cs",
-              "RelativeToolTip": "Do_an_P10\\QL_EcoStraws.cs",
-              "ViewState": "AgIAAO0AAAAAAAAAAAA3wPYAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-08T15:33:23.758Z",
-              "EditorCaption": ""
             }
           ]
         }

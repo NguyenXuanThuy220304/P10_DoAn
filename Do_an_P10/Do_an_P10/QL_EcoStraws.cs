@@ -28,6 +28,12 @@ namespace Do_an_P10
         private void QL_EcoStraws_Load(object sender, EventArgs e)
         {
             loaddata(); // Gọi hàm tải dữ liệu khi mở form
+            LoadKhachHang_DH();
+            LoadSanPham_DH();
+            LoadTrangThai();
+            dgvDonHang.CellClick += dgvDonHang_CellClick;
+            cbSanPham.SelectedIndexChanged += cbSanPham_SelectedIndexChanged;
+
         }
         private void sp_Click(object sender, EventArgs e)
         {
@@ -39,7 +45,8 @@ namespace Do_an_P10
             {
                 panelKhachHang.Visible = false;
                 panelkho.Visible = false;
-                
+                panelDonhang.Visible = false;
+
                 loaddata();
             }
         }
@@ -60,6 +67,41 @@ namespace Do_an_P10
             dGVKhachHang.DataSource = modify.GetDataTable(query);
         }
         List<khachhang> dskh = new List<khachhang>();
+        private void LoadKhachHang_DH()
+        {
+            string query = "SELECT MaKH, Hoten FROM khachhang";
+            DataTable dt = modify.GetDataTable(query);
+            cbKhachHang.DataSource = dt;
+            cbKhachHang.DisplayMember = "Hoten";
+            cbKhachHang.ValueMember = "MaKH";
+        }
+
+        private void LoadSanPham_DH()
+        {
+            string query = "SELECT MaSP, TenSP FROM sanpham";
+            DataTable dt = modify.GetDataTable(query);
+            cbSanPham.DataSource = dt;
+            cbSanPham.DisplayMember = "TenSP";
+            cbSanPham.ValueMember = "MaSP";
+        }
+        private void LoadTrangThai()
+        {
+            cbTrangThai.Items.Clear();
+            cbTrangThai.Items.Add("Chờ xử lý");
+            cbTrangThai.Items.Add("Chưa Thanh Toán");
+            cbTrangThai.Items.Add("Đã Thanh Toán");
+            cbTrangThai.SelectedIndex = 0;
+        }
+        private void loadDonHang()
+        {
+            string query = @"
+                SELECT dh.MaDH, kh.Hoten, dh.NgayLap, dh.TongTien, dh.TrangThai
+                FROM DonHang dh
+                JOIN khachhang kh ON dh.MaKH = kh.MaKH
+                ORDER BY dh.MaDH DESC";
+            dgvDonHang.DataSource = modify.GetDataTable(query);
+        }
+        List<ChiTietGioHang> gioHang = new List<ChiTietGioHang>();
         bool dangThemKhachHang = false; // Cờ xác định đang trong chế độ thêm
         private void btnthem_Click(object sender, EventArgs e)
         {
@@ -270,6 +312,7 @@ namespace Do_an_P10
             {
                 sanp.Visible = false;
                 panelkho.Visible = false;
+                panelDonhang.Visible = false;
 
                 loadKhachHang();
             }
@@ -476,7 +519,247 @@ namespace Do_an_P10
 
         private void dh_Click(object sender, EventArgs e)
         {
-         
+            panelDonhang.Visible = !panelDonhang.Visible;
+
+            if (panelDonhang.Visible)
+            {
+                sanp.Visible = false;
+                panelKhachHang.Visible = false;
+                panelkho.Visible = false;
+
+                // Gọi hàm load đơn hàng nếu bạn có
+                loadDonHang();
+            }
+        }
+
+        private void btThemSP_Click(object sender, EventArgs e)
+        {
+            if (cbSanPham.SelectedItem == null || string.IsNullOrWhiteSpace(txtSoLuong.Text) || string.IsNullOrWhiteSpace(txtDonGia.Text))
+            {
+                MessageBox.Show("Vui lòng chọn sản phẩm và nhập số lượng, đơn giá.");
+                return;
+            }
+            int masp = (int)cbSanPham.SelectedValue;
+            string tensp = cbSanPham.Text;
+            int sl = int.Parse(txtSoLuong.Text);
+            decimal gia = decimal.Parse(txtDonGia.Text);
+
+            // Kiểm tra sản phẩm đã có trong giỏ chưa
+            ChiTietGioHang spTonTai = gioHang.FirstOrDefault(sp => sp.MaSP == masp);
+
+            if (spTonTai != null)
+            {
+                // Nếu có: cộng thêm số lượng và cập nhật thành tiền
+                spTonTai.SoLuong += sl;
+                spTonTai.DonGia = gia; // có thể giữ giá cũ nếu bạn muốn
+            }
+            else
+            {
+                // Nếu chưa có: thêm mới
+                ChiTietGioHang spMoi = new ChiTietGioHang
+                {
+                    MaSP = masp,
+                    TenSP = tensp,
+                    SoLuong = sl,
+                    DonGia = gia
+                };
+                gioHang.Add(spMoi);
+            }
+
+            // Refresh lại DataGridView
+            dgvGioHang.DataSource = null;
+            dgvGioHang.DataSource = gioHang;
+
+            // Cập nhật tổng tiền
+            lbTongTien.Text = "Tổng: " + gioHang.Sum(x => x.ThanhTien).ToString("N0") + " VNĐ";
+        }
+
+        private void btLuuDH_Click(object sender, EventArgs e)
+        {
+            if (cbKhachHang.SelectedItem == null || gioHang.Count == 0)
+            {
+                MessageBox.Show("Chọn khách hàng và thêm sản phẩm!");
+                return;
+            }
+
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
+            {
+                conn.Open();
+                SqlTransaction tran = conn.BeginTransaction();
+
+                try
+                {
+                    int makh = (int)cbKhachHang.SelectedValue;
+                    DateTime ngay = dtpNgayLap.Value;
+                    decimal tong = gioHang.Sum(x => x.ThanhTien);
+
+                    // Insert DonHang
+                    SqlCommand cmd = new SqlCommand("INSERT INTO DonHang(NgayLap, MaKH, TongTien, TrangThai) OUTPUT INSERTED.MaDH VALUES (@ngay, @kh, @tong, @tt)", conn, tran);
+                    cmd.Parameters.AddWithValue("@tt", cbTrangThai.Text);
+                    cmd.Parameters.AddWithValue("@ngay", ngay);
+                    cmd.Parameters.AddWithValue("@kh", makh);
+                    cmd.Parameters.AddWithValue("@tong", tong);
+                    int madh = (int)cmd.ExecuteScalar();
+
+                    // Insert chi tiết
+                    foreach (var item in gioHang)
+                    {
+                        SqlCommand ctdh = new SqlCommand("INSERT INTO CT_DonHang(MaDH, MaSP, Tensanpham, SoLuong, DonGia) VALUES (@madh, @masp, @ten, @sl, @gia)", conn, tran);
+                        ctdh.Parameters.AddWithValue("@madh", madh);
+                        ctdh.Parameters.AddWithValue("@masp", item.MaSP);
+                        ctdh.Parameters.AddWithValue("@ten", item.TenSP);
+                        ctdh.Parameters.AddWithValue("@sl", item.SoLuong);
+                        ctdh.Parameters.AddWithValue("@gia", item.DonGia);
+                        ctdh.ExecuteNonQuery();
+                    }
+
+                    tran.Commit();
+                    MessageBox.Show("Lưu đơn hàng thành công!");
+
+                    gioHang.Clear();
+                    dgvGioHang.DataSource = null;
+                    lbTongTien.Text = "Tổng: 0 VNĐ";
+                    loadDonHang();
+                }
+                catch (Exception ex)
+                {
+                    tran.Rollback();
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
+            }
+        }
+
+        private void btTimKiemDH_Click(object sender, EventArgs e)
+        {
+            string keyword = txtTimKiemDH.Text.Trim();
+            if (string.IsNullOrEmpty(keyword))
+            {
+                MessageBox.Show("Vui lòng nhập mã đơn hàng hoặc tên khách hàng để tìm.");
+                return;
+            }
+
+            string query = $@"
+                SELECT dh.MaDH, kh.Hoten, dh.NgayLap, dh.TongTien, dh.TrangThai 
+                FROM DonHang dh
+                JOIN khachhang kh ON dh.MaKH = kh.MaKH
+                WHERE dh.MaDH LIKE '%{keyword}%' OR kh.Hoten LIKE N'%{keyword}%'
+                ORDER BY dh.MaDH DESC";
+
+            dgvDonHang.DataSource = modify.GetDataTable(query);
+        }
+
+        private void btSuaDh_Click(object sender, EventArgs e)
+        {
+            if(dgvDonHang.CurrentRow != null)
+            {
+                int maDH = Convert.ToInt32(dgvDonHang.CurrentRow.Cells["MaDH"].Value);
+                DateTime ngayLap = dtpNgayLap.Value;
+                decimal tongTien = gioHang.Sum(x => x.ThanhTien);
+                string trangThai = cbTrangThai.Text;
+
+                string query = @"UPDATE DonHang SET NgayLap = @ngay, TongTien = @tong, TrangThai = @trangthai WHERE MaDH = @madh";
+                using (SqlConnection conn = ketnoi.GetSqlConnection())
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@ngay", ngayLap);
+                    cmd.Parameters.AddWithValue("@tong", tongTien);
+                    cmd.Parameters.AddWithValue("@trangthai", trangThai);
+                    cmd.Parameters.AddWithValue("@madh", maDH);
+                    cmd.ExecuteNonQuery();
+                }
+
+                MessageBox.Show("Cập nhật đơn hàng thành công!");
+                loadDonHang();
+            }
+        }
+
+        private void btXoaDH_Click(object sender, EventArgs e)
+        {
+            if (dgvDonHang.CurrentRow != null)
+            {
+                int maDH = Convert.ToInt32(dgvDonHang.CurrentRow.Cells["MaDH"].Value);
+
+                DialogResult result = MessageBox.Show("Xác nhận xoá đơn hàng này?", "Xác nhận", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    using (SqlConnection conn = ketnoi.GetSqlConnection())
+                    {
+                        conn.Open();
+
+                        SqlCommand cmdCT = new SqlCommand("DELETE FROM CT_DonHang WHERE MaDH = @madh", conn);
+                        cmdCT.Parameters.AddWithValue("@madh", maDH);
+                        cmdCT.ExecuteNonQuery();
+
+                        SqlCommand cmdDH = new SqlCommand("DELETE FROM DonHang WHERE MaDH = @madh", conn);
+                        cmdDH.Parameters.AddWithValue("@madh", maDH);
+                        cmdDH.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Đã xoá đơn hàng.");
+                    loadDonHang();
+                }
+            }
+        }
+        private void LoadChiTietDonHang(int maDH)
+        {
+            gioHang.Clear();
+
+            string query = @"SELECT MaSP, Tensanpham, SoLuong, DonGia 
+                     FROM CT_DonHang 
+                     WHERE MaDH = @madh";
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@madh", maDH);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    ChiTietGioHang item = new ChiTietGioHang
+                    {
+                        MaSP = reader.GetInt32(0),
+                        TenSP = reader.GetString(1),
+                        SoLuong = reader.GetInt32(2),
+                        DonGia = reader.GetDecimal(3)
+                    };
+                    gioHang.Add(item);
+                }
+            }
+
+            // Hiển thị lên dgvGioHang
+            dgvGioHang.DataSource = null;
+            dgvGioHang.DataSource = gioHang;
+
+            // Cập nhật tổng tiền
+            lbTongTien.Text = "Tổng: " + gioHang.Sum(x => x.ThanhTien).ToString("N0") + " VNĐ";
+        }
+        private void dgvDonHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvDonHang.Rows[e.RowIndex];
+                if (row.Cells["TrangThai"].Value != null)
+                {
+                    cbTrangThai.Text = row.Cells["TrangThai"].Value.ToString();
+                }
+                // Lấy mã đơn hàng
+                int maDH = Convert.ToInt32(row.Cells["MaDH"].Value);
+
+                // Load chi tiết giỏ hàng
+                LoadChiTietDonHang(maDH);
+            }
+        }
+        private void cbSanPham_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbSanPham.SelectedValue != null)
+            {
+                string maSP = cbSanPham.SelectedValue.ToString();
+                Modify modify = new Modify();
+                var spInfo = modify.LayThongTinSanPham(maSP);
+                lblLoaiDH.Text = "Loại: " + spInfo.Loai;
+                lblKichThuocDH.Text = "Kích thước: " + spInfo.KichThuoc;
+            }
         }
     }
 }

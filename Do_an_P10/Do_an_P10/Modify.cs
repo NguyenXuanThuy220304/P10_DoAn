@@ -374,6 +374,36 @@ namespace Do_an_P10
                 }
             }
         }
+        public SanPhamInfo LayThongTinSanPham(string maSP)
+        {
+            SanPhamInfo spInfo = new SanPhamInfo();
+            string query = "SELECT Loai, KichThuoc FROM sanpham WHERE MaSP = @maSP";
 
+            try
+            {
+                using (SqlConnection conn = ketnoi.GetSqlConnection())
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@maSP", maSP);
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                spInfo.Loai = reader["Loai"].ToString();
+                                spInfo.KichThuoc = reader["KichThuoc"].ToString();
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lấy thông tin sản phẩm: " + ex.Message);
+            }
+
+            return spInfo;
+        }
     }
 }
