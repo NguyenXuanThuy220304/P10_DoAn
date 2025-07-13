@@ -10,6 +10,7 @@ namespace Do_an_P10
     {
         public string Loai { get; set; }
         public string KichThuoc { get; set; }
+        public decimal DonGia { get; set; }
     }
 
 }

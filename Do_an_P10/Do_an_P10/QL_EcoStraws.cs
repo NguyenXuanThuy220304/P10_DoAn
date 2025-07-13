@@ -123,15 +123,15 @@ namespace Do_an_P10
                 return;
             }
 
-            if (!int.TryParse(txtSLNhap.Text, out int slnhap))
-            {
-                MessageBox.Show("Số lượng nhập không hợp lệ!");
-                return;
-            }
-
             if (ds.Any(sp => sp.MaSP == masp))
             {
                 MessageBox.Show("Mã sản phẩm đã tồn tại trong danh sách tạm!");
+                return;
+            }
+
+            if (!int.TryParse(txtSLTon.Text, out int soLuongTon))
+            {
+                MessageBox.Show("Số lượng tồn không hợp lệ!");
                 return;
             }
 
@@ -143,8 +143,7 @@ namespace Do_an_P10
                 Kichthuoc = kt.Text,
                 Mausac = m.Text,
                 Dongia = gia,
-                NgayNhap = dateNgayNhap.Value, // Giả sử đây là DateTimePicker
-                SoLuongNhap = slnhap
+                SoLuongTon = soLuongTon  // Thêm dòng này
             };
 
             ds.Add(sp);
@@ -203,32 +202,27 @@ namespace Do_an_P10
                 MessageBox.Show("Giá không hợp lệ!"); return;
             }
 
-            if (!int.TryParse(txtSLNhap.Text, out int soluong))
+            if (!int.TryParse(txtSLTon.Text, out int soLuongTon))
             {
-                MessageBox.Show("Số lượng nhập không hợp lệ!");
+                MessageBox.Show("Số lượng tồn không hợp lệ!");
                 return;
             }
 
-            DateTime ngaynhap = dateNgayNhap.Value;
-
             string query = $@"
-                UPDATE sanpham 
-                SET 
-                TenSP = N'{t.Text}', 
-                Loai = N'{l.Text}', 
-                Kichthuoc = N'{kt.Text}', 
-                Mausac = N'{m.Text}', 
-                Giaban = {dongia.ToString(System.Globalization.CultureInfo.InvariantCulture)}, 
-                NgayNhap = @NgayNhap, 
-                SoLuongNhap = @SoLuongNhap
-                WHERE MaSP = {masp}";
+                    UPDATE sanpham 
+                    SET 
+                    TenSP = N'{t.Text}', 
+                    Loai = N'{l.Text}', 
+                    Kichthuoc = N'{kt.Text}', 
+                    Mausac = N'{m.Text}', 
+                    Giaban = {dongia.ToString(System.Globalization.CultureInfo.InvariantCulture)}, 
+                    SoLuongTon = {soLuongTon}
+                    WHERE MaSP = {masp}";
 
             using (SqlConnection conn = ketnoi.GetSqlConnection())
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@NgayNhap", ngaynhap);
-                cmd.Parameters.AddWithValue("@SoLuongNhap", soluong);
                 cmd.ExecuteNonQuery();
             }
 
@@ -275,6 +269,7 @@ namespace Do_an_P10
                 kt.Text = row.Cells["Kichthuoc"].Value.ToString();
                 m.Text = row.Cells["Mausac"].Value.ToString();
                 g.Text = row.Cells["Giaban"].Value.ToString();
+                txtSLTon.Text = row.Cells["SoLuongTon"].Value.ToString();
             }
         }
         private void ClearSanPhamForm()
@@ -286,8 +281,7 @@ namespace Do_an_P10
             m.Text = "";
             g.Text = "";
             tk.Text = "";
-            txtSLNhap.Text = "";
-            t.Focus();
+            txtSLTon.Text = "";
         }
         private void rs_Click(object sender, EventArgs e)
         {
@@ -701,6 +695,7 @@ namespace Do_an_P10
                 }
             }
         }
+
         private void LoadChiTietDonHang(int maDH)
         {
             gioHang.Clear();
@@ -734,6 +729,7 @@ namespace Do_an_P10
             // Cập nhật tổng tiền
             lbTongTien.Text = "Tổng: " + gioHang.Sum(x => x.ThanhTien).ToString("N0") + " VNĐ";
         }
+
         private void dgvDonHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -750,6 +746,7 @@ namespace Do_an_P10
                 LoadChiTietDonHang(maDH);
             }
         }
+
         private void cbSanPham_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbSanPham.SelectedValue != null)
@@ -757,8 +754,13 @@ namespace Do_an_P10
                 string maSP = cbSanPham.SelectedValue.ToString();
                 Modify modify = new Modify();
                 var spInfo = modify.LayThongTinSanPham(maSP);
-                lblLoaiDH.Text = "Loại: " + spInfo.Loai;
-                lblKichThuocDH.Text = "Kích thước: " + spInfo.KichThuoc;
+
+                if (spInfo != null)
+                {
+                    lblLoaiDH.Text = "Loại: " + spInfo.Loai;
+                    lblKichThuocDH.Text = "Kích thước: " + spInfo.KichThuoc;
+                    txtDonGia.Text = spInfo.DonGia.ToString("N0"); // Hiển thị đơn giá
+                }
             }
         }
 

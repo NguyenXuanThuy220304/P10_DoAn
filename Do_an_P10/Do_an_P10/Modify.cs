@@ -129,44 +129,23 @@ namespace Do_an_P10
         }
         public bool ThemSanPham(sanpham sp)
         {
+            string query = "INSERT INTO sanpham (MaSP, TenSP, Loai, Kichthuoc, Mausac, Giaban, SoLuongTon) " +
+                    "VALUES (@MaSP, @TenSP, @Loai, @Kichthuoc, @Mausac, @Giaban, @SoLuongTon)";
             using (SqlConnection conn = ketnoi.GetSqlConnection())
             {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@MaSP", sp.MaSP);
+                cmd.Parameters.AddWithValue("@TenSP", sp.Tensanpham);
+                cmd.Parameters.AddWithValue("@Loai", sp.Loai);
+                cmd.Parameters.AddWithValue("@Kichthuoc", sp.Kichthuoc);
+                cmd.Parameters.AddWithValue("@Mausac", sp.Mausac);
+                cmd.Parameters.AddWithValue("@Giaban", sp.Dongia);
+                cmd.Parameters.AddWithValue("@SoLuongTon", sp.SoLuongTon);
+
                 conn.Open();
-
-                // Kiểm tra mã sản phẩm trùng
-                string checkQuery = "SELECT COUNT(*) FROM sanpham WHERE MaSP = @MaSP";
-                using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
-                {
-                    checkCmd.Parameters.AddWithValue("@MaSP", sp.MaSP);
-                    int count = (int)checkCmd.ExecuteScalar();
-
-                    if (count > 0)
-                    {
-                        MessageBox.Show("Mã sản phẩm đã tồn tại!");
-                        return false;
-                    }
-                }
-
-                string sql = @"INSERT INTO sanpham (MaSP, TenSP, Loai, Kichthuoc, Mausac, Giaban, NgayNhap, SoLuongNhap)
-                       VALUES (@MaSP, @Ten, @Loai, @Kichthuoc, @Mausac, @Dongia, @NgayNhap, @SoLuongNhap)";
-
-                using (SqlCommand cmd = new SqlCommand(sql, conn))
-                {
-                    cmd.Parameters.AddWithValue("@MaSP", sp.MaSP);
-                    cmd.Parameters.AddWithValue("@Ten", sp.Tensanpham);
-                    cmd.Parameters.AddWithValue("@Loai", sp.Loai);
-                    cmd.Parameters.AddWithValue("@Kichthuoc", sp.Kichthuoc);
-                    cmd.Parameters.AddWithValue("@Mausac", sp.Mausac);
-                    cmd.Parameters.AddWithValue("@Dongia", sp.Dongia);
-                    cmd.Parameters.AddWithValue("@NgayNhap", sp.NgayNhap);
-                    cmd.Parameters.AddWithValue("@SoLuongNhap", sp.SoLuongNhap);
-
-                    cmd.ExecuteNonQuery();
-                }
+                return cmd.ExecuteNonQuery() > 0;
             }
-            return true;
         }
-
         public bool ThemKhachHang(khachhang kh)
         {
             using (SqlConnection conn = ketnoi.GetSqlConnection())
@@ -405,34 +384,25 @@ namespace Do_an_P10
         }
         public SanPhamInfo LayThongTinSanPham(string maSP)
         {
-            SanPhamInfo spInfo = new SanPhamInfo();
-            string query = "SELECT Loai, KichThuoc FROM sanpham WHERE MaSP = @maSP";
-
-            try
+            string query = "SELECT Loai, KichThuoc, GiaBan FROM sanpham WHERE MaSP = @MaSP";
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
             {
-                using (SqlConnection conn = ketnoi.GetSqlConnection())
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@MaSP", maSP);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
                 {
-                    conn.Open();
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    return new SanPhamInfo
                     {
-                        cmd.Parameters.AddWithValue("@maSP", maSP);
-                        using (SqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                spInfo.Loai = reader["Loai"].ToString();
-                                spInfo.KichThuoc = reader["KichThuoc"].ToString();
-                            }
-                        }
-                    }
+                        Loai = reader["Loai"].ToString(),
+                        KichThuoc = reader["KichThuoc"].ToString(),
+                        DonGia = Convert.ToDecimal(reader["GiaBan"])  // ✅ dùng đúng kiểu
+                    };
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi lấy thông tin sản phẩm: " + ex.Message);
-            }
-
-            return spInfo;
+            return null;
         }
         public static void TruSoLuongSanPham(int maSP, int soLuongMua)
         {

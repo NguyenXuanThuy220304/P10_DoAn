@@ -17,8 +17,7 @@ namespace Do_an_P10
         public decimal Dongia { get; set; }
         public int Soluong { get; set; }
         public Image Hinhanh { get; set; }
-        public DateTime NgayNhap { get; set; }
-        public int SoLuongNhap { get; set; }
+        public int SoLuongTon { get; set; }
 
         public sanpham() { }
 
