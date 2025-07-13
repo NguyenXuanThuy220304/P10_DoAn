@@ -44,7 +44,7 @@ namespace Do_an_P10
             if (sanp.Visible)
             {
                 panelKhachHang.Visible = false;
-                panelkho.Visible = false;
+                panelLichSuKho.Visible = false;
                 panelDonhang.Visible = false;
 
                 loaddata();
@@ -311,7 +311,7 @@ namespace Do_an_P10
             if (panelKhachHang.Visible)
             {
                 sanp.Visible = false;
-                panelkho.Visible = false;
+                panelLichSuKho.Visible = false;
                 panelDonhang.Visible = false;
 
                 loadKhachHang();
@@ -525,7 +525,7 @@ namespace Do_an_P10
             {
                 sanp.Visible = false;
                 panelKhachHang.Visible = false;
-                panelkho.Visible = false;
+                panelLichSuKho.Visible = false;
 
                 // Gọi hàm load đơn hàng nếu bạn có
                 loadDonHang();
@@ -650,7 +650,7 @@ namespace Do_an_P10
 
         private void btSuaDh_Click(object sender, EventArgs e)
         {
-            if(dgvDonHang.CurrentRow != null)
+            if (dgvDonHang.CurrentRow != null)
             {
                 int maDH = Convert.ToInt32(dgvDonHang.CurrentRow.Cells["MaDH"].Value);
                 DateTime ngayLap = dtpNgayLap.Value;
@@ -760,6 +760,41 @@ namespace Do_an_P10
                 lblLoaiDH.Text = "Loại: " + spInfo.Loai;
                 lblKichThuocDH.Text = "Kích thước: " + spInfo.KichThuoc;
             }
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelLichSuKho_Paint(object sender, PaintEventArgs e)
+        {
+            tu.Value = DateTime.Now.AddMonths(-1); // mặc định từ 1 tháng trước
+            den.Value = DateTime.Now;
+            btntk.PerformClick(); // tự động tìm luôn
+        }
+
+        private void btntk_Click(object sender, EventArgs e)
+        {
+            DateTime tuNgay = tu.Value;
+            DateTime denNgay = den.Value;
+
+            var dt = Modify.TimKiemLichSuKho(tuNgay, denNgay);
+
+            dgvKho.DataSource = dt;
+            ketq.Text = $"Tìm thấy {dt.Rows.Count} kết quả từ {tuNgay:dd/MM/yyyy} đến {denNgay:dd/MM/yyyy}";
+        }
+
+        private void lsk_Click(object sender, EventArgs e)
+        {
+            panelLichSuKho.Visible = !panelLichSuKho.Visible;
+            if(panelLichSuKho.Visible )
+            {
+                sanp.Visible = false;
+                panelKhachHang.Visible = false;
+                panelDonhang.Visible = false;
+            }
+
         }
     }
 }

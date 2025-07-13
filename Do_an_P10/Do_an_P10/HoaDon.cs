@@ -51,12 +51,23 @@ namespace Do_an_P10
             Modify.CapNhatTrangThaiDonHang(maDH, "Đã thanh toán");
 
             MessageBox.Show("Hóa đơn đã được xuất và cập nhật trạng thái thành 'Đã thanh toán'.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Lấy danh sách sản phẩm trong đơn hàng
+            var dtChiTiet = Modify.LayChiTietDonHang(maDH);
+            foreach (DataRow row in dtChiTiet.Rows)
+            {
+                int maSP = Convert.ToInt32(row["MaSP"]);
+                int soLuongMua = Convert.ToInt32(row["SoLuong"]);
 
-            // (Tùy chọn) làm mới lại giao diện nếu cần:
+                // Trừ số lượng trong kho
+                Modify.TruSoLuongSanPham(maSP, soLuongMua);
+                Modify.GhiLichSuKho(maSP, -soLuongMua, "Xuất bán", $"Đơn hàng: {maDH}");
+            }
+            // Làm mới giao diện
             LoadHoaDon();
             EcoStraws eco = new EcoStraws(tentk);
             eco.Show();
-            this.Close();   
+            this.Close();
         }
     }
-}
+    }
+

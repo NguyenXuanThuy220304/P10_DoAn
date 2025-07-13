@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -12,6 +13,34 @@ namespace Do_an_P10
         public Modify() { }
         SqlCommand sqlCommand;// truy vaans
         SqlDataReader dataReader; //dùng để đặt dữ liệu trong bảng
+        public List<sanpham> sp(string query)
+        {
+            List<sanpham> ds = new List<sanpham>();
+            using (SqlConnection sqlConnection = ketnoi.GetSqlConnection())
+            {
+                sqlConnection.Open();
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
+                {
+                    while (dataReader.Read())
+                    {
+                        int maSP = dataReader.GetInt32(0);
+                        string tensanpham = dataReader.GetString(1);
+                        decimal dongia = dataReader.IsDBNull(2) ? 0 : dataReader.GetDecimal(2);
+                        int soluong = dataReader.IsDBNull(3) ? 0 : dataReader.GetInt32(3);
+                        string loai = dataReader.IsDBNull(4) ? "" : dataReader.GetString(4);
+                        string kichthuoc = dataReader.IsDBNull(5) ? "" : dataReader.GetString(5);
+                        string mausac = dataReader.IsDBNull(6) ? "" : dataReader.GetString(6);
+
+
+                        // Hinhanh tạm thời null, sẽ gán sau
+                        sanpham spItem = new sanpham(maSP, tensanpham, dongia, soluong, null, loai, kichthuoc, mausac);
+                        ds.Add(spItem);
+                    }
+                }
+            }
+            return ds;
+        }
 
         public List<khachhang> kh(string query)
         {
@@ -405,5 +434,59 @@ namespace Do_an_P10
 
             return spInfo;
         }
+        public static void TruSoLuongSanPham(int maSP, int soLuongMua)
+        {
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
+            {
+                conn.Open();
+                string sql = "UPDATE sanpham SET SoLuongTon = SoLuongTon - @SoLuongMua WHERE MaSP = @MaSP";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@SoLuongMua", soLuongMua);
+                    cmd.Parameters.AddWithValue("@MaSP", maSP);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+        public static void GhiLichSuKho(int maSP, int soLuong, string loaiThayDoi, string ghiChu)
+        {
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
+            {
+                conn.Open();
+                string sql = @"INSERT INTO LichSuKho (MaSP, SoLuong, LoaiThayDoi, GhiChu) 
+                       VALUES (@MaSP, @SoLuong, @LoaiThayDoi, @GhiChu)";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@MaSP", maSP);
+                    cmd.Parameters.AddWithValue("@SoLuong", soLuong);
+                    cmd.Parameters.AddWithValue("@LoaiThayDoi", loaiThayDoi);
+                    cmd.Parameters.AddWithValue("@GhiChu", ghiChu);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+        public static DataTable TimKiemLichSuKho(DateTime tuNgay, DateTime denNgay)
+        {
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
+            {
+                string sql = @"SELECT MaLSK, MaSP, NgayThayDoi, SoLuong, LoaiThayDoi, GhiChu
+                       FROM LichSuKho
+                       WHERE NgayThayDoi >= @TuNgay AND NgayThayDoi <= @DenNgay
+                       ORDER BY NgayThayDoi DESC";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@TuNgay", tuNgay.Date); // lấy từ 00:00:00
+                    cmd.Parameters.AddWithValue("@DenNgay", denNgay.Date.AddDays(1).AddTicks(-1)); // đến 23:59:59
+
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+        }
+
     }
 }

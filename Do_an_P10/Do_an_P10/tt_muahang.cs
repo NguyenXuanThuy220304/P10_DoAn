@@ -23,12 +23,22 @@ namespace Do_an_P10
             int slt = sp.Soluong ;
             slton.Text = $"Số lượng: {slt}";
             // Thêm số lượng từ 1 đến 10 vào ListBox (hoặc ComboBox)
+            //      sl.Items.Clear();
+            //      for (int i = 1; i <= slt; i++)
+            //      {
+            //          sl.Items.Add(i.ToString());
+            //      }
+            //       sl.SelectedIndex = 0; // Mặc định chọn 1
             sl.Items.Clear();
             for (int i = 1; i <= slt; i++)
             {
                 sl.Items.Add(i.ToString());
             }
-            sl.SelectedIndex = 0; // Mặc định chọn 1
+            if (sl.Items.Count > 0)
+            {
+                sl.SelectedIndex = 0;
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
