@@ -47,7 +47,7 @@ namespace Do_an_P10
                 panelKhachHang.Visible = false;
                 panelLichSuKho.Visible = false;
                 panelDonhang.Visible = false;
-
+                panelDaiLy.Visible = false;
                 loaddata();
             }
         }
@@ -108,6 +108,13 @@ namespace Do_an_P10
         }
         List<ChiTietGioHang> gioHang = new List<ChiTietGioHang>();
         bool dangThemKhachHang = false; // Cờ xác định đang trong chế độ thêm
+        private void LoadDaiLy()
+        {
+            string query = "SELECT * FROM daily"; // Lấy tất cả cột, hoặc chỉ chọn các cột cần thiết
+            DataTable dt = modify.GetDataTable(query);
+            dgvDaiLy.DataSource = dt;
+        }
+
         private void btnthem_Click(object sender, EventArgs e)
         {
             if (!int.TryParse(msp.Text, out int masp))
@@ -308,7 +315,7 @@ namespace Do_an_P10
                 sanp.Visible = false;
                 panelLichSuKho.Visible = false;
                 panelDonhang.Visible = false;
-
+                panelDaiLy.Visible = false;
                 loadKhachHang();
             }
         }
@@ -521,7 +528,7 @@ namespace Do_an_P10
                 sanp.Visible = false;
                 panelKhachHang.Visible = false;
                 panelLichSuKho.Visible = false;
-
+                panelDaiLy.Visible = false;
                 // Gọi hàm load đơn hàng nếu bạn có
                 loadDonHang();
             }
@@ -748,11 +755,7 @@ namespace Do_an_P10
                 cbKichThuoc.DisplayMember = "KichThuoc";  // hiển thị kích thước
                 cbKichThuoc.ValueMember = "MaSP";         // giá trị là MaSP
             }
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
+            txtDonGia.Text = "";
         }
 
         private void panelLichSuKho_Paint(object sender, PaintEventArgs e)
@@ -781,8 +784,8 @@ namespace Do_an_P10
                 sanp.Visible = false;
                 panelKhachHang.Visible = false;
                 panelDonhang.Visible = false;
+                panelDaiLy.Visible = false;
             }
-
         }
 
         private void txtSoLuong_TextChanged(object sender, EventArgs e)
@@ -802,6 +805,7 @@ namespace Do_an_P10
                 cbKichThuoc.DataSource = listByName;
                 cbKichThuoc.DisplayMember = "KichThuoc";  // hiển thị kích thước
                 cbKichThuoc.ValueMember = "MaSP";         // giá trị là MaSP
+                txtDonGia.Clear();
             }
         }
 
@@ -812,24 +816,101 @@ namespace Do_an_P10
 
         private void cbKichThuoc_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbKichThuoc.SelectedValue != null)
+            if (cbKichThuoc.SelectedValue != null && cbKichThuoc.SelectedValue is int maSP)
             {
-                int maSP;
-                if (int.TryParse(cbKichThuoc.SelectedValue.ToString(), out maSP))
+                var spInfo = modify.LayThongTinSanPham(maSP);
+                if (spInfo != null)
                 {
-                    var spInfo = modify.LayThongTinSanPham(maSP);
-                    if (spInfo != null)
-                    {
-                        lblKichThuocDH.Text = "Kích thước: " + spInfo.KichThuoc;
-                        txtDonGia.Text = spInfo.DonGia.ToString("N0");
-                    }
+                    txtDonGia.Text = spInfo.DonGia.ToString("N0"); // định dạng giá tiền
+                }
+                else
+                {
+                    txtDonGia.Clear();
                 }
             }
         }
 
         private void linkCTDH_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            if (dgvKho.CurrentRow != null)
+            {
+                int maSP = Convert.ToInt32(dgvKho.CurrentRow.Cells["MaSP"].Value);
+                string ghiChu = dgvKho.CurrentRow.Cells["GhiChu"].Value.ToString();
+                DateTime ngayTao = Convert.ToDateTime(dgvKho.CurrentRow.Cells["NgayThayDoi"].Value);
 
+                // 1. Tách MaDH từ GhiChu (VD: "Đơn hàng: 1052")
+                int maDH = -1;
+                if (ghiChu.StartsWith("Đơn hàng:"))
+                {
+                    string[] parts = ghiChu.Split(':');
+                    if (parts.Length > 1 && int.TryParse(parts[1].Trim(), out int parsedMaDH))
+                    {
+                        maDH = parsedMaDH;
+                    }
+                }
+
+                // Nếu MaDH không hợp lệ thì thoát
+                if (maDH == -1)
+                {
+                    MessageBox.Show("Không thể xác định đơn hàng từ ghi chú!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // 2. Lấy dữ liệu chi tiết đơn hàng
+                DataTable dtChiTiet = Modify.LayChiTietDonHang(maDH);
+                DataRow[] chiTietSP = dtChiTiet.Select("MaSP = " + maSP);
+                if (chiTietSP.Length == 0)
+                {
+                    MessageBox.Show("Không tìm thấy chi tiết sản phẩm trong đơn hàng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                int soLuong = Convert.ToInt32(chiTietSP[0]["SoLuong"]);
+                decimal donGia = Convert.ToDecimal(chiTietSP[0]["DonGia"]);
+                string tenSP = chiTietSP[0]["Tensanpham"].ToString();
+
+                // 3. Lấy ngày lập và mã KH từ đơn hàng
+                DataTable dtDH = Modify.LayDonHang(maDH);
+                if (dtDH.Rows.Count == 0)
+                {
+                    MessageBox.Show("Không tìm thấy đơn hàng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                DateTime ngayLap = Convert.ToDateTime(dtDH.Rows[0]["NgayLap"]);
+                int maKH = Convert.ToInt32(dtDH.Rows[0]["MaKH"]);
+
+                // 4. Lấy tên khách hàng
+                DataTable dtKH = Modify.LayThongTinKhachHang(maKH);
+                string khachHang = (dtKH.Rows.Count > 0) ? dtKH.Rows[0]["Hoten"].ToString() : "Khách lẻ";
+
+                // 5. Mở form chi tiết
+                FormChiTietDonHang f = new FormChiTietDonHang(tenSP, soLuong, donGia, ngayLap, khachHang, ghiChu);
+                f.ShowDialog();
+            }
+        }
+
+        private void btLamMoiDH_Click(object sender, EventArgs e)
+        {
+            txtTimKiemDH.Clear();          // Xóa ô tìm kiếm
+            loadDonHang();                 // Load lại toàn bộ đơn hàng
+            gioHang.Clear();              // Nếu bạn muốn reset giỏ hàng luôn
+            dgvGioHang.DataSource = null;
+            lbTongTien.Text = "Tổng: 0 VNĐ";
+        }
+
+        private void btDaiLy_Click(object sender, EventArgs e)
+        {
+            panelDaiLy.Visible = !panelDaiLy.Visible;
+            if (panelDaiLy.Visible)
+            {
+                sanp.Visible = false;
+                panelKhachHang.Visible = false;
+                panelDonhang.Visible = false;
+                panelLichSuKho.Visible = false;
+
+                LoadDaiLy();
+            }
         }
     }
 }

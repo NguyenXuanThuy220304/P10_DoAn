@@ -454,6 +454,26 @@ namespace Do_an_P10
                 }
             }
         }
+        public string LayTenSanPham(int maSP)
+        {
+            string tenSP = null;
+            string query = "SELECT TenSP FROM sanpham WHERE MaSP = @MaSP";
+
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@MaSP", maSP);
+                conn.Open();
+                object result = cmd.ExecuteScalar();
+
+                if (result != null)
+                {
+                    tenSP = result.ToString();
+                }
+            }
+
+            return tenSP;
+        }
 
     }
 }
