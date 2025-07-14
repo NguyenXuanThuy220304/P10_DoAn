@@ -164,3 +164,4 @@ E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.genr
 E:\ĐồÁn\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\ref\Do_an_P10.dll
 D:\Du_An_Ban_Hang\P10_DoAn\Do_an_P10\Do_an_P10\bin\Debug\net8.0-windows\Do_an_P10.dll.config
 D:\Du_An_Ban_Hang\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.HoaDon.resources
+D:\Du_An_Ban_Hang\P10_DoAn\Do_an_P10\Do_an_P10\obj\Debug\net8.0-windows\Do_an_P10.SanPhamControl.resources

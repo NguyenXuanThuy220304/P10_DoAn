@@ -28,69 +28,50 @@ namespace Do_an_P10
             form.Show();
             this.Hide();
         }
-
+        List<sanpham> allProducts = new List<sanpham>();
         private void EcoStraws_Load(object sender, EventArgs e)
         {
-            //  t.Text = tentk;
-            //  phi45.Tag = new sanpham(1, "Ống hút phi 4,5", 45000, 5000, Properties.Resources.Ong_hut_gao_phi_4_5, "Gạo", "phi 4.5", "trắng");
-            //  phi6.Tag = new sanpham(2, "Ống hút phi 6", 55000, 5000, Properties.Resources.Ong_hut_gao_phi_6, "Gạo", "phi 6", "Vàng");
-            //  phi8.Tag = new sanpham(3, "Ống hút phi 8", 65000, 5000, Properties.Resources.Ong_hut_gao_phi_8, "Gạo", "phi 8", "hồng");
-            //  phi13.Tag = new sanpham(4, "Ống hút phi 13", 75000, 5000, Properties.Resources.Ong_hut_gao_phi_13, "Gạo", "phi 13", "nâu");
+            // Danh sách sản phẩm để load
+            List<(int MaSP, Image hinh)> dsSp = new List<(int, Image)>
+    {
+        (1, Properties.Resources.Ong_hut_gao_phi_4_5),
+        (2,   Properties.Resources.Ong_hut_gao_phi_6),
+        (3,   Properties.Resources.Ong_hut_gao_phi_8),
+        (4,  Properties.Resources.Ong_hut_gao_phi_13),
+        (4,  Properties.Resources.Ong_hut_gao_phi_13),
+        (5,  Properties.Resources.Ong_hut_gao_phi_13),
+        (6,  Properties.Resources.Ong_hut_gao_phi_13),
+        (7,  Properties.Resources.Ong_hut_gao_phi_13),
+        (8,  Properties.Resources.Ong_hut_gao_phi_13),
+        (9,  Properties.Resources.Ong_hut_gao_phi_13),
+        (10,  Properties.Resources.Ong_hut_gao_phi_13),
+        (11,  Properties.Resources.Ong_hut_gao_phi_13),
+        (12,  Properties.Resources.Ong_hut_gao_phi_13),
+        (13,  Properties.Resources.Ong_hut_gao_phi_13),
+        (14,  Properties.Resources.Ong_hut_gao_phi_13)
+
+    };
+
+            foreach (var item in dsSp)
+            {
+                string sql = $"SELECT MaSP, TenSP, KichThuoc, MauSac,  GiaBan , SoLuongTon FROM sanpham WHERE MaSP= '{item.MaSP}'";
+                var list = modify.sp(sql);
+
+                if (list.Count > 0)
+                {
+                    var sp = list[0];
+                    sp.Hinhanh = item.hinh;
+
+                    // Thêm vào danh sách allProducts
+                    allProducts.Add(sp);
+                }
+            }
+
+            // Hiển thị ra flowLayoutPanel1
+            DisplayProducts(allProducts);
+
+            // Gán tên tài khoản lên label nếu muốn
             t.Text = tentk;
-
-            // Lấy từ database (không có cột hình ảnh
-            string p45 = "SELECT MaSP, TenSP, GiaBan , SoLuongTon, Loai, KichThuoc, MauSac FROM sanpham WHERE KichThuoc LIKE '%phi 4.5%'";
-            var list = modify.sp(p45);
-
-            if (list.Count > 0)
-            {
-                var sp1 = list[0];
-
-                // tự gán hình ảnh
-                sp1.Hinhanh = Properties.Resources.Ong_hut_gao_phi_4_5;
-
-                // gán vào Tag
-                phi45.Tag = sp1;
-            }
-            string p6 = "SELECT MaSP, TenSP, GiaBan , SoLuongTon, Loai, KichThuoc, MauSac FROM sanpham WHERE KichThuoc LIKE '%phi 6%'";
-            var list1 = modify.sp(p6);
-
-            if (list1.Count > 0)
-            {
-                var sp2 = list1[0];
-
-                // tự gán hình ảnh
-                sp2.Hinhanh = Properties.Resources.Ong_hut_gao_phi_6;
-
-                // gán vào Tag
-                phi6.Tag = sp2;
-            }
-            string p8 = "SELECT MaSP, TenSP, GiaBan , SoLuongTon, Loai, KichThuoc, MauSac FROM sanpham WHERE KichThuoc LIKE '%phi 8%'";
-            var list2 = modify.sp(p8);
-
-            if (list2.Count > 0)
-            {
-                var sp3 = list2[0];
-
-                // tự gán hình ảnh
-                sp3.Hinhanh = Properties.Resources.Ong_hut_gao_phi_8;
-
-                // gán vào Tag
-                phi8.Tag = sp3;
-            }
-            string p13 = "SELECT MaSP, TenSP, GiaBan , SoLuongTon, Loai, KichThuoc, MauSac FROM sanpham WHERE KichThuoc LIKE '%phi 13%'";
-            var list3 = modify.sp(p13);
-
-            if (list3.Count > 0)
-            {
-                var sp4 = list3[0];
-
-                // tự gán hình ảnh
-                sp4.Hinhanh = Properties.Resources.Ong_hut_gao_phi_13;
-
-                // gán vào Tag
-                phi13.Tag = sp4;
-            }
         }
 
         private void phi6_Click(object sender, EventArgs e)
@@ -140,6 +121,25 @@ namespace Do_an_P10
         private void panel5_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        private void DisplayProducts(List<sanpham> products)
+        {
+            panelmathang.Controls.Clear();
+
+            foreach (var sp in products)
+            {
+                var control = new SanPhamControl(sp, tentk);
+                panelmathang.Controls.Add(control);
+            }
+        }
+        private void Tk_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = Tk.Text.ToLower();
+            var filtered = allProducts.Where(sp => sp.Tensanpham.ToLower().Contains(keyword)
+                                                || sp.Kichthuoc.ToLower().Contains(keyword)
+                                                || sp.Mausac.ToLower().Contains(keyword))
+                                      .ToList();
+            DisplayProducts(filtered);
         }
     }
 }

@@ -19,6 +19,9 @@
     <Compile Update="QL_EcoStraws.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="SanPhamControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Tt_khachhang.cs">
       <SubType>Form</SubType>
     </Compile>

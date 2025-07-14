@@ -11,7 +11,6 @@ namespace Do_an_P10
     {
         public int MaSP { get; set; }                    // ✅ Thêm dòng này
         public string Tensanpham { get; set; }
-        public string Loai {  get; set; }
         public string Kichthuoc { get; set; }
         public string Mausac { get; set;}
         public decimal Dongia { get; set; }
@@ -21,14 +20,13 @@ namespace Do_an_P10
 
         public sanpham() { }
 
-        public sanpham(int maSP, string tensanpham,  decimal dongia, int soluong, Image hinhanh, string loai, string kichthuoc, string mausac)
+        public sanpham(int maSP, string tensanpham,  decimal dongia, int soluong, Image hinhanh, string kichthuoc, string mausac)
         {
             this.MaSP = maSP;   
             this.Tensanpham = tensanpham;
             this.Dongia = dongia;
             this.Soluong = soluong;
             this.Hinhanh = hinhanh;
-            Loai = loai;
             Kichthuoc = kichthuoc;
             Mausac = mausac;
            

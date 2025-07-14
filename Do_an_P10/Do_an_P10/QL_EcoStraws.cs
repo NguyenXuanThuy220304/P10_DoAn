@@ -35,6 +35,7 @@ namespace Do_an_P10
             cbSanPham.SelectedIndexChanged += cbSanPham_SelectedIndexChanged;
 
         }
+        List<sanpham> allProducts = new List<sanpham>();
         private void sp_Click(object sender, EventArgs e)
         {
             // Toggle panel sản phẩm
@@ -78,11 +79,15 @@ namespace Do_an_P10
 
         private void LoadSanPham_DH()
         {
-            string query = "SELECT MaSP, TenSP FROM sanpham";
-            DataTable dt = modify.GetDataTable(query);
-            cbSanPham.DataSource = dt;
-            cbSanPham.DisplayMember = "TenSP";
-            cbSanPham.ValueMember = "MaSP";
+            allProducts = modify.sp("SELECT * FROM sanpham");
+
+            var distinctNames = allProducts
+                .Select(sp => sp.Tensanpham)
+                .Distinct()
+                .ToList();
+
+            cbSanPham.DataSource = distinctNames;
+            // cbSanPham không cần ValueMember vì chỉ chứa chuỗi tên
         }
         private void LoadTrangThai()
         {
@@ -139,7 +144,6 @@ namespace Do_an_P10
             {
                 MaSP = masp,
                 Tensanpham = t.Text,
-                Loai = l.Text,
                 Kichthuoc = kt.Text,
                 Mausac = m.Text,
                 Dongia = gia,
@@ -212,7 +216,6 @@ namespace Do_an_P10
                     UPDATE sanpham 
                     SET 
                     TenSP = N'{t.Text}', 
-                    Loai = N'{l.Text}', 
                     Kichthuoc = N'{kt.Text}', 
                     Mausac = N'{m.Text}', 
                     Giaban = {dongia.ToString(System.Globalization.CultureInfo.InvariantCulture)}, 
@@ -265,7 +268,6 @@ namespace Do_an_P10
 
                 msp.Text = row.Cells["MaSP"].Value.ToString();
                 t.Text = row.Cells["TenSP"].Value.ToString();
-                l.Text = row.Cells["Loai"].Value.ToString();
                 kt.Text = row.Cells["Kichthuoc"].Value.ToString();
                 m.Text = row.Cells["Mausac"].Value.ToString();
                 g.Text = row.Cells["Giaban"].Value.ToString();
@@ -276,7 +278,6 @@ namespace Do_an_P10
         {
             msp.Text = "";
             t.Text = "";
-            l.Text = "";
             kt.Text = "";
             m.Text = "";
             g.Text = "";
@@ -528,43 +529,30 @@ namespace Do_an_P10
 
         private void btThemSP_Click(object sender, EventArgs e)
         {
-            if (cbSanPham.SelectedItem == null || string.IsNullOrWhiteSpace(txtSoLuong.Text) || string.IsNullOrWhiteSpace(txtDonGia.Text))
+            if (cbKichThuoc.SelectedItem == null || string.IsNullOrWhiteSpace(txtSoLuong.Text) || string.IsNullOrWhiteSpace(txtDonGia.Text))
             {
-                MessageBox.Show("Vui lòng chọn sản phẩm và nhập số lượng, đơn giá.");
+                MessageBox.Show("Vui lòng chọn sản phẩm, kích thước và nhập số lượng, đơn giá.");
                 return;
             }
-            int masp = (int)cbSanPham.SelectedValue;
-            string tensp = cbSanPham.Text;
+
+            int masp = (int)cbKichThuoc.SelectedValue;     // Lấy MaSP
+            string tensp = cbSanPham.Text + " " + ((sanpham)cbKichThuoc.SelectedItem).Kichthuoc; // Hoặc cbSize.Text
             int sl = int.Parse(txtSoLuong.Text);
             decimal gia = decimal.Parse(txtDonGia.Text);
 
-            // Kiểm tra sản phẩm đã có trong giỏ chưa
-            ChiTietGioHang spTonTai = gioHang.FirstOrDefault(sp => sp.MaSP == masp);
-
-            if (spTonTai != null)
+            // Tạo mới chi tiết giỏ hàng
+            ChiTietGioHang spMoi = new ChiTietGioHang
             {
-                // Nếu có: cộng thêm số lượng và cập nhật thành tiền
-                spTonTai.SoLuong += sl;
-                spTonTai.DonGia = gia; // có thể giữ giá cũ nếu bạn muốn
-            }
-            else
-            {
-                // Nếu chưa có: thêm mới
-                ChiTietGioHang spMoi = new ChiTietGioHang
-                {
-                    MaSP = masp,
-                    TenSP = tensp,
-                    SoLuong = sl,
-                    DonGia = gia
-                };
-                gioHang.Add(spMoi);
-            }
+                MaSP = masp,
+                TenSP = tensp,
+                SoLuong = sl,
+                DonGia = gia
+            };
 
-            // Refresh lại DataGridView
+            gioHang.Add(spMoi);
             dgvGioHang.DataSource = null;
             dgvGioHang.DataSource = gioHang;
 
-            // Cập nhật tổng tiền
             lbTongTien.Text = "Tổng: " + gioHang.Sum(x => x.ThanhTien).ToString("N0") + " VNĐ";
         }
 
@@ -749,18 +737,16 @@ namespace Do_an_P10
 
         private void cbSanPham_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbSanPham.SelectedValue != null)
+            string selectedName = cbSanPham.SelectedItem?.ToString();
+            if (!string.IsNullOrEmpty(selectedName))
             {
-                string maSP = cbSanPham.SelectedValue.ToString();
-                Modify modify = new Modify();
-                var spInfo = modify.LayThongTinSanPham(maSP);
+                var listByName = allProducts
+                    .Where(sp => sp.Tensanpham == selectedName)
+                    .ToList();
 
-                if (spInfo != null)
-                {
-                    lblLoaiDH.Text = "Loại: " + spInfo.Loai;
-                    lblKichThuocDH.Text = "Kích thước: " + spInfo.KichThuoc;
-                    txtDonGia.Text = spInfo.DonGia.ToString("N0"); // Hiển thị đơn giá
-                }
+                cbKichThuoc.DataSource = listByName;
+                cbKichThuoc.DisplayMember = "KichThuoc";  // hiển thị kích thước
+                cbKichThuoc.ValueMember = "MaSP";         // giá trị là MaSP
             }
         }
 
@@ -790,12 +776,59 @@ namespace Do_an_P10
         private void lsk_Click(object sender, EventArgs e)
         {
             panelLichSuKho.Visible = !panelLichSuKho.Visible;
-            if(panelLichSuKho.Visible )
+            if (panelLichSuKho.Visible)
             {
                 sanp.Visible = false;
                 panelKhachHang.Visible = false;
                 panelDonhang.Visible = false;
             }
+
+        }
+
+        private void txtSoLuong_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbSanPham_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            string selectedName = cbSanPham.SelectedItem?.ToString();
+            if (!string.IsNullOrEmpty(selectedName))
+            {
+                var listByName = allProducts
+                    .Where(sp => sp.Tensanpham == selectedName)
+                    .ToList();
+
+                cbKichThuoc.DataSource = listByName;
+                cbKichThuoc.DisplayMember = "KichThuoc";  // hiển thị kích thước
+                cbKichThuoc.ValueMember = "MaSP";         // giá trị là MaSP
+            }
+        }
+
+        private void lbSanPham_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbKichThuoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbKichThuoc.SelectedValue != null)
+            {
+                int maSP;
+                if (int.TryParse(cbKichThuoc.SelectedValue.ToString(), out maSP))
+                {
+                    var spInfo = modify.LayThongTinSanPham(maSP);
+                    if (spInfo != null)
+                    {
+                        lblKichThuocDH.Text = "Kích thước: " + spInfo.KichThuoc;
+                        txtDonGia.Text = spInfo.DonGia.ToString("N0");
+                    }
+                }
+            }
+        }
+
+        private void linkCTDH_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
 
         }
     }

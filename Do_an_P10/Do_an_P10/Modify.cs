@@ -26,15 +26,14 @@ namespace Do_an_P10
                     {
                         int maSP = dataReader.GetInt32(0);
                         string tensanpham = dataReader.GetString(1);
-                        decimal dongia = dataReader.IsDBNull(2) ? 0 : dataReader.GetDecimal(2);
-                        int soluong = dataReader.IsDBNull(3) ? 0 : dataReader.GetInt32(3);
-                        string loai = dataReader.IsDBNull(4) ? "" : dataReader.GetString(4);
-                        string kichthuoc = dataReader.IsDBNull(5) ? "" : dataReader.GetString(5);
-                        string mausac = dataReader.IsDBNull(6) ? "" : dataReader.GetString(6);
+                        decimal dongia = dataReader.IsDBNull(4) ? 0 : dataReader.GetDecimal(4);
+                        int soluong = dataReader.IsDBNull(5) ? 0 : dataReader.GetInt32(5);
+                        string kichthuoc = dataReader.IsDBNull(2) ? "" : dataReader.GetString(2);
+                        string mausac = dataReader.IsDBNull(3) ? "" : dataReader.GetString(3);
 
 
                         // Hinhanh tạm thời null, sẽ gán sau
-                        sanpham spItem = new sanpham(maSP, tensanpham, dongia, soluong, null, loai, kichthuoc, mausac);
+                        sanpham spItem = new sanpham(maSP, tensanpham, dongia, soluong, null, kichthuoc, mausac);
                         ds.Add(spItem);
                     }
                 }
@@ -129,14 +128,13 @@ namespace Do_an_P10
         }
         public bool ThemSanPham(sanpham sp)
         {
-            string query = "INSERT INTO sanpham (MaSP, TenSP, Loai, Kichthuoc, Mausac, Giaban, SoLuongTon) " +
-                    "VALUES (@MaSP, @TenSP, @Loai, @Kichthuoc, @Mausac, @Giaban, @SoLuongTon)";
+            string query = "INSERT INTO sanpham (MaSP, TenSP, Kichthuoc, Mausac, Giaban, SoLuongTon) " +
+                    "VALUES (@MaSP, @TenSP, @Kichthuoc, @Mausac, @Giaban, @SoLuongTon)";
             using (SqlConnection conn = ketnoi.GetSqlConnection())
             {
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@MaSP", sp.MaSP);
                 cmd.Parameters.AddWithValue("@TenSP", sp.Tensanpham);
-                cmd.Parameters.AddWithValue("@Loai", sp.Loai);
                 cmd.Parameters.AddWithValue("@Kichthuoc", sp.Kichthuoc);
                 cmd.Parameters.AddWithValue("@Mausac", sp.Mausac);
                 cmd.Parameters.AddWithValue("@Giaban", sp.Dongia);
@@ -382,9 +380,9 @@ namespace Do_an_P10
                 }
             }
         }
-        public SanPhamInfo LayThongTinSanPham(string maSP)
+        public SanPhamInfo LayThongTinSanPham(int maSP)
         {
-            string query = "SELECT Loai, KichThuoc, GiaBan FROM sanpham WHERE MaSP = @MaSP";
+            string query = "SELECT KichThuoc, GiaBan FROM sanpham WHERE MaSP = @MaSP";
             using (SqlConnection conn = ketnoi.GetSqlConnection())
             {
                 SqlCommand cmd = new SqlCommand(query, conn);
@@ -396,9 +394,8 @@ namespace Do_an_P10
                 {
                     return new SanPhamInfo
                     {
-                        Loai = reader["Loai"].ToString(),
                         KichThuoc = reader["KichThuoc"].ToString(),
-                        DonGia = Convert.ToDecimal(reader["GiaBan"])  // ✅ dùng đúng kiểu
+                        DonGia = Convert.ToDecimal(reader["GiaBan"])
                     };
                 }
             }
