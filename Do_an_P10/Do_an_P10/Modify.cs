@@ -11,7 +11,7 @@ namespace Do_an_P10
     internal class Modify
     {
         public Modify() { }
-        SqlCommand sqlCommand;// truy vaans
+        SqlCommand sqlCommand;// truy vấn
         SqlDataReader dataReader; //dùng để đặt dữ liệu trong bảng
         public List<sanpham> sp(string query)
         {
@@ -489,6 +489,23 @@ namespace Do_an_P10
             }
 
             return tenSP;
+        }
+        public bool ExecuteNonQuery(string query)
+        {
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
+            {
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi truy vấn: " + ex.Message);
+                    return false;
+                }
+            }
         }
 
     }

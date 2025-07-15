@@ -1,4 +1,5 @@
 ﻿using ClosedXML.Excel;
+using Do_an_P10;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,7 +40,10 @@ namespace Do_an_P10
             panelDonhang.Visible = false;
             panelDaiLy.Visible = false;
             sanp.Visible = false;
+            InitPhieuNhapMoi();
+            LoadSanPham();
         }
+
         List<sanpham> allProducts = new List<sanpham>();
         private void sp_Click(object sender, EventArgs e)
         {
@@ -973,34 +977,41 @@ namespace Do_an_P10
         {
             if (!int.TryParse(txtma.Text, out int MaDaiLy))
             {
-                MessageBox.Show("Mã sản đại lý  không hợp lệ!");
+                MessageBox.Show("Mã sản đại lý không hợp lệ!");
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(txttendaily.Text) || string.IsNullOrWhiteSpace(txttensp.Text)
-               || string.IsNullOrWhiteSpace(txtdchi.Text) || string.IsNullOrWhiteSpace(txtsodt.Text) || string.IsNullOrWhiteSpace(txtE.Text))
+            if (string.IsNullOrWhiteSpace(txttendaily.Text) ||
+                string.IsNullOrWhiteSpace(txttensp.Text) ||
+                string.IsNullOrWhiteSpace(txtdchi.Text) ||
+                string.IsNullOrWhiteSpace(txtsodt.Text) ||
+                string.IsNullOrWhiteSpace(txtE.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
                 return;
             }
+
             if (dailies.Any(dl => dl.Madaily == MaDaiLy))
             {
                 MessageBox.Show("Mã sản đại lý đã tồn tại trong danh sách tạm!");
                 return;
             }
+
             daily dl = new daily
             {
-                Madaily = int.Parse(txtma.Text),
+                Madaily = MaDaiLy,
                 Tendaily = txttendaily.Text,
                 Tensanpham = txttensp.Text,
-                Diachi = m.Text,
+                Diachi = txtdchi.Text,   // ❗ Sửa từ `m.Text` sang đúng textbox
                 Email = txtE.Text,
-                Sdt = txtsodt.Text  // Thêm dòng này
+                Sdt = txtsodt.Text
             };
 
             dailies.Add(dl);
+
+            // ✅ Cập nhật lại DataGridView với danh sách mới
             dgvDaiLy.DataSource = null;
-            dgvDaiLy.DataSource = dl;
+            dgvDaiLy.DataSource = dailies;
 
             dangThemSanPham = true;
 
@@ -1018,19 +1029,293 @@ namespace Do_an_P10
             int demThanhCong = 0;
             foreach (var dl in dailies)
             {
-                bool thanhCong = modify.ThemDaiLy(dl); // Sửa phương thức này cho phù hợp
+                bool thanhCong = modify.ThemDaiLy(dl);
                 if (thanhCong)
                     demThanhCong++;
             }
 
-            MessageBox.Show($"Đã lưu {demThanhCong} sản phẩm vào cơ sở dữ liệu.");
+            MessageBox.Show($"Đã lưu {demThanhCong} đại lý vào cơ sở dữ liệu.");
 
-            ds.Clear();
+            dailies.Clear(); // ✅ Clear danh sách tạm
             dangThemSanPham = false;
 
             dgvDaiLy.DataSource = null;
-            loaddata(); // Load từ CSDL
+            LoadDaiLy(); // ✅ Load lại từ bảng daily
         }
+        private void dgvDaiLy_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvDaiLy.Rows[e.RowIndex];
+
+                txtma.Text = row.Cells[0].Value?.ToString();
+                txttendaily.Text = row.Cells[1].Value?.ToString();
+                txttensp.Text = row.Cells[2].Value?.ToString();
+                txtdchi.Text = row.Cells[3].Value?.ToString();
+                txtsodt.Text = row.Cells[4].Value?.ToString();
+                txtE.Text = row.Cells[5].Value?.ToString();
+            }
+        }
+
+        private void sua_Click(object sender, EventArgs e)
+        {
+            int ma;
+            if (!int.TryParse(txtma.Text, out ma))
+            {
+                MessageBox.Show("Mã đại lý không hợp lệ.");
+                return;
+            }
+
+            string query = $"UPDATE daily SET " +
+                           $"TenDaiLy = N'{txttendaily.Text}', " +
+                           $"Tensanpham = N'{txttensp.Text}', " +
+                           $"Diachi = N'{txtdchi.Text}', " +
+                           $"Sdt = '{txtsodt.Text}', " +
+                           $"Email = '{txtE.Text}' " +
+                           $"WHERE MaDaiLy = {ma}";
+
+            if (modify.ExecuteNonQuery(query))
+            {
+                MessageBox.Show("Cập nhật thành công.");
+                LoadDaiLy();
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật thất bại.");
+            }
+        }
+
+        private void xoaDL_Click(object sender, EventArgs e)
+        {
+            int ma;
+            if (!int.TryParse(txtma.Text, out ma))
+            {
+                MessageBox.Show("Mã đại lý không hợp lệ.");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa đại lý này?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                string query = $"DELETE FROM daily WHERE MaDaiLy = {ma}";
+                if (modify.ExecuteNonQuery(query))
+                {
+                    MessageBox.Show("Xóa thành công.");
+                    LoadDaiLy();
+                }
+                else
+                {
+                    MessageBox.Show("Xóa thất bại.");
+                }
+            }
+        }
+
+        private void timkiemDL_Click(object sender, EventArgs e)
+        {
+            string tensp = txttimk.Text.Trim();
+
+            if (string.IsNullOrEmpty(tensp))
+            {
+                MessageBox.Show("Vui lòng nhập tên sản phẩm cần tìm.");
+                return;
+            }
+
+            string query = $"SELECT * FROM daily WHERE Tensanpham LIKE N'%{tensp}%'";
+            dgvDaiLy.DataSource = modify.GetDataTable(query);
+        }
+
+        private void lmDL_Click(object sender, EventArgs e)
+        {
+            txtma.Clear();
+            txttendaily.Clear();
+            txttensp.Clear();
+            txtdchi.Clear();
+            txtsodt.Clear();
+            txtE.Clear();
+            txtma.Focus();
+            txttimk.Clear();
+            LoadDaiLy();
+
+            DateTime start = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            DateTime end = start.AddMonths(1).AddDays(-1);
+            txtDlTen.Clear(); // hoặc cbTenDaiLy.SelectedIndex = -1;
+            dateNgayTu.Value = start;
+            dateDen.Value = end;
+
+            LoadPhieuNhap(start, end, null);
+        }
+        private void LoadPhieuNhap(DateTime tuNgay, DateTime denNgay, string tenDaiLy)
+        {
+            string query = @"
+            SELECT 
+                pn.MaPhieuNhap, 
+                pn.NgayNhap, 
+                dl.TenDaiLy, 
+                pn.GhiChu,
+                SUM(ISNULL(ct.SoLuongNhap, 0)) AS TongSoSP,
+                SUM(ISNULL(ct.SoLuongNhap, 0) * ISNULL(ct.DonGiaNhap, 0)) AS TongTien
+            FROM PhieuNhap pn
+            JOIN daily dl ON pn.MaDaiLy = dl.MaDaiLy
+            JOIN CT_PhieuNhap ct ON pn.MaPhieuNhap = ct.MaPhieuNhap
+            WHERE pn.NgayNhap BETWEEN @tuNgay AND @denNgay";
+
+            if (!string.IsNullOrEmpty(tenDaiLy))
+                query += " AND dl.TenDaiLy LIKE @tenDaiLy";
+
+            query += @"
+            GROUP BY pn.MaPhieuNhap, pn.NgayNhap, dl.TenDaiLy, pn.GhiChu
+            ORDER BY pn.NgayNhap DESC";
+
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@tuNgay", tuNgay);
+                cmd.Parameters.AddWithValue("@denNgay", denNgay);
+
+                if (!string.IsNullOrEmpty(tenDaiLy))
+                    cmd.Parameters.AddWithValue("@tenDaiLy", "%" + tenDaiLy + "%");
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgvPhieuNhap.DataSource = dt;
+            }
+        } 
+        private void btTimkiemLS_Click(object sender, EventArgs e)
+        {
+            DateTime tuNgay = dateNgayTu.Value.Date;
+            DateTime denNgay = dateDen.Value.Date;
+            string tenDL = txtDlTen.Text.Trim();
+
+            LoadPhieuNhap(tuNgay, denNgay, tenDL);
+        }
+
+        BindingList<SanPhamNhap> danhSachNhap = new BindingList<SanPhamNhap>();
+
+        private void InitPhieuNhapMoi()
+        {
+            dgvChonSanPham.AutoGenerateColumns = false;
+            dgvChonSanPham.DataSource = danhSachNhap;
+
+            // Load đại lý
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT MaDaily, TenDaily FROM daily", conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                cbDaiLy.DataSource = dt;
+                cbDaiLy.DisplayMember = "TenDaily";
+                cbDaiLy.ValueMember = "MaDaily";
+            }
+        }
+
+        private void btLuuSPDL_Click(object sender, EventArgs e)
+        {
+            if (danhSachNhap.Count == 0)
+            {
+                MessageBox.Show("Vui lòng thêm ít nhất 1 sản phẩm trước khi lưu.");
+                return;
+            }
+
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
+            {
+                conn.Open();
+                SqlTransaction tran = conn.BeginTransaction();
+
+                try
+                {
+                    // 1. Thêm phiếu nhập mới
+                    string insertPN = "INSERT INTO PhieuNhap (NgayNhap, MaDaily, GhiChu) " +
+                                      "VALUES (@NgayNhap, @MaDaily, @GhiChu); SELECT SCOPE_IDENTITY();";
+
+                    SqlCommand cmdPN = new SqlCommand(insertPN, conn, tran);
+                    cmdPN.Parameters.AddWithValue("@NgayNhap", dateNgayNhapPhieu.Value);
+                    cmdPN.Parameters.AddWithValue("@MaDaily", cbDaiLy.SelectedValue);
+                    cmdPN.Parameters.AddWithValue("@GhiChu", txtGhiChu.Text);
+
+                    int maPhieuNhap = Convert.ToInt32(cmdPN.ExecuteScalar());
+
+                    // 2. Thêm chi tiết từng sản phẩm nhập
+                    foreach (var sp in danhSachNhap)
+                    {
+                        string insertCT = "INSERT INTO CT_PhieuNhap (MaPhieuNhap, MaSP, SoLuongNhap, DonGiaNhap) " +
+                                          "VALUES (@MaPN, @MaSP, @SL, @DG)";
+                        SqlCommand cmdCT = new SqlCommand(insertCT, conn, tran);
+                        cmdCT.Parameters.AddWithValue("@MaPN", maPhieuNhap);
+                        cmdCT.Parameters.AddWithValue("@MaSP", sp.MaSP);
+                        cmdCT.Parameters.AddWithValue("@SL", sp.SoLuongNhap);
+                        cmdCT.Parameters.AddWithValue("@DG", sp.DonGiaNhap);
+                        cmdCT.ExecuteNonQuery();
+
+                        // 3. Cập nhật tồn kho sản phẩm
+                        string updateTonKho = "UPDATE sanpham SET SoLuongTon = ISNULL(SoLuongTon, 0) + @SL WHERE MaSP = @MaSP";
+                        SqlCommand cmdUpdate = new SqlCommand(updateTonKho, conn, tran);
+                        cmdUpdate.Parameters.AddWithValue("@SL", sp.SoLuongNhap);
+                        cmdUpdate.Parameters.AddWithValue("@MaSP", sp.MaSP);
+                        cmdUpdate.ExecuteNonQuery();
+                    }
+
+                    tran.Commit();
+                    MessageBox.Show("Lưu phiếu nhập thành công!");
+
+                    danhSachNhap.Clear(); // Reset danh sách
+                }
+                catch (Exception ex)
+                {
+                    tran.Rollback();
+                    MessageBox.Show("Lỗi khi lưu phiếu nhập: " + ex.Message);
+                }
+            }
+        }
+        private void btThemSPDL_Click(object sender, EventArgs e)
+        {
+            if (cbSP.SelectedItem == null)
+            {
+                MessageBox.Show("Vui lòng chọn sản phẩm.");
+                return;
+            }
+
+            DataRowView row = cbSP.SelectedItem as DataRowView;
+            int maSP = Convert.ToInt32(row["MaSP"]);
+            string tenSP = row["TenSP"].ToString();
+
+            // Kiểm tra và ép kiểu từ TextBox
+            if (!int.TryParse(txtSL.Text.Trim(), out int soLuong))
+            {
+                MessageBox.Show("Vui lòng nhập đúng số lượng (số nguyên).");
+                return;
+            }
+
+            if (!decimal.TryParse(txtGiaNhap.Text.Trim(), out decimal donGia))
+            {
+                MessageBox.Show("Vui lòng nhập đúng đơn giá (số thập phân).");
+                return;
+            }
+
+            var sp = new SanPhamNhap
+            {
+                MaSP = maSP,
+                TenSP = tenSP,
+                SoLuongNhap = soLuong,
+                DonGiaNhap = donGia
+            };
+
+            danhSachNhap.Add(sp);
+            dgvChonSanPham.Refresh();
+        }
+
+        private void LoadSanPham()
+        {
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
+            {
+                SqlDataAdapter da = new SqlDataAdapter("SELECT MaSP, TenSP FROM sanpham", conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                cbSP.DataSource = dt;
+                cbSP.DisplayMember = "TenSP";
+                cbSP.ValueMember = "MaSP";
+            }
+        }
+
     }
 }
-
