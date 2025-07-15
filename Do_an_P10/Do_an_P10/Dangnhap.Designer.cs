@@ -39,8 +39,10 @@
             qmk = new LinkLabel();
             dk = new LinkLabel();
             panel1 = new Panel();
+            piceyes = new PictureBox();
             label3 = new Label();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)piceyes).BeginInit();
             SuspendLayout();
             // 
             // imageList1
@@ -59,20 +61,20 @@
             // 
             tk.Anchor = AnchorStyles.None;
             tk.BorderStyle = BorderStyle.FixedSingle;
-            tk.Location = new Point(33, 131);
-            tk.Margin = new Padding(3, 2, 3, 2);
+            tk.Location = new Point(47, 218);
+            tk.Margin = new Padding(4, 3, 4, 3);
             tk.Name = "tk";
-            tk.Size = new Size(327, 23);
+            tk.Size = new Size(478, 31);
             tk.TabIndex = 0;
             // 
             // mk
             // 
             mk.Anchor = AnchorStyles.None;
             mk.BorderStyle = BorderStyle.FixedSingle;
-            mk.Location = new Point(33, 194);
-            mk.Margin = new Padding(3, 2, 3, 2);
+            mk.Location = new Point(47, 323);
+            mk.Margin = new Padding(4, 3, 4, 3);
             mk.Name = "mk";
-            mk.Size = new Size(327, 23);
+            mk.Size = new Size(478, 31);
             mk.TabIndex = 1;
             mk.UseSystemPasswordChar = true;
             // 
@@ -81,9 +83,10 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(33, 110);
+            label1.Location = new Point(47, 183);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(111, 19);
+            label1.Size = new Size(167, 26);
             label1.TabIndex = 2;
             label1.Text = "Tài Đăng Nhập";
             // 
@@ -92,9 +95,10 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(33, 173);
+            label2.Location = new Point(47, 288);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(75, 19);
+            label2.Size = new Size(112, 26);
             label2.TabIndex = 3;
             label2.Text = "Mật khẩu";
             // 
@@ -102,10 +106,10 @@
             // 
             dn.Anchor = AnchorStyles.None;
             dn.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dn.Location = new Point(83, 252);
-            dn.Margin = new Padding(3, 2, 3, 2);
+            dn.Location = new Point(136, 430);
+            dn.Margin = new Padding(4, 3, 4, 3);
             dn.Name = "dn";
-            dn.Size = new Size(234, 41);
+            dn.Size = new Size(300, 50);
             dn.TabIndex = 5;
             dn.Text = "Đăng nhập";
             dn.UseVisualStyleBackColor = true;
@@ -116,9 +120,10 @@
             qmk.Anchor = AnchorStyles.None;
             qmk.AutoSize = true;
             qmk.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            qmk.Location = new Point(33, 219);
+            qmk.Location = new Point(47, 375);
+            qmk.Margin = new Padding(4, 0, 4, 0);
             qmk.Name = "qmk";
-            qmk.Size = new Size(87, 15);
+            qmk.Size = new Size(125, 22);
             qmk.TabIndex = 6;
             qmk.TabStop = true;
             qmk.Text = "Quên mật khẩu";
@@ -129,9 +134,10 @@
             dk.Anchor = AnchorStyles.None;
             dk.AutoSize = true;
             dk.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dk.Location = new Point(169, 295);
+            dk.Location = new Point(246, 507);
+            dk.Margin = new Padding(4, 0, 4, 0);
             dk.Name = "dk";
-            dk.Size = new Size(52, 15);
+            dk.Size = new Size(75, 22);
             dk.TabIndex = 7;
             dk.TabStop = true;
             dk.Text = "Đăng ký";
@@ -141,6 +147,7 @@
             // 
             panel1.Anchor = AnchorStyles.None;
             panel1.BackColor = Color.Honeydew;
+            panel1.Controls.Add(piceyes);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(dn);
             panel1.Controls.Add(dk);
@@ -149,11 +156,22 @@
             panel1.Controls.Add(mk);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(275, 106);
-            panel1.Margin = new Padding(3, 2, 3, 2);
+            panel1.Location = new Point(393, 177);
+            panel1.Margin = new Padding(4, 3, 4, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(400, 350);
+            panel1.Size = new Size(571, 583);
             panel1.TabIndex = 8;
+            // 
+            // piceyes
+            // 
+            piceyes.BackColor = Color.White;
+            piceyes.Location = new Point(499, 329);
+            piceyes.Name = "piceyes";
+            piceyes.Size = new Size(20, 20);
+            piceyes.SizeMode = PictureBoxSizeMode.Zoom;
+            piceyes.TabIndex = 9;
+            piceyes.TabStop = false;
+            piceyes.Click += piceyes_Click;
             // 
             // label3
             // 
@@ -161,28 +179,30 @@
             label3.AutoSize = true;
             label3.Font = new Font("Times New Roman", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.ForestGreen;
-            label3.Location = new Point(96, 55);
+            label3.Location = new Point(137, 92);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(205, 31);
+            label3.Size = new Size(307, 47);
             label3.TabIndex = 8;
             label3.Text = "EcoStraws HKT";
             // 
             // Dangnhap
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             BackgroundImage = Properties.Resources.phan_huy_03_thang;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(943, 542);
+            ClientSize = new Size(1347, 903);
             Controls.Add(panel1);
-            Margin = new Padding(3, 2, 3, 2);
+            Margin = new Padding(4, 3, 4, 3);
             Name = "Dangnhap";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Đăng nhập";
             Load += Dangnhap_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)piceyes).EndInit();
             ResumeLayout(false);
         }
 
@@ -199,5 +219,6 @@
         private LinkLabel dk;
         private Panel panel1;
         private Label label3;
+        private PictureBox piceyes;
     }
 }

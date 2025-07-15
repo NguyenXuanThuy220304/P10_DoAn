@@ -38,17 +38,13 @@ namespace Do_an_P10
         (2,   Properties.Resources.Ong_hut_gao_phi_6),
         (3,   Properties.Resources.Ong_hut_gao_phi_8),
         (4,  Properties.Resources.Ong_hut_gao_phi_13),
-        (4,  Properties.Resources.Ong_hut_gao_phi_13),
-        (5,  Properties.Resources.Ong_hut_gao_phi_13),
-        (6,  Properties.Resources.Ong_hut_gao_phi_13),
-        (7,  Properties.Resources.Ong_hut_gao_phi_13),
-        (8,  Properties.Resources.Ong_hut_gao_phi_13),
-        (9,  Properties.Resources.Ong_hut_gao_phi_13),
-        (10,  Properties.Resources.Ong_hut_gao_phi_13),
-        (11,  Properties.Resources.Ong_hut_gao_phi_13),
-        (12,  Properties.Resources.Ong_hut_gao_phi_13),
-        (13,  Properties.Resources.Ong_hut_gao_phi_13),
-        (14,  Properties.Resources.Ong_hut_gao_phi_13)
+        (5,  Properties.Resources.onghutcophi4_5),
+        (7,  Properties.Resources.onghutcophi13),
+        (10,  Properties.Resources.onghutcophi13),
+        (11,  Properties.Resources.onghutbamiaphi6),
+        (12,  Properties.Resources.onghutbamiaphi13),
+        (13,  Properties.Resources.onghuttre),
+        (14,  Properties.Resources.onghuttrephi6_12_13)
 
     };
 
@@ -140,6 +136,16 @@ namespace Do_an_P10
                                                 || sp.Mausac.ToLower().Contains(keyword))
                                       .ToList();
             DisplayProducts(filtered);
+        }
+
+        private void t_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelmathang_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

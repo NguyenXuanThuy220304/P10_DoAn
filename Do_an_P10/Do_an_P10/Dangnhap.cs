@@ -4,9 +4,14 @@ namespace Do_an_P10
 {
     public partial class Dangnhap : Form
     {
+        private bool isPasswordShown = false;
         public Dangnhap()
         {
             InitializeComponent();
+            mk.UseSystemPasswordChar = true;
+            piceyes.Image = Properties.Resources.hide; // Mặc định là ảnh mắt đóng
+            piceyes.SizeMode = PictureBoxSizeMode.StretchImage;
+            piceyes.Cursor = Cursors.Hand;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -86,7 +91,23 @@ namespace Do_an_P10
 
         private void Dangnhap_Load(object sender, EventArgs e)
         {
-        
+            dn.BackColor = Color.Transparent;
+        }
+
+        private void piceyes_Click(object sender, EventArgs e)
+        {
+            if (isPasswordShown)
+            {
+                mk.UseSystemPasswordChar = true;
+                piceyes.Image = Properties.Resources.hide;
+                isPasswordShown = false;
+            }
+            else
+            {
+                mk.UseSystemPasswordChar = false;
+                piceyes.Image = Properties.Resources.view;
+                isPasswordShown = true;
+            }
         }
     }
 }

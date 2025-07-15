@@ -75,6 +75,22 @@ namespace Do_an_P10
             }
             return tk;
         }
+        public bool ThemDaiLy(daily  dl)
+        {
+            string sql = @"INSERT INTO daily (TenDaiLy, Tensanpham, Diachi, SDT, Email) 
+                       VALUES (@tendl, @tensp, @diac, @sdt,@email)";
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
+            {
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@tendl", dl.Tendaily);
+                cmd.Parameters.AddWithValue("@tensp", dl.Tensanpham);
+                cmd.Parameters.AddWithValue("@diac", dl.Diachi);
+                cmd.Parameters.AddWithValue("@sdt", dl.Sdt);
+                cmd.Parameters.AddWithValue("@email", dl.Email);
+                conn.Open();
+                return cmd.ExecuteNonQuery() > 0;
+            }
+        }
         public int ThemDonHang(donhang dh)
         {
             int maDH = -1;

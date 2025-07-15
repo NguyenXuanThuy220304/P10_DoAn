@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClosedXML.Excel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,7 +34,11 @@ namespace Do_an_P10
             LoadTrangThai();
             dgvDonHang.CellClick += dgvDonHang_CellClick;
             cbSanPham.SelectedIndexChanged += cbSanPham_SelectedIndexChanged;
-
+            panelKhachHang.Visible = false;
+            panelLichSuKho.Visible = false;
+            panelDonhang.Visible = false;
+            panelDaiLy.Visible = false;
+            sanp.Visible = false;
         }
         List<sanpham> allProducts = new List<sanpham>();
         private void sp_Click(object sender, EventArgs e)
@@ -912,5 +917,120 @@ namespace Do_an_P10
                 LoadDaiLy();
             }
         }
+
+        private void xuatexcel_Click(object sender, EventArgs e)
+        {
+            // Tạo DataTable từ DataGridView
+            DataTable dt = new DataTable();
+            foreach (DataGridViewColumn column in dgvKho.Columns)
+            {
+                dt.Columns.Add(column.HeaderText); // tên cột
+            }
+            foreach (DataGridViewRow row in dgvKho.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    DataRow dataRow = dt.NewRow();
+                    for (int i = 0; i < dgvKho.Columns.Count; i++)
+                    {
+                        dataRow[i] = row.Cells[i].Value;
+                    }
+                    dt.Rows.Add(dataRow);
+                }
+            }
+
+            // Mở hộp thoại lưu file
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel Workbook|*.xlsx";
+            saveFileDialog.Title = "Lưu file Excel";
+            saveFileDialog.FileName = "DanhSachLichSuKho.xlsx";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                using (XLWorkbook wb = new XLWorkbook())
+                {
+                    wb.Worksheets.Add(dt, "DanhSach");
+                    wb.SaveAs(saveFileDialog.FileName);
+                }
+                MessageBox.Show("Xuất Excel thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void ClearDaiLyForm()
+        {
+            txtma.Text = "";
+            txttendaily.Text = "";
+            txttensp.Text = "";
+            txtdchi.Text = "";
+            txtsodt.Text = "";
+            txtE.Text = "";
+        }
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+        List<daily> dailies = new List<daily>();
+        private void them_Click(object sender, EventArgs e)
+        {
+            if (!int.TryParse(txtma.Text, out int MaDaiLy))
+            {
+                MessageBox.Show("Mã sản đại lý  không hợp lệ!");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txttendaily.Text) || string.IsNullOrWhiteSpace(txttensp.Text)
+               || string.IsNullOrWhiteSpace(txtdchi.Text) || string.IsNullOrWhiteSpace(txtsodt.Text) || string.IsNullOrWhiteSpace(txtE.Text))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
+                return;
+            }
+            if (dailies.Any(dl => dl.Madaily == MaDaiLy))
+            {
+                MessageBox.Show("Mã sản đại lý đã tồn tại trong danh sách tạm!");
+                return;
+            }
+            daily dl = new daily
+            {
+                Madaily = int.Parse(txtma.Text),
+                Tendaily = txttendaily.Text,
+                Tensanpham = txttensp.Text,
+                Diachi = m.Text,
+                Email = txtE.Text,
+                Sdt = txtsodt.Text  // Thêm dòng này
+            };
+
+            dailies.Add(dl);
+            dgvDaiLy.DataSource = null;
+            dgvDaiLy.DataSource = dl;
+
+            dangThemSanPham = true;
+
+            ClearDaiLyForm();
+        }
+
+        private void luu_Click(object sender, EventArgs e)
+        {
+            if (dailies.Count == 0)
+            {
+                MessageBox.Show("Không có đại lý nào để lưu.");
+                return;
+            }
+
+            int demThanhCong = 0;
+            foreach (var dl in dailies)
+            {
+                bool thanhCong = modify.ThemDaiLy(dl); // Sửa phương thức này cho phù hợp
+                if (thanhCong)
+                    demThanhCong++;
+            }
+
+            MessageBox.Show($"Đã lưu {demThanhCong} sản phẩm vào cơ sở dữ liệu.");
+
+            ds.Clear();
+            dangThemSanPham = false;
+
+            dgvDaiLy.DataSource = null;
+            loaddata(); // Load từ CSDL
+        }
     }
 }
+

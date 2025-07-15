@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QRCoder;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
@@ -48,26 +50,63 @@ namespace Do_an_P10
 
         private void xuat_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Modify.CapNhatTrangThaiDonHang(maDH, "Đã thanh toán");
-
-            MessageBox.Show("Hóa đơn đã được xuất và cập nhật trạng thái thành 'Đã thanh toán'.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            // Lấy danh sách sản phẩm trong đơn hàng
-            var dtChiTiet = Modify.LayChiTietDonHang(maDH);
-            foreach (DataRow row in dtChiTiet.Rows)
+            string scanned = lbnhapma.Text.Trim();
+            if (scanned == currentCode)
             {
-                int maSP = Convert.ToInt32(row["MaSP"]);
-                int soLuongMua = Convert.ToInt32(row["SoLuong"]);
+                Modify.CapNhatTrangThaiDonHang(maDH, "Đã thanh toán");
 
-                // Trừ số lượng trong kho
-                Modify.TruSoLuongSanPham(maSP, soLuongMua);
-                Modify.GhiLichSuKho(maSP, -soLuongMua, "Xuất bán", $"Đơn hàng: {maDH}");
+                MessageBox.Show("Hóa đơn đã được xuất và cập nhật trạng thái thành 'Đã thanh toán'.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Lấy danh sách sản phẩm trong đơn hàng
+                var dtChiTiet = Modify.LayChiTietDonHang(maDH);
+                foreach (DataRow row in dtChiTiet.Rows)
+                {
+                    int maSP = Convert.ToInt32(row["MaSP"]);
+                    int soLuongMua = Convert.ToInt32(row["SoLuong"]);
+
+                    // Trừ số lượng trong kho
+                    Modify.TruSoLuongSanPham(maSP, soLuongMua);
+                    Modify.GhiLichSuKho(maSP, -soLuongMua, "Xuất bán", $"Đơn hàng: {maDH}");
+                }
+                // Làm mới giao diện
+                LoadHoaDon();
+                EcoStraws eco = new EcoStraws(tentk);
+                eco.Show();
+                this.Close();
             }
-            // Làm mới giao diện
-            LoadHoaDon();
-            EcoStraws eco = new EcoStraws(tentk);
-            eco.Show();
-            this.Close();
+            else
+            {
+                MessageBox.Show("Mã bạn nhập không đúng vui lòng nhập lại!");
+            }
+        }
+        private string GenerateRandomCode()
+        {
+            Random rnd = new Random();
+            int number = rnd.Next(100000, 999999); // 6 chữ số
+            return number.ToString(); // ví dụ: 548293
+        }
+        string currentCode = ""; // biến lưu mã hiện tại (có thể đặt global)
+
+      
+
+        private void HoaDon_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                currentCode = GenerateRandomCode(); // tạo mã mới mỗi lần
+
+                QRCodeGenerator qrGenerator = new QRCodeGenerator();
+                QRCodeData qrCodeData = qrGenerator.CreateQrCode(currentCode, QRCodeGenerator.ECCLevel.Q);
+                QRCode qrCode = new QRCode(qrCodeData);
+                Bitmap qrCodeImage = qrCode.GetGraphic(20, Color.Black, Color.White, true);
+
+                Qrcode.Image = qrCodeImage;
+             //   lblQRText.Text = "Mã sinh: " + currentCode;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tạo mã QR: " + ex.Message);
+            }
         }
     }
-    }
+}
 
