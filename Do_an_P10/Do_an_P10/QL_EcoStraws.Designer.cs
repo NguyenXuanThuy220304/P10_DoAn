@@ -154,6 +154,10 @@
             txtDlTen = new TextBox();
             lblDlTen = new Label();
             dgvChiTietPhieu = new DataGridView();
+            MaSPCT = new DataGridViewTextBoxColumn();
+            TenSPCT = new DataGridViewTextBoxColumn();
+            SoLuongNhapCT = new DataGridViewTextBoxColumn();
+            GiaNhapCT = new DataGridViewTextBoxColumn();
             lblChiTietPhieu = new Label();
             btTimkiemLS = new Button();
             dateDen = new DateTimePicker();
@@ -162,10 +166,21 @@
             lbNgayTu = new Label();
             dgvPhieuNhap = new DataGridView();
             tabPhieuNhapMoi = new TabPage();
+            txtGiaNhap = new TextBox();
+            txtSL = new TextBox();
+            label25 = new Label();
+            label24 = new Label();
+            cbSP = new ComboBox();
+            label23 = new Label();
+            cbDaiLy = new ComboBox();
             lbTongTienDL = new Label();
             btLuuSPDL = new Button();
             btThemSPDL = new Button();
             dgvChonSanPham = new DataGridView();
+            MaSP = new DataGridViewTextBoxColumn();
+            TenSP = new DataGridViewTextBoxColumn();
+            SoLuongNhap = new DataGridViewTextBoxColumn();
+            DonGiaNhap = new DataGridViewTextBoxColumn();
             txtGhiChu = new TextBox();
             lbGhiChu = new Label();
             lbCBDaiLy = new Label();
@@ -182,13 +197,6 @@
             dgvDaiLy = new DataGridView();
             them = new Button();
             sua = new Button();
-            cbDaiLy = new ComboBox();
-            label23 = new Label();
-            cbSP = new ComboBox();
-            label24 = new Label();
-            label25 = new Label();
-            txtSL = new TextBox();
-            txtGiaNhap = new TextBox();
             menu.SuspendLayout();
             panelkho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -1679,10 +1687,35 @@
             dgvChiTietPhieu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvChiTietPhieu.BackgroundColor = Color.White;
             dgvChiTietPhieu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvChiTietPhieu.Columns.AddRange(new DataGridViewColumn[] { MaSPCT, TenSPCT, SoLuongNhapCT, GiaNhapCT });
             dgvChiTietPhieu.Location = new Point(16, 343);
             dgvChiTietPhieu.Name = "dgvChiTietPhieu";
             dgvChiTietPhieu.Size = new Size(313, 106);
             dgvChiTietPhieu.TabIndex = 7;
+            // 
+            // MaSPCT
+            // 
+            MaSPCT.DataPropertyName = "MaSP";
+            MaSPCT.HeaderText = "Mã SP";
+            MaSPCT.Name = "MaSPCT";
+            // 
+            // TenSPCT
+            // 
+            TenSPCT.DataPropertyName = "TenSP";
+            TenSPCT.HeaderText = "Tên SP";
+            TenSPCT.Name = "TenSPCT";
+            // 
+            // SoLuongNhapCT
+            // 
+            SoLuongNhapCT.DataPropertyName = "SoLuongNhap";
+            SoLuongNhapCT.HeaderText = "Số lượng";
+            SoLuongNhapCT.Name = "SoLuongNhapCT";
+            // 
+            // GiaNhapCT
+            // 
+            GiaNhapCT.DataPropertyName = "DonGiaNhap";
+            GiaNhapCT.HeaderText = "Giá nhập";
+            GiaNhapCT.Name = "GiaNhapCT";
             // 
             // lblChiTietPhieu
             // 
@@ -1747,6 +1780,7 @@
             dgvPhieuNhap.Name = "dgvPhieuNhap";
             dgvPhieuNhap.Size = new Size(313, 120);
             dgvPhieuNhap.TabIndex = 0;
+            dgvPhieuNhap.CellClick += dgvPhieuNhap_CellClick;
             // 
             // tabPhieuNhapMoi
             // 
@@ -1773,6 +1807,72 @@
             tabPhieuNhapMoi.TabIndex = 2;
             tabPhieuNhapMoi.Text = "Tạo phiếu nhập mới";
             tabPhieuNhapMoi.UseVisualStyleBackColor = true;
+            // 
+            // txtGiaNhap
+            // 
+            txtGiaNhap.BorderStyle = BorderStyle.FixedSingle;
+            txtGiaNhap.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtGiaNhap.Location = new Point(102, 146);
+            txtGiaNhap.Name = "txtGiaNhap";
+            txtGiaNhap.Size = new Size(175, 22);
+            txtGiaNhap.TabIndex = 16;
+            // 
+            // txtSL
+            // 
+            txtSL.BorderStyle = BorderStyle.FixedSingle;
+            txtSL.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtSL.Location = new Point(102, 103);
+            txtSL.Name = "txtSL";
+            txtSL.Size = new Size(175, 22);
+            txtSL.TabIndex = 15;
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label25.Location = new Point(20, 148);
+            label25.Name = "label25";
+            label25.Size = new Size(65, 17);
+            label25.TabIndex = 14;
+            label25.Text = "Giá nhập";
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label24.Location = new Point(20, 105);
+            label24.Name = "label24";
+            label24.Size = new Size(65, 17);
+            label24.TabIndex = 13;
+            label24.Text = "Số lượng";
+            // 
+            // cbSP
+            // 
+            cbSP.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbSP.FormattingEnabled = true;
+            cbSP.Location = new Point(102, 62);
+            cbSP.Name = "cbSP";
+            cbSP.Size = new Size(175, 23);
+            cbSP.TabIndex = 12;
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label23.Location = new Point(20, 63);
+            label23.Name = "label23";
+            label23.Size = new Size(70, 17);
+            label23.TabIndex = 11;
+            label23.Text = "Sản phẩm";
+            // 
+            // cbDaiLy
+            // 
+            cbDaiLy.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cbDaiLy.FormattingEnabled = true;
+            cbDaiLy.Location = new Point(102, 187);
+            cbDaiLy.Name = "cbDaiLy";
+            cbDaiLy.Size = new Size(175, 23);
+            cbDaiLy.TabIndex = 10;
             // 
             // lbTongTienDL
             // 
@@ -1811,16 +1911,41 @@
             dgvChonSanPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvChonSanPham.BackgroundColor = Color.White;
             dgvChonSanPham.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvChonSanPham.Columns.AddRange(new DataGridViewColumn[] { MaSP, TenSP, SoLuongNhap, DonGiaNhap });
             dgvChonSanPham.Location = new Point(20, 257);
             dgvChonSanPham.Name = "dgvChonSanPham";
             dgvChonSanPham.Size = new Size(303, 121);
             dgvChonSanPham.TabIndex = 6;
             // 
+            // MaSP
+            // 
+            MaSP.DataPropertyName = "MaSP";
+            MaSP.HeaderText = "Mã SP";
+            MaSP.Name = "MaSP";
+            // 
+            // TenSP
+            // 
+            TenSP.DataPropertyName = "TenSP";
+            TenSP.HeaderText = "Tên SP";
+            TenSP.Name = "TenSP";
+            // 
+            // SoLuongNhap
+            // 
+            SoLuongNhap.DataPropertyName = "SoLuongNhap";
+            SoLuongNhap.HeaderText = "Số lượng";
+            SoLuongNhap.Name = "SoLuongNhap";
+            // 
+            // DonGiaNhap
+            // 
+            DonGiaNhap.DataPropertyName = "DonGiaNhap";
+            DonGiaNhap.HeaderText = "Giá nhập";
+            DonGiaNhap.Name = "DonGiaNhap";
+            // 
             // txtGhiChu
             // 
             txtGhiChu.BorderStyle = BorderStyle.FixedSingle;
             txtGhiChu.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtGhiChu.Location = new Point(102, 222);
+            txtGhiChu.Location = new Point(102, 228);
             txtGhiChu.Name = "txtGhiChu";
             txtGhiChu.Size = new Size(175, 22);
             txtGhiChu.TabIndex = 5;
@@ -1829,7 +1954,7 @@
             // 
             lbGhiChu.AutoSize = true;
             lbGhiChu.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbGhiChu.Location = new Point(20, 222);
+            lbGhiChu.Location = new Point(20, 231);
             lbGhiChu.Name = "lbGhiChu";
             lbGhiChu.Size = new Size(58, 17);
             lbGhiChu.TabIndex = 3;
@@ -1839,7 +1964,7 @@
             // 
             lbCBDaiLy.AutoSize = true;
             lbCBDaiLy.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbCBDaiLy.Location = new Point(20, 183);
+            lbCBDaiLy.Location = new Point(20, 189);
             lbCBDaiLy.Name = "lbCBDaiLy";
             lbCBDaiLy.Size = new Size(45, 17);
             lbCBDaiLy.TabIndex = 2;
@@ -1996,66 +2121,6 @@
             sua.Text = "Sửa";
             sua.UseVisualStyleBackColor = true;
             sua.Click += sua_Click;
-            // 
-            // cbDaiLy
-            // 
-            cbDaiLy.FormattingEnabled = true;
-            cbDaiLy.Location = new Point(102, 182);
-            cbDaiLy.Name = "cbDaiLy";
-            cbDaiLy.Size = new Size(175, 23);
-            cbDaiLy.TabIndex = 10;
-            // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label23.Location = new Point(20, 65);
-            label23.Name = "label23";
-            label23.Size = new Size(70, 17);
-            label23.TabIndex = 11;
-            label23.Text = "Sản phẩm";
-            // 
-            // cbSP
-            // 
-            cbSP.FormattingEnabled = true;
-            cbSP.Location = new Point(102, 64);
-            cbSP.Name = "cbSP";
-            cbSP.Size = new Size(175, 23);
-            cbSP.TabIndex = 12;
-            // 
-            // label24
-            // 
-            label24.AutoSize = true;
-            label24.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label24.Location = new Point(20, 110);
-            label24.Name = "label24";
-            label24.Size = new Size(65, 17);
-            label24.TabIndex = 13;
-            label24.Text = "Số lượng";
-            // 
-            // label25
-            // 
-            label25.AutoSize = true;
-            label25.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label25.Location = new Point(20, 146);
-            label25.Name = "label25";
-            label25.Size = new Size(65, 17);
-            label25.TabIndex = 14;
-            label25.Text = "Giá nhập";
-            // 
-            // txtSL
-            // 
-            txtSL.Location = new Point(102, 106);
-            txtSL.Name = "txtSL";
-            txtSL.Size = new Size(175, 23);
-            txtSL.TabIndex = 15;
-            // 
-            // txtGiaNhap
-            // 
-            txtGiaNhap.Location = new Point(102, 145);
-            txtGiaNhap.Name = "txtGiaNhap";
-            txtGiaNhap.Size = new Size(175, 23);
-            txtGiaNhap.TabIndex = 16;
             // 
             // QL_EcoStraws
             // 
@@ -2291,5 +2356,13 @@
         private ComboBox cbDaiLy;
         private TextBox txtGiaNhap;
         private TextBox txtSL;
+        private DataGridViewTextBoxColumn MaSP;
+        private DataGridViewTextBoxColumn TenSP;
+        private DataGridViewTextBoxColumn SoLuongNhap;
+        private DataGridViewTextBoxColumn DonGiaNhap;
+        private DataGridViewTextBoxColumn MaSPCT;
+        private DataGridViewTextBoxColumn TenSPCT;
+        private DataGridViewTextBoxColumn SoLuongNhapCT;
+        private DataGridViewTextBoxColumn GiaNhapCT;
     }
 }

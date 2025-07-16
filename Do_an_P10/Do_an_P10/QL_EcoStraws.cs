@@ -1143,28 +1143,31 @@ namespace Do_an_P10
             dateDen.Value = end;
 
             LoadPhieuNhap(start, end, null);
+
+            txtDlTen.Clear(); // Xóa ô tìm kiếm tên đại lý nếu có
+            dgvChiTietPhieu.DataSource = null; // Xóa chi tiết phiếu
         }
         private void LoadPhieuNhap(DateTime tuNgay, DateTime denNgay, string tenDaiLy)
         {
             string query = @"
-            SELECT 
-                pn.MaPhieuNhap, 
-                pn.NgayNhap, 
-                dl.TenDaiLy, 
-                pn.GhiChu,
-                SUM(ISNULL(ct.SoLuongNhap, 0)) AS TongSoSP,
-                SUM(ISNULL(ct.SoLuongNhap, 0) * ISNULL(ct.DonGiaNhap, 0)) AS TongTien
-            FROM PhieuNhap pn
-            JOIN daily dl ON pn.MaDaiLy = dl.MaDaiLy
-            JOIN CT_PhieuNhap ct ON pn.MaPhieuNhap = ct.MaPhieuNhap
-            WHERE pn.NgayNhap BETWEEN @tuNgay AND @denNgay";
+    SELECT 
+        pn.MaPhieuNhap, 
+        pn.NgayNhap, 
+        dl.TenDaiLy, 
+        pn.GhiChu,
+        SUM(ISNULL(ct.SoLuongNhap, 0)) AS TongSoSP,
+        SUM(ISNULL(ct.SoLuongNhap, 0) * ISNULL(ct.DonGiaNhap, 0)) AS TongTien
+    FROM PhieuNhap pn
+    JOIN daily dl ON pn.MaDaiLy = dl.MaDaiLy
+    JOIN CT_PhieuNhap ct ON pn.MaPhieuNhap = ct.MaPhieuNhap
+    WHERE pn.NgayNhap BETWEEN @tuNgay AND @denNgay";
 
             if (!string.IsNullOrEmpty(tenDaiLy))
                 query += " AND dl.TenDaiLy LIKE @tenDaiLy";
 
             query += @"
-            GROUP BY pn.MaPhieuNhap, pn.NgayNhap, dl.TenDaiLy, pn.GhiChu
-            ORDER BY pn.NgayNhap DESC";
+    GROUP BY pn.MaPhieuNhap, pn.NgayNhap, dl.TenDaiLy, pn.GhiChu
+    ORDER BY pn.NgayNhap DESC";
 
             using (SqlConnection conn = ketnoi.GetSqlConnection())
             {
@@ -1178,9 +1181,58 @@ namespace Do_an_P10
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
+
                 dgvPhieuNhap.DataSource = dt;
+                dgvPhieuNhap.ClearSelection(); // tránh bị chọn sai dòng
+
+                // ✅ nếu có dữ liệu thì chọn dòng đầu tiên
+                if (dgvPhieuNhap.Rows.Count > 0)
+                {
+                    dgvPhieuNhap.Rows[0].Selected = true;
+                    int maPN = Convert.ToInt32(dgvPhieuNhap.Rows[0].Cells["MaPhieuNhap"].Value);
+                    LoadChiTietPhieuNhap(maPN);
+                }
+                else
+                {
+                    dgvChiTietPhieu.DataSource = null;
+                }
             }
-        } 
+        }
+        private void dgvPhieuNhap_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                int maPN = Convert.ToInt32(dgvPhieuNhap.Rows[e.RowIndex].Cells[0].Value);
+                MessageBox.Show("Mã phiếu nhập: " + maPN);
+                LoadChiTietPhieuNhap(maPN);
+            }
+        }
+        private void LoadChiTietPhieuNhap(int maPhieuNhap)
+        {
+            string query = @"
+    SELECT 
+        sp.MaSP, 
+        sp.TenSP, 
+        ct.SoLuongNhap, 
+        ct.DonGiaNhap
+    FROM CT_PhieuNhap ct
+    JOIN sanpham sp ON ct.MaSP = sp.MaSP
+    WHERE ct.MaPhieuNhap = @MaPN";
+
+            using (SqlConnection conn = ketnoi.GetSqlConnection())
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@MaPN", maPhieuNhap);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dgvChiTietPhieu.AutoGenerateColumns = true; // để cột tự sinh từ dữ liệu
+                dgvChiTietPhieu.DataSource = dt;
+            }
+        }
+
         private void btTimkiemLS_Click(object sender, EventArgs e)
         {
             DateTime tuNgay = dateNgayTu.Value.Date;
@@ -1253,6 +1305,17 @@ namespace Do_an_P10
                         cmdUpdate.Parameters.AddWithValue("@SL", sp.SoLuongNhap);
                         cmdUpdate.Parameters.AddWithValue("@MaSP", sp.MaSP);
                         cmdUpdate.ExecuteNonQuery();
+
+                        // 4. Ghi vào Lịch sử kho
+                        string insertLSK = "INSERT INTO LichSuKho (MaSP, NgayThayDoi, SoLuong, LoaiThayDoi, GhiChu) " +
+                                           "VALUES (@MaSP, @Ngay, @SL, @Loai, @GhiChu)";
+                        SqlCommand cmdLSK = new SqlCommand(insertLSK, conn, tran);
+                        cmdLSK.Parameters.AddWithValue("@MaSP", sp.MaSP);
+                        cmdLSK.Parameters.AddWithValue("@Ngay", dateNgayNhapPhieu.Value);
+                        cmdLSK.Parameters.AddWithValue("@SL", sp.SoLuongNhap);
+                        cmdLSK.Parameters.AddWithValue("@Loai", "Nhập kho");
+                        cmdLSK.Parameters.AddWithValue("@GhiChu", "Phiếu nhập #" + maPhieuNhap);
+                        cmdLSK.ExecuteNonQuery();
                     }
 
                     tran.Commit();
@@ -1302,6 +1365,7 @@ namespace Do_an_P10
 
             danhSachNhap.Add(sp);
             dgvChonSanPham.Refresh();
+            TinhTongThanhTien();
         }
 
         private void LoadSanPham()
@@ -1315,6 +1379,17 @@ namespace Do_an_P10
                 cbSP.DisplayMember = "TenSP";
                 cbSP.ValueMember = "MaSP";
             }
+        }
+        private void TinhTongThanhTien()
+        {
+            decimal tong = 0;
+            foreach (var sp in danhSachNhap)
+            {
+                tong += sp.SoLuongNhap * sp.DonGiaNhap;
+            }
+
+            // Gán lên Label/TextBox để hiển thị
+            lbTongTienDL.Text = tong.ToString("N0") + " đ"; // Định dạng tiền đẹp hơn
         }
 
     }
